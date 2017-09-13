@@ -1,0 +1,10 @@
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\bin\Debug\LogiCAR.AccesoDatos.dll.config
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\bin\Debug\LogiCAR.AccesoDatos.dll
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\bin\Debug\LogiCAR.AccesoDatos.pdb
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\bin\Debug\EntityFramework.dll
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\bin\Debug\EntityFramework.xml
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\obj\Debug\LogiCAR.CapaAccesoDatos.csprojResolveAssemblyReference.cache
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\obj\Debug\LogiCAR.AccesoDatos.dll
+c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.AccesoDatos\obj\Debug\LogiCAR.AccesoDatos.pdb
