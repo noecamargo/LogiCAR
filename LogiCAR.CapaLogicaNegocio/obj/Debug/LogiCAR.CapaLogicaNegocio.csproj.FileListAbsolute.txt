@@ -3,3 +3,7 @@ c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.CapaLogicaN
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.csprojResolveAssemblyReference.cache
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.dll
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocio\bin\Debug\LogiCAR.CapaLogicaNegocio.dll
+C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocio\bin\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.dll
+C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.pdb

@@ -30,3 +30,4 @@ c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi.Test
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi.Tests\obj\Debug\LogiCAR.WebApi.Tests.csprojResolveAssemblyReference.cache
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi.Tests\obj\Debug\LogiCAR.WebApi.Tests.dll
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi.Tests\obj\Debug\LogiCAR.WebApi.Tests.pdb
+C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.WebApi.Tests\obj\Debug\LogiCAR.WebApi.Tests.csprojResolveAssemblyReference.cache

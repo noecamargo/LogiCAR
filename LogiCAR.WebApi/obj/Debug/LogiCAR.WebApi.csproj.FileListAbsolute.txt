@@ -28,3 +28,4 @@ c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi\bin\
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi\bin\es\System.Web.Http.WebHost.resources.dll
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi\obj\Debug\LogiCAR.WebApi.dll
 c:\users\noelc\documents\visual studio 2015\Projects\LogiCAR\LogiCAR.WebApi\obj\Debug\LogiCAR.WebApi.pdb
+C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.WebApi\obj\Debug\LogiCAR.WebApi.csprojResolveAssemblyReference.cache
