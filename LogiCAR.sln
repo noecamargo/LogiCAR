@@ -7,9 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.CapaAccesoDatos", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.CapaLogicaNegocio", "LogiCAR.CapaLogicaNegocio\LogiCAR.CapaLogicaNegocio.csproj", "{FF637E58-5DA0-471E-8A48-9D8C1DA5604C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.WebApi", "LogiCAR.WebApi\LogiCAR.WebApi.csproj", "{C897FADB-29C9-4E12-A8AA-10164639FA62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.CapaLogicaNegocioTests", "LogiCAR.CapaLogicaNegocioTests\LogiCAR.CapaLogicaNegocioTests.csproj", "{B6C7BABA-EF90-4E96-B4B5-1BDD12BC6729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.WebApi.Tests", "LogiCAR.WebApi.Tests\LogiCAR.WebApi.Tests.csproj", "{4DAC0D08-A342-4D03-A525-1495A1EA63DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logi.CAR.WebApi", "Logi.CAR.WebApi\Logi.CAR.WebApi.csproj", "{C7B61433-1965-4662-8278-ACD22C9D03DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logi.CAR.WebApi.Tests", "Logi.CAR.WebApi.Tests\Logi.CAR.WebApi.Tests.csproj", "{A9AE07FE-DF14-45D5-A4C6-ED0C608D3380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.CapaAccesoDatos.Tests", "LogiCAR.CapaAccesoDatos.Tests\LogiCAR.CapaAccesoDatos.Tests.csproj", "{99963236-4DDD-4337-880A-F1A3E408722A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +29,22 @@ Global
 		{FF637E58-5DA0-471E-8A48-9D8C1DA5604C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF637E58-5DA0-471E-8A48-9D8C1DA5604C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF637E58-5DA0-471E-8A48-9D8C1DA5604C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C897FADB-29C9-4E12-A8AA-10164639FA62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C897FADB-29C9-4E12-A8AA-10164639FA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C897FADB-29C9-4E12-A8AA-10164639FA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C897FADB-29C9-4E12-A8AA-10164639FA62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DAC0D08-A342-4D03-A525-1495A1EA63DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DAC0D08-A342-4D03-A525-1495A1EA63DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DAC0D08-A342-4D03-A525-1495A1EA63DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DAC0D08-A342-4D03-A525-1495A1EA63DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C7BABA-EF90-4E96-B4B5-1BDD12BC6729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C7BABA-EF90-4E96-B4B5-1BDD12BC6729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C7BABA-EF90-4E96-B4B5-1BDD12BC6729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C7BABA-EF90-4E96-B4B5-1BDD12BC6729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B61433-1965-4662-8278-ACD22C9D03DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B61433-1965-4662-8278-ACD22C9D03DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B61433-1965-4662-8278-ACD22C9D03DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B61433-1965-4662-8278-ACD22C9D03DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9AE07FE-DF14-45D5-A4C6-ED0C608D3380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AE07FE-DF14-45D5-A4C6-ED0C608D3380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AE07FE-DF14-45D5-A4C6-ED0C608D3380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AE07FE-DF14-45D5-A4C6-ED0C608D3380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99963236-4DDD-4337-880A-F1A3E408722A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99963236-4DDD-4337-880A-F1A3E408722A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99963236-4DDD-4337-880A-F1A3E408722A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99963236-4DDD-4337-880A-F1A3E408722A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
