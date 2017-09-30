@@ -70,3 +70,13 @@ C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\Newto
 C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\Castle.Core.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\LogiCAR.CapaLogicaNegocio.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\LogiCAR.Entidades.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\Moq.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\LogiCAR.AccesoDatos.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\LogiCAR.Entidades.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\Moq.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\Moq.xml
+C:\Users\noelc\Source\Repos\LogiCarLugares\Logi.CAR.WebApi.Tests\bin\Debug\LogiCAR.AccesoDatos.pdb

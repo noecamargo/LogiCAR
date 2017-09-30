@@ -138,9 +138,17 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LogiCAR.CapaLogicaNegocio\LogiCAR.CapaLogicaNegocio.csproj">
+      <Project>{ff637e58-5da0-471e-8a48-9d8c1da5604c}</Project>
+      <Name>LogiCAR.CapaLogicaNegocio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LogiCAR.DependencyResolver\LogiCAR.DependencyResolver.csproj">
       <Project>{906ed05f-0a8f-45ef-b08d-e30bd8f7a824}</Project>
       <Name>LogiCAR.DependencyResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">
+      <Project>{7740dcf3-756a-4e98-9f75-c16edfce9c25}</Project>
+      <Name>LogiCAR.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

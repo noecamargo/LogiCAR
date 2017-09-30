@@ -1,0 +1,5 @@
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\bin\Debug\LogiCAR.Entidades.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\bin\Debug\LogiCAR.Entidades.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.csprojResolveAssemblyReference.cache
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.pdb

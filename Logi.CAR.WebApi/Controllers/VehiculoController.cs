@@ -1,18 +1,34 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using LogiCAR.Entidades;
+using LogiCAR.CapaLogicaNegocio;
 
 namespace LogiCAR.WebApi.Controllers
 {
     public class VehiculoController : ApiController
     {
-        // GET: api/Vehiculo
-        public IEnumerable<string> Get()
+
+        private ILogicaNegocioVehiculo logicaNegocioVehiculo { get; set; }
+
+        public VehiculoController(ILogicaNegocioVehiculo logicaVehiculo)
         {
-            return new string[] { "value1", "value2" };
+            logicaNegocioVehiculo = logicaVehiculo;
+        }
+
+        // GET: api/Vehiculo
+        public IHttpActionResult Get()
+        {
+            IEnumerable<Vehiculo> vehiculos = logicaNegocioVehiculo.Get();
+            if (vehiculos == null)
+            {
+                return NotFound();
+            }
+            return Ok(vehiculos);
+            
         }
 
         // GET: api/Vehiculo/5

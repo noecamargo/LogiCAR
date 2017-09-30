@@ -39,6 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,12 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AccesoDatosVehiculo.cs" />
+    <Compile Include="DependecyResolver.cs" />
+    <Compile Include="IAccesoDatosVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogiCAR.DependencyResolver\LogiCAR.DependencyResolver.csproj">
+      <Project>{906ed05f-0a8f-45ef-b08d-e30bd8f7a824}</Project>
+      <Name>LogiCAR.DependencyResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">
+      <Project>{7740dcf3-756a-4e98-9f75-c16edfce9c25}</Project>
+      <Name>LogiCAR.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
