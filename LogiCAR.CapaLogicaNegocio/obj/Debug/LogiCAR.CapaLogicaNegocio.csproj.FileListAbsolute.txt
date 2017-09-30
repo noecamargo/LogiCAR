@@ -13,3 +13,10 @@ C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\L
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.csprojResolveAssemblyReference.cache
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.dll
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\LogiCAR.DependencyResolver.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\LogiCAR.DependencyResolver.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\Microsoft.Practices.ServiceLocation.xml

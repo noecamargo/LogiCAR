@@ -9,11 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.CapaLogicaNegocio",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.CapaLogicaNegocioTests", "LogiCAR.CapaLogicaNegocioTests\LogiCAR.CapaLogicaNegocioTests.csproj", "{B6C7BABA-EF90-4E96-B4B5-1BDD12BC6729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logi.CAR.WebApi", "Logi.CAR.WebApi\Logi.CAR.WebApi.csproj", "{C7B61433-1965-4662-8278-ACD22C9D03DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.WebApi", "Logi.CAR.WebApi\LogiCAR.WebApi.csproj", "{C7B61433-1965-4662-8278-ACD22C9D03DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logi.CAR.WebApi.Tests", "Logi.CAR.WebApi.Tests\Logi.CAR.WebApi.Tests.csproj", "{A9AE07FE-DF14-45D5-A4C6-ED0C608D3380}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.WebApi.Tests", "Logi.CAR.WebApi.Tests\LogiCAR.WebApi.Tests.csproj", "{A9AE07FE-DF14-45D5-A4C6-ED0C608D3380}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.CapaAccesoDatos.Tests", "LogiCAR.CapaAccesoDatos.Tests\LogiCAR.CapaAccesoDatos.Tests.csproj", "{99963236-4DDD-4337-880A-F1A3E408722A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.DependencyResolver", "LogiCAR.DependencyResolver\LogiCAR.DependencyResolver.csproj", "{906ED05F-0A8F-45EF-B08D-E30BD8F7A824}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{99963236-4DDD-4337-880A-F1A3E408722A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99963236-4DDD-4337-880A-F1A3E408722A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99963236-4DDD-4337-880A-F1A3E408722A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906ED05F-0A8F-45EF-B08D-E30BD8F7A824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906ED05F-0A8F-45EF-B08D-E30BD8F7A824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906ED05F-0A8F-45EF-B08D-E30BD8F7A824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906ED05F-0A8F-45EF-B08D-E30BD8F7A824}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

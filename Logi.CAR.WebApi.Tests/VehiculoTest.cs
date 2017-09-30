@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using LogiCAR.WebApi.Models;
 
-
-namespace Logi.CAR.WebApi.Tests
+namespace LogiCAR.WebApi.Tests
 {
     [TestClass]
     public class VehiculoTest
