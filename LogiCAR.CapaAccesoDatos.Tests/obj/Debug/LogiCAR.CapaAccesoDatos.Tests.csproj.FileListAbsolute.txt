@@ -4,3 +4,10 @@ C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\Micr
 C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.dll
 C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.CapaAccesoDatos.Tests.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.CapaAccesoDatos.Tests.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.csprojResolveAssemblyReference.cache
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.pdb

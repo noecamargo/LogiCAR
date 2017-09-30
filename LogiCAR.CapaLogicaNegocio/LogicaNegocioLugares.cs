@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
-    public class LogicaNegocio
+    public class LogicaNegocioLugares
     {
     }
 }

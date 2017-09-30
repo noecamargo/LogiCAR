@@ -29,23 +29,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         //}
 
 
-        [TestMethod]
-        public void AltaAdministrador()
-        {
-            Administrador admin = new Administrador();
-            admin.Nombre = "Pedro";
-            Assert.AreNotEqual(null,admin);
-            
-        }
-
-        [TestMethod]
-        public void AltaOperarioPuerto()
-        {
-            OperarioPuerto admin = new OperarioPuerto();
-            admin.Nombre = "Pedro";
-
-        }
-
+       
 
     }
 

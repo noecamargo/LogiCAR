@@ -7,3 +7,12 @@ C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocioTests\obj\Debug\Log
 C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocioTests\obj\Debug\LogiCAR.CapaLogicaNegocioTests.csprojResolveAssemblyReference.cache
 C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocio.dll
 C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\obj\Debug\LogiCAR.CapaLogicaNegocioTests.csprojResolveAssemblyReference.cache
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\obj\Debug\LogiCAR.CapaLogicaNegocioTests.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\obj\Debug\LogiCAR.CapaLogicaNegocioTests.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocioTests.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocioTests.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocio.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

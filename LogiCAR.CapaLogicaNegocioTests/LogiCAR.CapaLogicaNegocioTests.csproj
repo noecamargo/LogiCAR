@@ -51,7 +51,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Inicializacion.cs" />
-    <Compile Include="UsuarioTest.cs" />
+    <Compile Include="PatioTest.cs" />
+    <Compile Include="PuertoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

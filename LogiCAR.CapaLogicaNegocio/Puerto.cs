@@ -1,6 +1,6 @@
 ﻿namespace LogiCAR.CapaLogicaNegocio
 {
-    public class OperarioPuerto
+    public class Puerto
     {
         public string Nombre { get; set; }
     }
