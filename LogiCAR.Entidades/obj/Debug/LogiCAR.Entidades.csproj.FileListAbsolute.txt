@@ -3,3 +3,7 @@ C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\bin\Debug\LogiCAR.E
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.csprojResolveAssemblyReference.cache
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.dll
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.pdb
+C:\Users\Usuario\Documents\LogiCar\LogiCAR.Entidades\bin\Debug\LogiCAR.Entidades.dll
+C:\Users\Usuario\Documents\LogiCar\LogiCAR.Entidades\bin\Debug\LogiCAR.Entidades.pdb
+C:\Users\Usuario\Documents\LogiCar\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.dll
+C:\Users\Usuario\Documents\LogiCar\LogiCAR.Entidades\obj\Debug\LogiCAR.Entidades.pdb

@@ -45,6 +45,7 @@ namespace LogiCAR.WebApi.Controllers
         // PUT: api/Vehiculo/5
         public void Put(int id, [FromBody]string value)
         {
+            logicaNegocioVehiculo.Get
         }
 
         // DELETE: api/Vehiculo/5
