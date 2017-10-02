@@ -38,14 +38,15 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // POST: api/Vehiculo
-        public void Post([FromBody]string value)
-        {
-        }
+        //public void Post([FromBody]string value)
+        //{
+        //    logicaNegocioVehiculo.Post(value);
+        //}
 
         // PUT: api/Vehiculo/5
         public void Put(int id, [FromBody]string value)
         {
-            logicaNegocioVehiculo.Get
+            logicaNegocioVehiculo.Put(id, value);
         }
 
         // DELETE: api/Vehiculo/5

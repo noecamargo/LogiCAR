@@ -20,6 +20,11 @@ namespace LogiCAR.CapaAccesoDatos
             return list;
         }
 
+        public void Put(Vehiculo vehiculo)
+        {
+            list.Add(vehiculo);
+        }
+
 
     }
 }
