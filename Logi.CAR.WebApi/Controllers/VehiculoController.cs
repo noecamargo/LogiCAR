@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using LogiCAR.Entidades;
 using LogiCAR.CapaLogicaNegocio;
@@ -28,30 +25,52 @@ namespace LogiCAR.WebApi.Controllers
                 return NotFound();
             }
             return Ok(vehiculos);
-            
+
         }
 
         // GET: api/Vehiculo/5
-        public string Get(int id)
+        public IHttpActionResult Get(Guid VIN)
         {
-            return "value";
+            Vehiculo vehiculo = logicaNegocioVehiculo.ObtenerVehiculo(VIN);
+            if (vehiculo == null)
+            {
+                return NotFound();
+            }
+            return Ok(vehiculo);
+        }
+        
+        // PUT: api/Vehiculo/5
+        public IHttpActionResult Put(Guid VIN, [FromBody]Vehiculo vehiculo)
+        {
+            try
+            {
+                bool resultado = logicaNegocioVehiculo.ModificarVehiculo(VIN, vehiculo);
+                return CreatedAtRoute("DefaultApi", new { updated = resultado }, vehiculo);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // POST: api/Vehiculo
-        //public void Post([FromBody]string value)
-        //{
-        //    logicaNegocioVehiculo.Post(value);
-        //}
-
-        // PUT: api/Vehiculo/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Post([FromBody] Vehiculo vehiculo)
         {
-            logicaNegocioVehiculo.Put(id, value);
-        }
-
-        // DELETE: api/Vehiculo/5
-        public void Delete(int id)
-        {
+            try
+            {
+                Guid id = logicaNegocioVehiculo.CrearVehiculo(vehiculo);
+                return CreatedAtRoute("DefaultApi", new { id = id }, vehiculo);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
+
+    // DELETE: api/Vehiculo/5
+    //public void Delete(int id)
+    //{
+    //}
 }
+

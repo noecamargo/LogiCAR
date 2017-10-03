@@ -10,6 +10,10 @@ namespace LogiCAR.AccesoDatos
 {
     public class LogiCarContext : DbContext
     {
+        public LogiCarContext(string connectionString)
+                : base(connectionString)
+        {}
+       
         public DbSet<Vehiculo> Vehiculos { get; set; }
 
     }

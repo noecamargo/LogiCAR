@@ -7,9 +7,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
     public class DatosVehiculoTest
     {
 
-        [TestMethod]
-        public void CrearVehiculo() {
-        }
+      
        
     }
 }

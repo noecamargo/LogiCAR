@@ -29,6 +29,11 @@ namespace LogiCAR.AccesoDatos
 
         }
 
+        public Vehiculo ObtenerVehiculo(Guid VIN)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Vehiculo> GetVehiculos()
         {
             return repositorio.ListaVehiculos();

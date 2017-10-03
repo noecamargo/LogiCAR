@@ -9,9 +9,10 @@ namespace LogiCAR.AccesoDatos
 {
     public class RepositorioSqlServer : IRepositorio
     {
+        private string connectionString = "Data Source = VPUY - ACAPECE; Initial Catalog = LogiCAR; Integrated Security = True; MultipleActiveResultSets=True";
         public bool AgregarVehiculo(Vehiculo vehiculo)
         {
-            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext())
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
             {
 
                 ctx.Vehiculos.Add(vehiculo);
@@ -21,7 +22,7 @@ namespace LogiCAR.AccesoDatos
 
         public IEnumerable<Vehiculo> ListaVehiculos()
         {
-            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext())
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
             {
                 return ctx.Vehiculos;
             }

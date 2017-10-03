@@ -1,6 +1,7 @@
 ﻿using LogiCAR.AccesoDatos;
 using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -20,12 +21,19 @@ namespace LogiCAR.CapaLogicaNegocio
             return modelo.GetVehiculos();
         }
 
-        public bool Put(int id, [FromBody] string value)
+        public Vehiculo ObtenerVehiculo(Guid VIN)
         {
-            Vehiculo vehiculo = new Vehiculo();
-            vehiculo.VIN = new System.Guid();
-            vehiculo.Anio = "2017";
-            return modelo.AgregarVehiculo(vehiculo);
+            return modelo.ObtenerVehiculo(VIN);
+        }
+
+        public bool ModificarVehiculo(Guid VIN,Vehiculo vehiculo)
+        {
+            return true;
+        }
+
+        public Guid CrearVehiculo(Vehiculo vehiculo)
+        {
+            return Guid.NewGuid();
         }
     }
 }

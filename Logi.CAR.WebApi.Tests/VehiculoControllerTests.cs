@@ -14,7 +14,53 @@ namespace LogiCAR.WebApi.Tests
     [TestClass]
     public class VehiculoControllerTests
     {
+        [TestMethod]
+        public void CrearVehiculo()
+        {
+            //Arrange
+            var vehiculo= GenerarVehiculo();
 
+            var mockVehiculosLogica = new Mock<ILogicaNegocioVehiculo>();
+            mockVehiculosLogica
+                .Setup(bl => bl.CrearVehiculo(vehiculo))
+                    .Returns(vehiculo.VIN);
+
+            var controller = new VehiculoController(mockVehiculosLogica.Object);
+
+            //Act
+            IHttpActionResult obtainedResult = controller.Post(vehiculo);
+            var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
+
+            //Assert
+            mockVehiculosLogica.VerifyAll();
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual("DefaultApi", createdResult.RouteName);
+            Assert.AreEqual(vehiculo.VIN, createdResult.RouteValues["id"]);
+            Assert.AreEqual(vehiculo, createdResult.Content);
+        }
+
+        [TestMethod]
+        public void ObtenerVehiculo()
+        {
+            //Arrange: Construimos el mock y seteamos las expectativas
+            var vehiculo = GenerarVehiculo();
+            var mockVehiculosLogica = new Mock<ILogicaNegocioVehiculo>();
+            mockVehiculosLogica
+                .Setup(bl => bl.ObtenerVehiculo(vehiculo.VIN))
+                .Returns(vehiculo);
+
+            var controller = new VehiculoController(mockVehiculosLogica.Object);
+
+            //Act: Efectuamos la llamada al controller
+            IHttpActionResult obtainedResult = controller.Get(vehiculo.VIN);
+
+            //Assert
+            var contentResult = obtainedResult as OkNegotiatedContentResult<Vehiculo>;
+            mockVehiculosLogica.VerifyAll();
+            Assert.IsNotNull(contentResult);
+            Assert.IsNotNull(contentResult.Content);
+            Assert.AreEqual(vehiculo, contentResult.Content);
+        }
 
         [TestMethod]
         public void ObtenerVehiculos()
@@ -38,6 +84,31 @@ namespace LogiCAR.WebApi.Tests
             Assert.IsNotNull(contentResult.Content);
             Assert.AreEqual(vehiculos, contentResult.Content);
         }
+
+        [TestMethod]
+        public void ModificarVehiculo()
+        {
+            //Arrange: Construimos el mock y seteamos las expectativas
+            var vehiculo = GenerarVehiculo();
+            var mockVehiculosLogica = new Mock<ILogicaNegocioVehiculo>();
+            mockVehiculosLogica
+                .Setup(bl => bl.ModificarVehiculo(vehiculo.VIN,vehiculo))
+                .Returns(true);
+
+            var controller = new VehiculoController(mockVehiculosLogica.Object);
+
+            //Act: Efectuamos la llamada al controller
+            IHttpActionResult obtainedResult = controller.Put(vehiculo.VIN,vehiculo);
+
+            //Assert
+            var contentResult = obtainedResult as OkNegotiatedContentResult<IEnumerable<Vehiculo>>;
+            mockVehiculosLogica.VerifyAll();
+            Assert.IsNotNull(contentResult);
+            Assert.IsNotNull(contentResult.Content);
+            Assert.AreEqual(true, obtainedResult);
+
+        }
+
         private IEnumerable<Vehiculo> GenerarVehiculos()
         {
             return new List<Vehiculo>
@@ -62,32 +133,18 @@ namespace LogiCAR.WebApi.Tests
         
         }
 
-    //Función auxiliar
-    //    private IEnumerable<Breed> GetFakeBreeds()
-    //    {
-    //        return new List<Breed>
-    //        {
-    //            new Breed
-    //            {
-    //                Id = new Guid("e5020d0b-6fce-4b9f-a492-746c6c8a1bfa"),
-    //                Name = "Pug",
-    //                HairType  = "short fur",
-    //                HairColors = new List<string>
-    //                {
-    //                    "blonde"
-    //                }
-    //            },
-    //            new Breed
-    //            {
-    //                Id = new Guid("6b718186-fa8c-4e14-9af8-2601e153db71"),
-    //                Name = "Golden Retriever",
-    //                HairType  = "hairy fur",
-    //                HairColors = new List<string>
-    //                {
-    //                    "blonde"
-    //                }
-    //            }
-    //        };
-    //    }
-}
+        private Vehiculo GenerarVehiculo()
+        {
+            return new Vehiculo
+            {
+                VIN = Guid.NewGuid(),
+                Marca = "Renault",
+                Modelo = "Clio",
+                Color = "gris",
+                Anio = "2012"
+            };
+            
+        }
+
+    }
 }
