@@ -1,0 +1,8 @@
+LogiCAR.CapaLogicaNegocioTests/bin/
+LogiCAR.Entidades.Test/obj/
+LogiCAR.WebApi.Test/bin/
+LogiCAR.WebApi.Test/obj/
+*.cache
+*.dll
+*.exe
+*.pdb

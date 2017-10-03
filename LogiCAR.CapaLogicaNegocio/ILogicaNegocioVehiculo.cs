@@ -6,9 +6,9 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public interface ILogicaNegocioVehiculo
     {
-        IEnumerable<Vehiculo> Get();
+        IEnumerable<Vehiculo> ListaVehiculos();
 
-        void Put(int id, [FromBody] string value);
+        bool Put(int id, [FromBody] string value);
         //void Delete(int id);
         //string Get(int id);
         //void Post([FromBody] string value);

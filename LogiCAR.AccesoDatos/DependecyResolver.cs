@@ -1,4 +1,5 @@
-﻿using LogiCAR.DependencyResolver;
+﻿using LogiCAR.AccesoDatos;
+using LogiCAR.DependencyResolver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
@@ -13,7 +14,7 @@ namespace LogiCAR.CapaAccesoDatos
     {
         public void SetUp(IRegisterComponent registerComponent)
         {
-            registerComponent.RegisterType<IAccesoDatosVehiculo, AccesoDatosVehiculo>();
+            registerComponent.RegisterType<IRepositorio, RepositorioSqlServer>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using LogiCAR.CapaAccesoDatos;
+﻿using LogiCAR.AccesoDatos;
+using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
 using System.Collections.Generic;
 using System.Web.Http;
@@ -7,24 +8,24 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioVehiculo : ILogicaNegocioVehiculo
     {
-        private IAccesoDatosVehiculo repositorioVehiculo;
-
-        public LogicaNegocioVehiculo(IAccesoDatosVehiculo repositorio)
+        private LogiCar modelo;
+                
+        public LogicaNegocioVehiculo(LogiCar modelo)
         {
-            repositorioVehiculo = repositorio;
+            this.modelo = modelo;
         }
 
-        public IEnumerable<Vehiculo> Get()
+        public IEnumerable<Vehiculo> ListaVehiculos()
         {
-            return repositorioVehiculo.Get();
+            return modelo.GetVehiculos();
         }
-            
-        public void Put(int id, [FromBody] string value)
+
+        public bool Put(int id, [FromBody] string value)
         {
             Vehiculo vehiculo = new Vehiculo();
             vehiculo.VIN = new System.Guid();
             vehiculo.Anio = "2017";
-            repositorioVehiculo.Put(vehiculo);
+            return modelo.AgregarVehiculo(vehiculo);
         }
     }
 }

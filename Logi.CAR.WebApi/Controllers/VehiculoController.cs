@@ -22,7 +22,7 @@ namespace LogiCAR.WebApi.Controllers
         // GET: api/Vehiculo
         public IHttpActionResult Get()
         {
-            IEnumerable<Vehiculo> vehiculos = logicaNegocioVehiculo.Get();
+            IEnumerable<Vehiculo> vehiculos = logicaNegocioVehiculo.ListaVehiculos();
             if (vehiculos == null)
             {
                 return NotFound();
