@@ -6,3 +6,6 @@ LogiCAR.WebApi.Test/obj/
 *.dll
 *.exe
 *.pdb
+LogiCAR.AccesoDatos/bin/
+LogiCAR.AccesoDatos/obj/
+LogiCAR.Entidades/obj/
