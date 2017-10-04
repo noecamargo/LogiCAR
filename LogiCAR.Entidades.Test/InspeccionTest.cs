@@ -14,7 +14,11 @@ namespace LogiCAR.Entidades.Test
         public void CrearInspeccion()
         {
             Inspeccion inspeccion = new Inspeccion();
-           
+            inspeccion.Creacion = DateTime.Today;
+            inspeccion.Vehiculo = new Vehiculo();
+            inspeccion.Usuario = new Usuario();
+            inspeccion.Danio = new Danio();
+
         }
     }
 }
