@@ -13,5 +13,10 @@ namespace LogiCAR.CapaLogicaNegocio
         {
             return 1;
         }
+
+        public Inspeccion ObtenerInspeccion(int id)
+        {
+            return new Inspeccion();
+        }
     }
 }

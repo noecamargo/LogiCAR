@@ -16,6 +16,17 @@ namespace LogiCAR.WebApi.Controllers
             this.logicaInspeccion = logicaInspeccion;
         }
 
+        // GET: api/Inspeccion/5
+        public IHttpActionResult Get(int id)
+        {
+            Inspeccion inspeccion = logicaInspeccion.ObtenerInspeccion(id);
+            if (inspeccion == null)
+            {
+                return NotFound();
+            }
+            return Ok(inspeccion);
+        }
+
         // POST: api/Inspeccion
         public IHttpActionResult Post([FromBody] Inspeccion inspeccion)
         {
