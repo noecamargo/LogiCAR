@@ -7,8 +7,10 @@ namespace LogiCAR.Entidades.Test
     public class RolTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void AltaRol()
         {
+            Rol rol = new Rol("Admin");
+            Assert.AreNotEqual(null, rol);
         }
     }
 }

@@ -4,11 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace LogiCAR.Entidades.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class FuncionalidadTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void AltaFuncionalidad()
         {
+            Funcionalidad funcion = new Funcionalidad("Agregar Vehiculo");
+            Assert.AreNotEqual(null, funcion);
         }
     }
 }
