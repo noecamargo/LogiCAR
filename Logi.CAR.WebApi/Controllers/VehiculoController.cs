@@ -44,8 +44,8 @@ namespace LogiCAR.WebApi.Controllers
         {
             try
             {
-                bool resultado = logicaNegocioVehiculo.ModificarVehiculo(VIN, vehiculo);
-                return CreatedAtRoute("DefaultApi", new { updated = resultado }, vehiculo);
+                bool updateResult = logicaNegocioVehiculo.ActualizarVehiculo(VIN, vehiculo);
+                return CreatedAtRoute("DefaultApi", new { updated = updateResult }, vehiculo);
             }
             catch (ArgumentNullException ex)
             {

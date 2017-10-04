@@ -92,7 +92,7 @@ namespace LogiCAR.WebApi.Tests
             var vehiculo = GenerarVehiculo();
             var mockVehiculosLogica = new Mock<ILogicaNegocioVehiculo>();
             mockVehiculosLogica
-                .Setup(bl => bl.ModificarVehiculo(vehiculo.VIN,vehiculo))
+                .Setup(bl => bl.ActualizarVehiculo(vehiculo.VIN,vehiculo))
                 .Returns(true);
 
             var controller = new VehiculoController(mockVehiculosLogica.Object);
@@ -101,11 +101,11 @@ namespace LogiCAR.WebApi.Tests
             IHttpActionResult obtainedResult = controller.Put(vehiculo.VIN,vehiculo);
 
             //Assert
-            var contentResult = obtainedResult as OkNegotiatedContentResult<IEnumerable<Vehiculo>>;
+            var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<bool>;
             mockVehiculosLogica.VerifyAll();
-            Assert.IsNotNull(contentResult);
-            Assert.IsNotNull(contentResult.Content);
-            Assert.AreEqual(true, obtainedResult);
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual("DefaultApi", createdResult.RouteName);
+            Assert.AreEqual(true, createdResult.Content);
 
         }
 

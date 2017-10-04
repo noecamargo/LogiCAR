@@ -16,9 +16,23 @@ namespace LogiCAR.CapaLogicaNegocio
             this.modelo = modelo;
         }
 
+        public Guid CrearVehiculo(Vehiculo vehiculo)
+        {
+            vehiculo.VIN = Guid.NewGuid();
+
+            if (modelo.InsertarVehiculo(vehiculo))
+            {
+                return vehiculo.VIN;
+            }
+            else
+            {
+                return new Guid();
+            }
+        }
+
         public IEnumerable<Vehiculo> ListaVehiculos()
         {
-            return modelo.ListaVehiculos();
+            return modelo.ObtenerVehiculos();
         }
 
         public Vehiculo ObtenerVehiculo(Guid VIN)
@@ -26,14 +40,11 @@ namespace LogiCAR.CapaLogicaNegocio
             return modelo.ObtenerVehiculo(VIN);
         }
 
-        public bool ModificarVehiculo(Guid VIN,Vehiculo vehiculo)
+        public bool ActualizarVehiculo(Guid VIN,Vehiculo vehiculo)
         {
-            return true;
+            return modelo.ActualizarVehiculo(VIN,vehiculo);
         }
 
-        public Guid CrearVehiculo(Vehiculo vehiculo)
-        {
-            return modelo.CrearVehiculo(vehiculo);
-        }
+        
     }
 }

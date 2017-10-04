@@ -11,12 +11,12 @@ namespace LogiCAR.CapaLogicaNegocio
         
         Vehiculo ObtenerVehiculo(Guid VIN);
 
-        bool ModificarVehiculo(Guid VIN, Vehiculo vehiculo);
+        bool ActualizarVehiculo(Guid VIN, Vehiculo vehiculo);
 
         Guid CrearVehiculo(Vehiculo vehiculo);
+        
         //void Delete(int id);
-        //string Get(int id);
-        //void Post([FromBody] string value);
+        
 
     }
 }

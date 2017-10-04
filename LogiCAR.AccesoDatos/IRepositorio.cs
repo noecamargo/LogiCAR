@@ -9,11 +9,12 @@ namespace LogiCAR.AccesoDatos
 {
     public interface IRepositorio
     {
-        Guid CrearVehiculo(Vehiculo vehiculo);
+        bool InsertarVehiculo(Vehiculo vehiculo);
 
         Vehiculo ObtenerVehiculo(Guid vIN);
 
-        IEnumerable<Vehiculo> ListaVehiculos();
-       
+        IEnumerable<Vehiculo> ObtenerVehiculos();
+
+        bool ActualizarVehiculo(Guid VIN, Vehiculo vehiculo);
     }
 }
