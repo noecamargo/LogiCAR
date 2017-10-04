@@ -1,4 +1,5 @@
-﻿using LogiCAR.CapaAccesoDatos;
+﻿using LogiCAR.AccesoDatos;
+using LogiCAR.CapaAccesoDatos;
 using LogiCAR.CapaLogicaNegocio;
 using LogiCAR.Entidades;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,44 +13,56 @@ namespace LogiCAR.CapaLogicaNegocioTests
     [TestClass]
     public class VehiculoTest
     {
-        //[TestMethod]
-        //public void CrearVehiculo()
+        [TestMethod]
+        public void CrearVehiculo()
+        {
+            //Arrange: Construimos el mock y seteamos las expectativas
+            Vehiculo vehiculo = GenerarVehiculo();
+            var mockVehiculoAccesoDatos = new Mock<IRepositorio>();
+
+            mockVehiculoAccesoDatos
+                .Setup(ad => ad.CrearVehiculo(vehiculo))
+                .Returns(vehiculo.VIN);
+
+
+            var logicaVehiculo = new LogicaNegocioVehiculo(mockVehiculoAccesoDatos.Object);
+
+            Guid resultado = logicaVehiculo.CrearVehiculo(vehiculo);
+            //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
+
+            //Assert
+            mockVehiculoAccesoDatos.VerifyAll();
+            Assert.AreEqual(resultado, vehiculo.VIN);
+
+        }
+
+        //private string GenerarJsonVehiculo()
         //{
-        //    //Arrange: Construimos el mock y seteamos las expectativas
-        //    string vehiculo = GenerarJsonVehiculo();
-        //    var mockVehiculosLogica = new Mock<ILogicaNegocioVehiculo>();
-            
-        //    mockVehiculosLogica
-        //        .Setup(bl => bl.CrearVehiculo(vehiculo))
-        //        .Returns(true);
 
+        //    Vehiculo vehiculo = new Vehiculo
+        //    {
+        //        VIN = Guid.NewGuid(),
+        //        Marca = "Peugeot",
+        //        Modelo = "208",
+        //        Color = "azul",
+        //        Anio = "2014"
+        //    };
 
-        //    var logicaVehiculo = new LogicaNegocioVehiculo(new AccesoDatos.LogiCar());
-
-        //    //Act: Efectuamos la llamada al controller
-        //    bool obtainedResult = logicaVehiculo.Put(1,vehiculo);
-
-        //    //Assert
-        //    mockVehiculosLogica.VerifyAll();
-        //    Assert.AreEqual(obtainedResult, true);
+        //    return new JavaScriptSerializer().Serialize(vehiculo);
 
         //}
 
-        private string GenerarJsonVehiculo()
+        private Vehiculo GenerarVehiculo()
         {
-
-            Vehiculo vehiculo = new Vehiculo
+            return new Vehiculo
             {
                 VIN = Guid.NewGuid(),
-                Marca = "Peugeot",
-                Modelo = "208",
-                Color = "azul",
-                Anio = "2014"
+                Marca = "Renault",
+                Modelo = "Clio",
+                Color = "gris",
+                Anio = "2012"
             };
 
-            return new JavaScriptSerializer().Serialize(vehiculo);
-            
         }
-
     }
 }

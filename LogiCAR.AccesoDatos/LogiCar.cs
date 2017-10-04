@@ -22,10 +22,10 @@ namespace LogiCAR.AccesoDatos
             this.repositorio = repositorio;
         }
 
-        public bool AgregarVehiculo(Vehiculo vehiculo)
+        public Guid AgregarVehiculo(Vehiculo vehiculo)
         {
 
-            return repositorio.AgregarVehiculo(vehiculo);
+            return repositorio.CrearVehiculo(vehiculo);
 
         }
 
