@@ -7,7 +7,6 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public interface ILogicaNegocioInspeccion
     {
-        
-        
+        int CrearInspeccion(Inspeccion inspeccion);
     }
 }

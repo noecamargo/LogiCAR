@@ -1,5 +1,6 @@
 ﻿using LogiCAR.CapaLogicaNegocio;
 using LogiCAR.Entidades;
+using LogiCAR.WebApi.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -19,7 +20,15 @@ namespace Logi.CAR.WebApi.Tests
             var inspeccion = GenerarInspeccion();
 
             var mockInspeccionLogica = new Mock<ILogicaNegocioInspeccion>();
-           
+            mockInspeccionLogica
+                 .Setup(il => il.CrearInspeccion(inspeccion))
+                 .Returns(inspeccion.Id);
+
+            var controller = new InspeccionController(mockInspeccionLogica.Object);
+
+            
+
+
         }
 
         private Inspeccion GenerarInspeccion()

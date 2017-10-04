@@ -9,6 +9,9 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioInspeccion : ILogicaNegocioInspeccion
     {
-       
+        public int CrearInspeccion(Inspeccion inspeccion)
+        {
+            return 1;
+        }
     }
 }
