@@ -9,16 +9,16 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioVehiculo : ILogicaNegocioVehiculo
     {
-        private LogiCar modelo;
+        private IRepositorio modelo;
                 
-        public LogicaNegocioVehiculo(LogiCar modelo)
+        public LogicaNegocioVehiculo(IRepositorio modelo)
         {
             this.modelo = modelo;
         }
 
         public IEnumerable<Vehiculo> ListaVehiculos()
         {
-            return modelo.GetVehiculos();
+            return modelo.ListaVehiculos();
         }
 
         public Vehiculo ObtenerVehiculo(Guid VIN)
@@ -33,7 +33,7 @@ namespace LogiCAR.CapaLogicaNegocio
 
         public Guid CrearVehiculo(Vehiculo vehiculo)
         {
-            return Guid.NewGuid();
+            return modelo.CrearVehiculo(vehiculo);
         }
     }
 }
