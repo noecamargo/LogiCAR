@@ -18,6 +18,7 @@ namespace LogiCAR.Entidades.Test
             inspeccion.Vehiculo = new Vehiculo();
             inspeccion.Usuario = new Usuario();
             inspeccion.Danio = new Danio();
+            Assert.IsNotNull(inspeccion);
 
         }
     }

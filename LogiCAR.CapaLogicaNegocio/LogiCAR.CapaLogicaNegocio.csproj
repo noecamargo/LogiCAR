@@ -71,7 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependecyResolver.cs" />
+    <Compile Include="ILogicaNegocioInspeccion.cs" />
     <Compile Include="ILogicaNegocioVehiculo.cs" />
+    <Compile Include="LogicaNegocioInspeccion.cs" />
     <Compile Include="LogicaNegocioVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using LogiCAR.CapaLogicaNegocio;
+using LogiCAR.Entidades;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +14,23 @@ namespace Logi.CAR.WebApi.Tests
     public class InspeccionControllerTest
     {
         [TestMethod]
-        public void CrearInspeccion()
+        public void CrearInspeccionController()
         {
-            Inepccion inspeccion = new Inspeccion();
+            var inspeccion = GenerarInspeccion();
 
+            var mockInspeccionLogica = new Mock<ILogicaNegocioInspeccion>();
+           
         }
+
+        private Inspeccion GenerarInspeccion()
+        {
+            return new Inspeccion
+            {
+                Creacion = DateTime.Today,
+                Vehiculo = new Vehiculo(),
+                Usuario = new Usuario(),
+                Danio = new Danio()
+            };
+        }
+    }
 }

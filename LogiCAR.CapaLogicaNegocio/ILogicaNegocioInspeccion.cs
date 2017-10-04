@@ -1,0 +1,13 @@
+﻿using LogiCAR.Entidades;
+using System.Collections.Generic;
+using System.Web.Http;
+using System;
+
+namespace LogiCAR.CapaLogicaNegocio
+{
+    public interface ILogicaNegocioInspeccion
+    {
+        
+        
+    }
+}
