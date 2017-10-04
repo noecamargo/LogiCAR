@@ -9,5 +9,7 @@ namespace LogiCAR.CapaLogicaNegocio
     {
         int CrearInspeccion(Inspeccion inspeccion);
         Inspeccion ObtenerInspeccion(int id);
+        IEnumerable<Inspeccion> ObtenerInspecciones();
+        bool ActualizarInspeccion(int id, Inspeccion inspeccion);
     }
 }

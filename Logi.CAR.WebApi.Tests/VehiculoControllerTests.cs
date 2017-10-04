@@ -8,6 +8,7 @@ using Moq;
 using System.Web.Http.Results;
 using System.Web.Http;
 using LogiCAR.WebApi.Controllers;
+using System.Linq;
 
 namespace LogiCAR.WebApi.Tests
 {
@@ -101,11 +102,12 @@ namespace LogiCAR.WebApi.Tests
             IHttpActionResult obtainedResult = controller.Put(vehiculo.VIN,vehiculo);
 
             //Assert
-            var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<bool>;
+            var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
             mockVehiculosLogica.VerifyAll();
             Assert.IsNotNull(createdResult);
             Assert.AreEqual("DefaultApi", createdResult.RouteName);
-            Assert.AreEqual(true, createdResult.Content);
+            Assert.AreEqual("updated", createdResult.RouteValues.ElementAt(0).Key);
+            Assert.AreEqual(true, createdResult.RouteValues.ElementAt(0).Value);
 
         }
 

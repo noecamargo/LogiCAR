@@ -16,6 +16,18 @@ namespace LogiCAR.WebApi.Controllers
             this.logicaInspeccion = logicaInspeccion;
         }
 
+        // GET: api/Vehiculo/Inspeccion
+        public IHttpActionResult Get()
+        {
+            IEnumerable<Inspeccion> inspecciones = logicaInspeccion.ObtenerInspecciones();
+            if (inspecciones == null)
+            {
+                return NotFound();
+            }
+            return Ok(inspecciones);
+
+        }
+
         // GET: api/Inspeccion/5
         public IHttpActionResult Get(int id)
         {
@@ -34,6 +46,20 @@ namespace LogiCAR.WebApi.Controllers
             {
                 int id = logicaInspeccion.CrearInspeccion(inspeccion);
                 return CreatedAtRoute("DefaultApi", new { id = id }, inspeccion);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // PUT: api/Inspeccion/5
+        public IHttpActionResult Put(int id, [FromBody]Inspeccion inspeccion)
+        {
+            try
+            {
+                bool resultado = logicaInspeccion.ActualizarInspeccion(id, inspeccion);
+                return CreatedAtRoute("DefaultApi", new { updated = resultado }, inspeccion);
             }
             catch (ArgumentNullException ex)
             {

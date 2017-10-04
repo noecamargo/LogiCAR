@@ -18,5 +18,15 @@ namespace LogiCAR.CapaLogicaNegocio
         {
             return new Inspeccion();
         }
+
+        public IEnumerable<Inspeccion> ObtenerInspecciones()
+        {
+            return null;
+        }
+
+        public bool ActualizarInspeccion(int id, Inspeccion inspeccion)
+        {
+            return true;
+        }
     }
 }
