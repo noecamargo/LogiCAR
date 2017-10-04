@@ -9,17 +9,18 @@ namespace LogiCAR.AccesoDatos
 {
     public class RepositorioSqlServer : IRepositorio
     {
-        private string connectionString = "Data Source = VPUY - ACAPECE; Initial Catalog = LogiCAR; Integrated Security = True; MultipleActiveResultSets=True";
+        private string connectionString = "Data Source = VPUY-ACAPECE; Initial Catalog = LogiCAR; Integrated Security = True; MultipleActiveResultSets=True";
 
         public Guid CrearVehiculo(Vehiculo vehiculo)
         {
-            //using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
-            //{
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
 
-            //    ctx.Vehiculos.Add(vehiculo);
-            //    return ctx.SaveChanges() > 0;
-            //}
-            return Guid.NewGuid();
+                ctx.Vehiculos.Add(vehiculo);
+                ctx.SaveChanges();
+                return Guid.NewGuid();
+            }
+            
         }
 
         public Vehiculo ObtenerVehiculo(Guid VIN)

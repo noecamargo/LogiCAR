@@ -62,6 +62,16 @@
     <Compile Include="DatosVehiculoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogiCAR.AccesoDatos\LogiCAR.CapaAccesoDatos.csproj">
+      <Project>{247FB134-88FB-446C-A6FB-C4CDD04C8F21}</Project>
+      <Name>LogiCAR.CapaAccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">
+      <Project>{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}</Project>
+      <Name>LogiCAR.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

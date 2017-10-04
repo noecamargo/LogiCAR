@@ -12,7 +12,9 @@ namespace LogiCAR.AccesoDatos
     {
         public LogiCarContext(string connectionString)
                 : base(connectionString)
-        {}
+        {
+            Database.Connection.ConnectionString = connectionString;
+        }
        
         public DbSet<Vehiculo> Vehiculos { get; set; }
 
