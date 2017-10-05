@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LogiCAR.Entidades
 {
@@ -8,6 +9,7 @@ namespace LogiCAR.Entidades
         public string Color { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
+        [Key]
         public Guid VIN { get; set; }
     }
 }

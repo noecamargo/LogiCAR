@@ -12,6 +12,6 @@ namespace LogiCAR.Entidades
         }
         [Key]
         public string Nombre { get; set; }
-        public List<Funcionalidad> Permisos { get; set; }
+        public virtual List<Funcionalidad> Permisos { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-namespace LogiCAR.AccesoDatos
+namespace LogiCAR.CapaAccesoDatos
 {
     using System;
     using System.Data.Entity;
@@ -6,23 +6,20 @@ namespace LogiCAR.AccesoDatos
     using System.Linq;
     using Entidades;
 
-    public partial class RepositorioContext : DbContext
+    public class RepositorioContext : DbContext
     {
-        private string connectionString = @"data source=localhost\SQLEXPRESS;initial catalog=LogiCAR;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
-        public RepositorioContext()
-            : base()
-        {
-            Database.Connection.ConnectionString = connectionString;
-        }
-
-    
+        //private string connectionString = @"data source=localhost\SQLEXPRESS;initial catalog=LogiCAR;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+        //public RepositorioContext()
+        //    : base()
+        //{
+        //    Database.Connection.ConnectionString = connectionString;
+        //}
+           
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Funcionalidad> Funcionalidades { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-        }
+       
     }
 }

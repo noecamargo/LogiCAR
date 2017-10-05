@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using LogiCAR.Entidades;
 
-namespace LogiCAR.AccesoDatos
+namespace LogiCAR.CapaAccesoDatos
 {
     public interface IRepositorioSeguridad
     {

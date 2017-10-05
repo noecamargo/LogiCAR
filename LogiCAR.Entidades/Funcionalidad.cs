@@ -1,4 +1,6 @@
-﻿namespace LogiCAR.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LogiCAR.Entidades
 {
     public class Funcionalidad
     {
@@ -6,6 +8,7 @@
         {
             Nombre = nombre;
         }
+        [Key]
         public string Nombre { get; set; }
     }
 }

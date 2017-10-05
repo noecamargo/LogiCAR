@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LogiCAR.Entidades;
 using System.Collections.Generic;
-using LogiCAR.AccesoDatos;
+using LogiCAR.CapaAccesoDatos;
 
 namespace LogiCAR.CapaAccesoDatos.Tests
 {
@@ -10,8 +10,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
     public class RepositorioSeguridadTest
     {
         private IRepositorioSeguridad repositorio = new RepositorioSeguridad();
-
-
+        
         private Usuario CrearUsuario()
         {
             Usuario usuario = new Usuario();
@@ -20,6 +19,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             usuario.NombreUsuario = "pperez";
             usuario.Contrasenia = "peperez2015";
             usuario.Telefono = "27120515";
+            usuario.Rol = new Rol("Admin");
             return usuario;
         }
 
