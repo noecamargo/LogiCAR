@@ -18,17 +18,17 @@ namespace LogiCAR.CapaLogicaNegocio
 
         public int CrearInspeccion(Inspeccion inspeccion)
         {
-            return 1;
+            return modelo.InsertarInspeccion(inspeccion);
         }
 
         public Inspeccion ObtenerInspeccion(int id)
         {
-            return new Inspeccion();
+            return modelo.ObtenerInspeccion(id);
         }
 
         public IEnumerable<Inspeccion> ObtenerInspecciones()
         {
-            return null;
+            return modelo.ObtenerInspecciones();
         }
 
         public bool ActualizarInspeccion(int id, Inspeccion inspeccion)

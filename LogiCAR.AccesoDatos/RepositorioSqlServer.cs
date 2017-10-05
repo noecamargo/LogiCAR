@@ -61,13 +61,14 @@ namespace LogiCAR.AccesoDatos
             }
         }
 
-        public bool InsertarInspeccion(Inspeccion inspeccion)
+        public int InsertarInspeccion(Inspeccion inspeccion)
         {
             using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
             {
 
                 ctx.Inspecciones.Add(inspeccion);
-                return ctx.SaveChanges() > 0;
+                ctx.SaveChanges();
+                return inspeccion.Id;
             }
         }
 

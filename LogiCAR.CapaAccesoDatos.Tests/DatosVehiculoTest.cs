@@ -23,7 +23,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         [TestMethod]
         public void ObtenerVehiculo()
         {
-            Vehiculo vehiculoInsertar = new Vehiculo { VIN = Guid.NewGuid(), Marca = "Ford", Modelo = "Fiesta", Color = "Gris", Anio = "2012" };
+            Vehiculo vehiculoInsertar = new Vehiculo { VIN = new Guid("11223344-5566-7788-99AA-BBCCDDEEFF50"), Marca = "Ford", Modelo = "Fiesta", Color = "Gris", Anio = "2012" };
             repositorio.InsertarVehiculo(vehiculoInsertar);
             Vehiculo vehiculo = repositorio.ObtenerVehiculo(vehiculoInsertar.VIN);
             Assert.AreNotEqual(null, vehiculo);
@@ -53,7 +53,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         [TestMethod]
         public void ModificarVehiculo()
         {
-            Vehiculo vehiculoInsertar = new Vehiculo { VIN = Guid.NewGuid(), Marca = "Renault", Modelo = "Clio", Color = "Gris", Anio = "2012" };
+            Vehiculo vehiculoInsertar = new Vehiculo { VIN = new Guid("11223344-5566-7788-99AA-BBCCDDEEFF40"), Marca = "Renault", Modelo = "Clio", Color = "Gris", Anio = "2012" };
             bool resultadoInsercion = repositorio.InsertarVehiculo(vehiculoInsertar);
             Assert.AreEqual(true, resultadoInsercion);
             
@@ -72,7 +72,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             {
                 new Vehiculo
                 {
-                    VIN = Guid.NewGuid(),
+                    VIN = new Guid("11223344-5566-7788-99AA-BBCCDDEEFF20"),
                     Marca = "Peugeot",
                     Modelo = "208",
                     Color = "azul",
@@ -80,7 +80,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
                 },
                  new Vehiculo
                 {
-                    VIN = Guid.NewGuid(),
+                    VIN =new Guid("11223344-5566-7788-99AA-BBCCDDEEFF30"),
                     Marca = "Renault",
                     Modelo = "Clio",
                     Color = "gris",
@@ -94,7 +94,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         {
             return new Vehiculo
             {
-                VIN = Guid.NewGuid(),
+                VIN = new Guid("11223344-5566-7788-99AA-BBCCDDEEFF10"),
                 Marca = "Renault",
                 Modelo = "Clio",
                 Color = "gris",

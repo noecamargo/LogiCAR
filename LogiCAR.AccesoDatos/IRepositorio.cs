@@ -17,7 +17,7 @@ namespace LogiCAR.AccesoDatos
 
         bool ActualizarVehiculo(Guid VIN, Vehiculo vehiculo);
 
-        bool InsertarInspeccion(Inspeccion inspeccion);
+        int InsertarInspeccion(Inspeccion inspeccion);
 
         Inspeccion ObtenerInspeccion(int id);
 

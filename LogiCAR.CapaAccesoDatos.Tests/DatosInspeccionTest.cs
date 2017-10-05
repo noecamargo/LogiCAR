@@ -16,21 +16,21 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         public void InsertarInspeccion()
         {
             Inspeccion Inspeccion = GenerarInspeccion();
-            bool resultado = repositorio.InsertarInspeccion(Inspeccion);
-            Assert.AreEqual(true, resultado);
+            int resultado = repositorio.InsertarInspeccion(Inspeccion);
+            Assert.AreEqual(1, resultado);
         }
 
         [TestMethod]
         public void ObtenerInspeccion()
         {
             Inspeccion InspeccionInsertar = GenerarInspeccion();
-            repositorio.InsertarInspeccion(InspeccionInsertar);
-            Inspeccion Inspeccion = repositorio.ObtenerInspeccion(InspeccionInsertar.Id);
+            int inspeccionID = repositorio.InsertarInspeccion(InspeccionInsertar);
+            Inspeccion Inspeccion = repositorio.ObtenerInspeccion(inspeccionID);
             Assert.AreNotEqual(null, Inspeccion);
         }
 
         [TestMethod]
-        public void ObtenerInspeccions()
+        public void ObtenerInspecciones()
         {
             IEnumerable<Inspeccion> Inspeccions = GenerarInspecciones();
 
@@ -70,9 +70,10 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         {
             return new Inspeccion
             {
-                Id = 1,
+                Id = -1,
                 Creacion = DateTime.Today,
-                VIN = new Vehiculo(),
+                //VIN = Guid.NewGuid(),
+                VIN = GenerarVehiculo(),
                 //Usuario = new Usuario(),
                 //Danio = new Danio()
             };
@@ -84,21 +85,58 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             {
                 new Inspeccion
                 {
-                    Id = 2,
+                    Id = -1,
                     Creacion = DateTime.Today,
                     //Danio = new Danio(),
                     //Usuario = new Usuario(),
-                   VIN = new Vehiculo()
+                   VIN = GenerarVehiculo()
                 },
                  new Inspeccion
                 {
-                    Id = 3,
+                    Id = -1,
                     Creacion = DateTime.Today,
                     //Danio = new Danio(),
                     //Usuario = new Usuario(),
-                    VIN = new Vehiculo()
+                    VIN = GenerarVehiculo()
                 }
             };
+        }
+
+        private IEnumerable<Vehiculo> GenerarVehiculos()
+        {
+            return new List<Vehiculo>
+            {
+                new Vehiculo
+                {
+                    VIN = new Guid("11223344-5566-7788-99AA-BBCCDDEEFF20"),
+                    Marca = "Peugeot",
+                    Modelo = "208",
+                    Color = "azul",
+                    Anio = "2014"
+                },
+                 new Vehiculo
+                {
+                    VIN =new Guid("11223344-5566-7788-99AA-BBCCDDEEFF00"),
+                    Marca = "Renault",
+                    Modelo = "Clio",
+                    Color = "gris",
+                    Anio = "2012"
+                }
+            };
+
+        }
+
+        private Vehiculo GenerarVehiculo()
+        {
+            return new Vehiculo
+            {
+                VIN = new Guid("11223344-5566-7788-99AA-BBCCDDEEFF00"),
+                Marca = "Renault",
+                Modelo = "Clio",
+                Color = "gris",
+                Anio = "2012"
+            };
+
         }
     }
 }

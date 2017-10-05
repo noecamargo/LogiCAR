@@ -23,7 +23,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
             mockInspeccionAccesoDatos
                 .Setup(ad => ad.InsertarInspeccion(inspeccion))
-                .Returns(true);
+                .Returns(1);
 
 
             var logicaInspeccion = new LogicaNegocioInspeccion(mockInspeccionAccesoDatos.Object);
@@ -33,7 +33,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
             //Assert
             //mockInspeccionAccesoDatos.VerifyAll();
-            Assert.AreEqual(resultado, inspeccion.Id);
+            Assert.AreEqual(resultado, 1);
 
         }
 
@@ -112,7 +112,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
             {
                 Id = 1,
                 Creacion = DateTime.Today,
-                VIN = new Vehiculo(),
+                //VIN = Guid.NewGuid(),
                 //Usuario = new Usuario(),
                 //Danio = new Danio()
             };
@@ -128,7 +128,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
                     Creacion = DateTime.Today,
                     //Danio = new Danio(),
                     //Usuario = new Usuario(),
-                    VIN = new Vehiculo()
+                    //VIN = Guid.NewGuid()
                 },
                  new Inspeccion
                 {
@@ -136,7 +136,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
                     Creacion = DateTime.Today,
                     //Danio = new Danio(),
                     //Usuario = new Usuario(),
-                    VIN = new Vehiculo()
+                    //VIN = Guid.NewGuid()
                 }
             };
 
