@@ -118,9 +118,9 @@ namespace Logi.CAR.WebApi.Tests
             {
                 Id = 1,
                 Creacion = DateTime.Today,
-                Vehiculo = new Vehiculo(),
-                Usuario = new Usuario(),
-                Danio = new Danio()
+                VIN = new Vehiculo(),
+                //Usuario = new Usuario(),
+                //Danio = new Danio()
             };
         }
 
@@ -132,17 +132,17 @@ namespace Logi.CAR.WebApi.Tests
                 {
                     Id = 2,
                     Creacion = DateTime.Today,
-                    Danio = new Danio(),
-                    Usuario = new Usuario(),
-                    Vehiculo = new Vehiculo()
+                    //Danio = new Danio(),
+                    //Usuario = new Usuario(),
+                    VIN = new Vehiculo()
                 },
                  new Inspeccion
                 {
                     Id = 3,
                     Creacion = DateTime.Today,
-                    Danio = new Danio(),
-                    Usuario = new Usuario(),
-                    Vehiculo = new Vehiculo()
+                    //Danio = new Danio(),
+                    //Usuario = new Usuario(),
+                    VIN = new Vehiculo()
                 }
             };
 

@@ -16,7 +16,7 @@ namespace LogiCAR.WebApi.Controllers
             this.logicaInspeccion = logicaInspeccion;
         }
 
-        // GET: api/Vehiculo/Inspeccion
+        // GET: api/Inspeccion/Inspeccion
         public IHttpActionResult Get()
         {
             IEnumerable<Inspeccion> inspecciones = logicaInspeccion.ObtenerInspecciones();

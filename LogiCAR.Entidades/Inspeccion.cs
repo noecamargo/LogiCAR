@@ -13,8 +13,8 @@ namespace LogiCAR.Entidades
         public int Id { get; set; }
 
         public DateTime Creacion { get; set; }
-        public Danio Danio { get; set; }
-        public Usuario Usuario { get; set; }
-        public Vehiculo Vehiculo { get; set; }
+        //public Danio Danio { get; set; }
+        //public Usuario Usuario { get; set; }
+        public Vehiculo VIN { get; set; }
     }
 }

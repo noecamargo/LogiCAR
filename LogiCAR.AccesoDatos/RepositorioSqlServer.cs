@@ -60,5 +60,38 @@ namespace LogiCAR.AccesoDatos
                 return ctx.SaveChanges() > 0;
             }
         }
+
+        public bool InsertarInspeccion(Inspeccion inspeccion)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+
+                ctx.Inspecciones.Add(inspeccion);
+                return ctx.SaveChanges() > 0;
+            }
+        }
+
+        public Inspeccion ObtenerInspeccion(int id)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                return ctx.Inspecciones
+                    .Where(i => i.Id.Equals(id))
+                    .FirstOrDefault();
+            }
+        }
+
+        public IEnumerable<Inspeccion> ObtenerInspecciones()
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                return ctx.Inspecciones;
+            }
+        }
+
+        public bool ActualizarInspeccion(int id, Inspeccion inspeccion)
+        {
+            return true;
+        }
     }
 }

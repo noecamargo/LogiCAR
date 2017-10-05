@@ -16,5 +16,14 @@ namespace LogiCAR.AccesoDatos
         IEnumerable<Vehiculo> ObtenerVehiculos();
 
         bool ActualizarVehiculo(Guid VIN, Vehiculo vehiculo);
+
+        bool InsertarInspeccion(Inspeccion inspeccion);
+
+        Inspeccion ObtenerInspeccion(int id);
+
+        IEnumerable<Inspeccion> ObtenerInspecciones();
+
+        bool ActualizarInspeccion(int id, Inspeccion inspeccion);
+
     }
 }
