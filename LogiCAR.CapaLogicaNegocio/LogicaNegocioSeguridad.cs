@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LogiCAR.AccesoDatos;
+using LogiCAR.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,8 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioSeguridad : ILogicaNegocioSeguridad
     {
+        private IRepositorioSeguridad repositorioSeguridad;
+
         public LogicaNegocioSeguridad(IRepositorioSeguridad repository)
         {
             repositorioSeguridad = repository;

@@ -1,4 +1,5 @@
 ﻿using LogiCAR.Entidades;
+using System.Collections.Generic;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
@@ -9,8 +10,8 @@ namespace LogiCAR.CapaLogicaNegocio
         void AltaUsuario(Usuario usuario);
         void AsignarFuncionalidad(string nombreRol, string nombreFuncionalidad);
         void AsignarRol(string nombreUsuario, string nombreRol);
-        System.Collections.Generic.IEnumerable<Funcionalidad> ObtenerFuncionalidades();
-        System.Collections.Generic.IEnumerable<Rol> ObtenerRoles();
-        System.Collections.Generic.IEnumerable<Usuario> ObtenerUsuarios();
+        IEnumerable<Funcionalidad> ObtenerFuncionalidades();
+        IEnumerable<Rol> ObtenerRoles();
+        IEnumerable<Usuario> ObtenerUsuarios();
     }
 }

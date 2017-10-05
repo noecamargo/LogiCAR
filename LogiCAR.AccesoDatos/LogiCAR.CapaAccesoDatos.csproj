@@ -53,7 +53,10 @@
     <Compile Include="AccesoDatosVehiculo.cs" />
     <Compile Include="DependecyResolver.cs" />
     <Compile Include="IAccesoDatosVehiculo.cs" />
+    <Compile Include="IRepositorioSeguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioContext.cs" />
+    <Compile Include="RepositorioSeguridad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
