@@ -9,7 +9,7 @@ namespace LogiCAR.AccesoDatos
 {
     public class RepositorioSeguridad : IRepositorioSeguridad
     {
-        private static RepositorioContext contexto;
+        private static RepositorioContext contexto = new RepositorioContext();
 
         public RepositorioSeguridad()
         {

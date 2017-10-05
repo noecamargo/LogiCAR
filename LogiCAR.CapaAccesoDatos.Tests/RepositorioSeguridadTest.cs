@@ -9,24 +9,39 @@ namespace LogiCAR.CapaAccesoDatos.Tests
     [TestClass]
     public class RepositorioSeguridadTest
     {
-        private IRepositorioSeguridad repositorio;
+        private IRepositorioSeguridad repositorio = new RepositorioSeguridad();
+
+
+        private Usuario CrearUsuario()
+        {
+            Usuario usuario = new Usuario();
+            usuario.Nombre = "Pedro";
+            usuario.Apellido = "Perez";
+            usuario.NombreUsuario = "pperez";
+            usuario.Contrasenia = "peperez2015";
+            usuario.Telefono = "27120515";
+            return usuario;
+        }
 
         [TestMethod]
-        public void AltaFuncionalidad(Funcionalidad funcionalidad)
+        public void AltaFuncionalidad()
         {
-            bool retorno = repositorio.AltaFuncionalidad(funcionalidad);
+            Funcionalidad funcion = new Funcionalidad("Listar Vehiculos");
+            bool retorno = repositorio.AltaFuncionalidad(funcion);
             Assert.AreEqual(true, retorno);
         }
 
         [TestMethod]
-        public void AltaRol(Rol rol)
+        public void AltaRol()
         {
+            Rol rol = new Rol("OperarioPatio");
             bool retorno = repositorio.AltaRol(rol);
             Assert.AreEqual(true, retorno);
         }
         [TestMethod]
-        public void AltaUsuario(Usuario usuario)
+        public void AltaUsuario()
         {
+            Usuario usuario = CrearUsuario();
             bool retorno = repositorio.AltaUsuario(usuario);
             Assert.AreEqual(true, retorno);
         }
@@ -59,16 +74,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             ICollection<Rol> retorno = repositorio.ObtenerRoles();
             Assert.AreNotEqual(0, retorno.Count);
         }
-        private Usuario CrearUsuario()
-        {
-            Usuario usuario = new Usuario();
-            usuario.Nombre = "Pedro";
-            usuario.Apellido = "Perez";
-            usuario.NombreUsuario = "pperez";
-            usuario.Contrasenia = "peperez2015";
-            usuario.Telefono = "27120515";
-            return usuario;
-        }
+        
 
         [TestMethod]
         public void ObtenerUsuarios()
