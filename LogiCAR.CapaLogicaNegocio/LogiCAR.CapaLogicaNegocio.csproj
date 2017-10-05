@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependecyResolver.cs" />
+    <Compile Include="ILogicaNegocioSeguridad.cs" />
     <Compile Include="ILogicaNegocioVehiculo.cs" />
+    <Compile Include="LogicaNegocioSeguridad.cs" />
     <Compile Include="LogicaNegocioVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

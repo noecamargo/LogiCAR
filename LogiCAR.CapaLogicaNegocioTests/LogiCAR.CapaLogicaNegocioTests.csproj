@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Inicializacion.cs" />
+    <Compile Include="LogicaNegocioSeguridadTest.cs" />
     <Compile Include="UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\LogiCAR.CapaLogicaNegocio\LogiCAR.CapaLogicaNegocio.csproj">
       <Project>{FF637E58-5DA0-471E-8A48-9D8C1DA5604C}</Project>
       <Name>LogiCAR.CapaLogicaNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">
+      <Project>{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}</Project>
+      <Name>LogiCAR.Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
