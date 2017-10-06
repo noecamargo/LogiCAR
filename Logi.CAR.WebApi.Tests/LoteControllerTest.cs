@@ -115,7 +115,7 @@ namespace Logi.CAR.WebApi.Tests
         {
             return new Lote
             {
-                Id = -1,
+                Id = 1,
                 Creador = new Usuario(),
                 Nombre = "Lote 2",
                 Descripcion = "desc Lote 2",
@@ -130,7 +130,7 @@ namespace Logi.CAR.WebApi.Tests
             {
                 new Lote
                 {
-                    Id = -1,
+                    Id = 2,
             Creador = new Usuario(),
             Nombre = "Lote 3",
             Descripcion = "desc Lote 3",
@@ -139,7 +139,7 @@ namespace Logi.CAR.WebApi.Tests
                 },
                  new Lote
                 {
-                     Id = -1,
+                     Id = 3,
             Creador = new Usuario(),
             Nombre = "Lote 4",
             Descripcion = "desc Lote 4",
