@@ -7,31 +7,31 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioTransporteLote : ILogicaNegocioTransporteLote
     {
-        private IRepositorioTransporteLote repositorioLote;
+        private IRepositorioTransporteLote repositorioTransporteLote;
 
         public LogicaNegocioTransporteLote(IRepositorioTransporteLote repositorio)
         {
-            this.repositorioLote = repositorio;
+            this.repositorioTransporteLote = repositorio;
         }
 
-        public long CrearTransporteLote(TransporteLote lote)
+        public long CrearTransporteLote(TransporteLote transporte)
         {
-            return 1;
+            return repositorioTransporteLote.InsertarTransporteLote(transporte);
         }
 
         public TransporteLote ObtenerTransporteLote(long id)
         {
-            return new TransporteLote();
+            return repositorioTransporteLote.ObtenerTransporteLote(id);
         }
 
         public IEnumerable<TransporteLote> ObtenerTransporteLotes()
         {
-            return null;
+            return repositorioTransporteLote.ObtenerTransporteLotes();
         }
 
-        public bool ActualizarTransporteLote(long id, TransporteLote lote)
+        public bool ActualizarTransporteLote(long id, TransporteLote transporte)
         {
-            return true;
+            return repositorioTransporteLote.ActualizarTransporteLote(id,transporte);
         }
     }
 }
