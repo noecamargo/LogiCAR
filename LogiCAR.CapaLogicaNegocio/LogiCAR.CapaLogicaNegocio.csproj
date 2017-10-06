@@ -71,8 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependecyResolver.cs" />
+    <Compile Include="ILogicaNegocioDanio.cs" />
     <Compile Include="ILogicaNegocioInspeccion.cs" />
     <Compile Include="ILogicaNegocioVehiculo.cs" />
+    <Compile Include="LogicaNegocioDanio.cs" />
     <Compile Include="LogicaNegocioInspeccion.cs" />
     <Compile Include="LogicaNegocioVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
