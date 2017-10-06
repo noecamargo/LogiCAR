@@ -25,5 +25,14 @@ namespace LogiCAR.AccesoDatos
 
         bool ActualizarInspeccion(int id, Inspeccion inspeccion);
 
+        int InsertarDanio(Danio danio);
+
+        Danio ObtenerDanio(int id);
+
+        IEnumerable<Danio> ObtenerDanios();
+
+        bool ActualizarDanio(int id, Danio danio);
+
+
     }
 }

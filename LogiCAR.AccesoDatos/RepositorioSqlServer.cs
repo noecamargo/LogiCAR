@@ -94,5 +94,51 @@ namespace LogiCAR.AccesoDatos
         {
             return true;
         }
+
+        public int InsertarDanio(Danio danio)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+
+                ctx.Danios.Add(danio);
+                ctx.SaveChanges();
+                return danio.Id;
+            }
+        }
+
+        public Danio ObtenerDanio(int id)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                return ctx.Danios
+                    .Where(d => d.Id.Equals(id))
+                    .FirstOrDefault();
+            }
+        }
+
+        public IEnumerable<Danio> ObtenerDanios()
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                return ctx.Danios;
+            }
+        }
+
+        public bool ActualizarDanio(int id, Danio danio)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                Danio danioViejo = ObtenerDanio(id);
+                if (danioViejo == null)
+                {
+                    return false;
+                }
+                danioViejo.Descripcion = danio.Descripcion;
+                danioViejo.Foto = danio.Foto;
+               
+                ctx.Entry(danioViejo).State = System.Data.Entity.EntityState.Modified;
+                return ctx.SaveChanges() > 0;
+            }
+        }
     }
 }

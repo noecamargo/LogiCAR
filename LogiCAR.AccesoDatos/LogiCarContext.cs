@@ -18,6 +18,7 @@ namespace LogiCAR.AccesoDatos
        
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Inspeccion> Inspecciones { get; set; }
+        public DbSet<Danio> Danios { get; set; }
 
     }
 }
