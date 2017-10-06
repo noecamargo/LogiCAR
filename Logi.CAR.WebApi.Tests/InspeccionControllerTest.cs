@@ -17,7 +17,7 @@ namespace Logi.CAR.WebApi.Tests
     public class InspeccionControllerTest
     {
         [TestMethod]
-        public void CrearInspeccionController()
+        public void CrearInspeccion()
         {
             var inspeccion = GenerarInspeccion();
 

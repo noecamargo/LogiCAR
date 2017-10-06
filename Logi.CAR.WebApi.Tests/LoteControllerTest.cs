@@ -17,7 +17,7 @@ namespace Logi.CAR.WebApi.Tests
     public class LoteControllerTest
     {
         [TestMethod]
-        public void CrearLoteController()
+        public void CrearLote()
         {
             var lote = GenerarLote();
 

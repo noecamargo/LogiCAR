@@ -30,7 +30,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         }
 
         [TestMethod]
-        public void ObtenerLotees()
+        public void ObtenerLotes()
         {
             IEnumerable<Lote> Lotes = GenerarLotes();
 

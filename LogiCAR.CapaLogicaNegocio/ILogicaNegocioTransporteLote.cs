@@ -10,6 +10,6 @@ namespace LogiCAR.CapaLogicaNegocio
         long CrearTransporteLote(TransporteLote transporte);
         TransporteLote ObtenerTransporteLote(long id);
         IEnumerable<TransporteLote> ObtenerTransporteLotes();
-        bool ActualizarTransporteLote(long id, TransporteLote Transporte);
+        bool ActualizarTransporteLote(long id, TransporteLote transporte);
     }
 }

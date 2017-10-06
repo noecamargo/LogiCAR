@@ -17,7 +17,7 @@ namespace Logi.CAR.WebApi.Tests
     public class DanioControllerTest
     {
         [TestMethod]
-        public void CreardanioController()
+        public void CrearDanio()
         {
             var danio = GenerarDanio();
 
