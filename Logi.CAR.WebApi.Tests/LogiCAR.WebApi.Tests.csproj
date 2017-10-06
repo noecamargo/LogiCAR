@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="DanioControllerTest.cs" />
     <Compile Include="InspeccionControllerTest.cs" />
+    <Compile Include="TransporteLote.cs" />
     <Compile Include="LoteControllerTest.cs" />
     <Compile Include="VehiculoControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
