@@ -21,12 +21,20 @@ namespace Logi.CAR.WebApi.Tests
         {
             var lote = GenerarTransporteLote();
 
-           
+
         }
 
         private object GenerarTransporteLote()
         {
-            TransporteLote transporte = new TransporteLote();
+            return new TransporteLote
+            {
+                Id = -1,
+                Creador = new Usuario(),
+                FechaInicio = DateTime.Today,
+                FechaFin = DateTime.Today,
+                Lotes = new List<Lote>()
+            };
         }
     }
 }
+
