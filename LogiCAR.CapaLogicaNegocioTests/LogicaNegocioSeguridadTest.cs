@@ -10,6 +10,7 @@ using Moq;
 using LogiCAR.CapaAccesoDatos;
 using System.Web.Http;
 using System.Web.Http.Results;
+using LogiCAR.Utilidades;
 
 namespace LogiCAR.CapaLogicaNegocioTests
 {
@@ -20,7 +21,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         public void AltaUsuario()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            Usuario usuario = CrearUsuarioFalso();
+            Usuario usuario = Utilidades.CrearUsuarioFalso();
 
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
@@ -42,7 +43,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         [TestMethod]
         public void ModificarUsuario()
         {
-            Usuario usuario = CrearUsuarioFalso();
+            Usuario usuario = Utilidades.CrearUsuarioFalso();
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
 
@@ -59,22 +60,12 @@ namespace LogiCAR.CapaLogicaNegocioTests
             Assert.AreNotEqual(null, true);
         }
 
-        private Usuario CrearUsuarioFalso()
-        {
-            Usuario usuario = new Usuario();
-            usuario.Nombre = "Pedro";
-            usuario.Apellido = "Perez";
-            usuario.NombreUsuario = "pperez";
-            usuario.Contrasenia = "peperez2015";
-            usuario.Telefono = "27120515";
-            usuario.Habilitado = true;
-            return usuario;
-        }
+     
 
         [TestMethod]
         public void BajaUsuario()
         {
-            string  nombreUsuario = CrearNombreUsuarioFalso();
+            string  nombreUsuario = Utilidades.CrearNombreUsuarioFalso();
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
             
             mockRepositorioSeguridad
@@ -89,11 +80,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
             mockRepositorioSeguridad.VerifyAll();
             Assert.AreNotEqual(null, true);
         }
-
-        private string CrearNombreUsuarioFalso()
-        {
-            return "vrodriguez";
-        }
+       
 
         [TestMethod]
         public void AltaFuncionalidad()
@@ -129,7 +116,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         [TestMethod]
         public void ModificarFuncionalidad()
         {
-            Usuario usuario = CrearUsuarioFalso();
+            Usuario usuario = Utilidades.CrearUsuarioFalso();
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
 
@@ -232,7 +219,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         void ObtenerFuncionalidades()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            var funcionalidades = CrearFuncionalidadesDummy();
+            var funcionalidades = Utilidades.CrearFuncionalidadesDummy();
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
             mockRepositorioSeguridad
@@ -248,25 +235,12 @@ namespace LogiCAR.CapaLogicaNegocioTests
             Assert.AreNotEqual(null, true);
         }
 
-        private IEnumerable<Funcionalidad> CrearFuncionalidadesDummy()
-        {
-            return new List<Funcionalidad>
-            {
-                new Funcionalidad
-                {
-                    Nombre = "Alta Zona"
-                },
-                new Funcionalidad
-                {
-                   Nombre = "Alta SubZona"
-                }
-            };
-        }
+        
         [TestMethod]
         void ObtenerRoles()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            var roles = CrearRolesDummy();
+            var roles = Utilidades.CrearRolesDummy();
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
             mockRepositorioSeguridad
@@ -282,25 +256,12 @@ namespace LogiCAR.CapaLogicaNegocioTests
             Assert.AreNotEqual(null, true);
         }
 
-        private IEnumerable<Rol> CrearRolesDummy()
-        {
-            return new List<Rol>
-            {
-                new Rol
-                {
-                    Nombre = "Admin"
-                },
-                new Rol
-                {
-                   Nombre = "Operario Patio"
-                }
-            };
-        }
+     
         [TestMethod]
         void ObtenerUsuarios()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            var usuarios = CrearUsuariosDummy();
+            var usuarios = Utilidades.CrearUsuariosDummy();
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
             mockRepositorioSeguridad
@@ -316,22 +277,9 @@ namespace LogiCAR.CapaLogicaNegocioTests
             Assert.AreNotEqual(null, true);
         }
 
-       private IEnumerable<Usuario> CrearUsuariosDummy()
-        {
-            List<Usuario> retorno = new List<Usuario>();
-            retorno.Add(CrearUsuarioFalso());
-            Usuario usuario = new Usuario();
-            usuario.Nombre = "Pablo";
-            usuario.Apellido = "Jeres";
-            usuario.NombreUsuario = "jj2017";
-            usuario.Contrasenia = "jj2017";
-            usuario.Telefono = "27120000";
-            usuario.Habilitado = true;
-            retorno.Add(usuario);
-            return retorno;
-         }
-       [TestMethod]
-       void ObtenerFuncionalidad()
+      
+        [TestMethod]
+        void ObtenerFuncionalidad()
         {
 
             //Arrange: Construimos el mock y seteamos las expectativas
@@ -352,7 +300,8 @@ namespace LogiCAR.CapaLogicaNegocioTests
             Assert.AreNotEqual(null, true);
 
         }
-       void ObtenerRol()
+        [TestMethod]
+        void ObtenerRol()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             string nombreRol = "Admin";
@@ -389,6 +338,8 @@ namespace LogiCAR.CapaLogicaNegocioTests
             mockRepositorioSeguridad.VerifyAll();
             Assert.AreEqual(nombreUsuario, usuarioRetorno.NombreUsuario);
         }
+
+        [TestMethod]
         void ModificarRol()
         {
 

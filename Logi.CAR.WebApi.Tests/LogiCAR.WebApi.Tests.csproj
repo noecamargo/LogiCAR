@@ -61,8 +61,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VehiculoControllerTests.cs" />
-    <Compile Include="VehiculoTest.cs" />
+    <Compile Include="RolControllerTest.cs" />
+    <Compile Include="UsuarioControllerTest.cs" />
+    <Compile Include="FuncionalidadControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
