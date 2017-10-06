@@ -19,8 +19,23 @@ namespace Logi.CAR.WebApi.Tests
         [TestMethod]
         public void CrearLoteController()
         {
-            var lote = GenerarTransporteLote();
+            var transporte = GenerarTransporteLote();
+            var mockTransporteLogica = new Mock<ILogicaNegocioTransporteLote>();
+            mockTransporteLogica
+                 .Setup(il => il.CrearLote(transporte))
+                 .Returns(transporte.id);
 
+            var controller = new LoteController(mockTransporteLogica.Object);
+
+            //Act: Efectuamos la llamada al controller
+            IHttpActionResult obtainedResult = controller.Post(lote);
+
+            //Assert
+            var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Lote>;
+            mockTransporteLogica.VerifyAll();
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual("DefaultApi", createdResult.RouteName);
+            Assert.AreEqual(1, createdResult.Content.Id);
 
         }
 
