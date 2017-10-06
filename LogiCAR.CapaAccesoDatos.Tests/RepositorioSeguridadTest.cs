@@ -32,12 +32,12 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         [TestMethod]
         public void AltaUsuario()
         {
-            Usuario usuario = CrearUsuario();
-            repositorio.AltaUsuario(usuario);
-            Assert.AreEqual("Pedro", usuario.Nombre);
+            Usuario usuario = CrearFalsoUsuario();
+            bool retorno = repositorio.AltaUsuario(usuario);
+            Assert.AreEqual(true, retorno);
         }
 
-        private Usuario CrearUsuario()
+        private Usuario CrearFalsoUsuario()
         {
             Usuario usuario = new Usuario();
             usuario.Nombre = "Pedro";
@@ -80,24 +80,83 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             Assert.AreNotEqual(0, retorno.Count);
         }
         
-
         [TestMethod]
         public void ObtenerUsuarios()
         {
-            Usuario usuario = CrearUsuario();
+            Usuario usuario = CrearFalsoUsuario();
             repositorio.AltaUsuario(usuario);
             ICollection<Usuario> retorno = repositorio.ObtenerUsuarios();
             Assert.AreNotEqual(0, retorno.Count);
         }
 
-        //void ObtenerFuncionalidad(string nombreFuncionalidad);
-        //void ObtenerRol(string nombreRol);
-        //void ObtenerUsuario(Usuario usuario);
+        [TestMethod]
+        void ObtenerFuncionalidad()
+        {
+            Funcionalidad funcion = repositorio.ObtenerFuncionalidad("Agregar Rol");
+            Assert.AreEqual(funcion.Nombre, "Agregar Rol");
+        }
+
+        [TestMethod]
+        void ObtenerRol()
+        {
+            Rol rolRetornado = repositorio.ObtenerRol("Admin");
+            Assert.AreEqual(rolRetornado.Nombre,"Admin");
+        }
+        [TestMethod]
+        void  ObtenerUsuario()
+        {
+            AltaUsuario();
+            Usuario usuario = repositorio.ObtenerUsuario("pperez");
+            Assert.AreEqual(usuario.NombreUsuario, "pperez");
+        }
         //void BajaRol(string nombre);
-        //void BajaUsuario(string nombreUsuario);
-        //void BajaFuncionalidad(string nombreFuncionalidad);
-        //void ModificarRol(string nombre);
-        //void ModificarUsuario(Usuario usuario);
-        //void ModificarFuncionalidad(string nombreFuncionalidad);
+        [TestMethod]
+        void BajaUsuario(string nombreUsuario)
+        {
+           bool retorno = repositorio.BajaUsuario(nombreUsuario);
+            Assert.AreEqual(true, retorno);
+        }
+        //void BajaFuncionalidad(string nombreFuncionalidad) { }
+
+        [TestMethod]
+
+        public void ModificarRol()
+        {
+            bool retorno = repositorio.ModificarRol(CrearFalsoRol());
+            Assert.AreEqual("true", retorno);
+        }
+        
+        private Rol CrearFalsoRol()
+        {
+            Rol rol = new Rol();
+            rol.Nombre = "Admin";
+            rol.Permisos = new List<Funcionalidad>();
+            Funcionalidad funcion = new Funcionalidad();
+            funcion.Nombre = "Crear Lote";
+            rol.Permisos.Add(funcion);
+            return rol;
+        }
+
+        [TestMethod]
+        void ModificarUsuario()
+        {
+            Usuario usuario = CrearFalsoUsuario();
+            bool retorno = repositorio.ModificarUsuario(usuario);
+            Assert.AreEqual("true", retorno);
+        }
+        [TestMethod]
+        void ModificarFuncionalidad(string nombreFuncionalidad)
+        {
+            Funcionalidad usuario = CrearFalsaFuncionalidad();
+            repositorio.ModificarFuncionalidad("Agregar Zona");
+            Assert.AreEqual("true", true);
+        }
+
+        private Funcionalidad CrearFalsaFuncionalidad()
+        {
+            Funcionalidad funcion = new Funcionalidad();
+            funcion.Nombre = "Agregar Zona";
+            return funcion;
+        }
     }
 }

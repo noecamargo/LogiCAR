@@ -10,16 +10,18 @@ namespace LogiCAR.CapaAccesoDatos
     public class RepositorioSeguridad : IRepositorioSeguridad
     {
 
-        public void AltaUsuario(Usuario usuario)
+        public bool AltaUsuario(Usuario usuario)
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                contexto.Usuarios.Add(usuario);
-                contexto.SaveChanges();
+                List<Usuario> listUsuarios = contexto.Usuarios.ToList();
+                if (!(listUsuarios.Exists(u => u.NombreUsuario.Equals(usuario.NombreUsuario))))
+                    contexto.Usuarios.Add(usuario);
+                return contexto.SaveChanges() > 0;
             }
 
         }
-        public void ModificarUsuario(Usuario usuario)
+        public bool ModificarUsuario(Usuario usuario)
         {
             using (var contexto = new RepositorioContext())
             {
@@ -31,7 +33,7 @@ namespace LogiCAR.CapaAccesoDatos
                 usuarioResultado.Telefono = usuario.Telefono;
                 usuarioResultado.Habilitado = usuario.Habilitado;
                 contexto.Entry(usuarioResultado).State = System.Data.Entity.EntityState.Modified;
-                contexto.SaveChanges();
+                return contexto.SaveChanges()>0;
             }
         }
         public Usuario ObtenerUsuario(string nombreUsuario)
@@ -48,14 +50,14 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.Usuarios.ToList();
             }
         }
-        public void BajaUsuario(string nombreUsuario)
+        public bool BajaUsuario(string nombreUsuario)
         {
             using (var contexto = new RepositorioContext())
             {
                 Usuario usuarioResultado = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(nombreUsuario)).FirstOrDefault();
                 usuarioResultado.Habilitado = false;
                 contexto.Entry(usuarioResultado).State = System.Data.Entity.EntityState.Modified;
-                contexto.SaveChanges();
+                return contexto.SaveChanges()>0;
             }
         }
         public bool AltaFuncionalidad(Funcionalidad funcionalidad)
@@ -95,7 +97,7 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.SaveChanges() > 0;
             }
         }
-        public void ModificarRol(Rol rol)
+        public bool ModificarRol(Rol rol)
         {
             using (var contexto = new RepositorioContext())
             {
@@ -103,7 +105,7 @@ namespace LogiCAR.CapaAccesoDatos
                 rolResultado.Nombre = rol.Nombre;
                 rolResultado.Permisos = rol.Permisos;
                 contexto.Entry(rolResultado).State = System.Data.Entity.EntityState.Modified;
-                contexto.SaveChanges();
+                return contexto.SaveChanges() > 0;
             }
         }
         public Rol ObtenerRol(string nombreRol)
