@@ -68,10 +68,11 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.SaveChanges() > 0;
             }
         }
-        public void ModificarFuncionalidad(string nombreFuncionalidad)
+        public bool ModificarFuncionalidad(string nombreFuncionalidad)
         {
             using (var contexto = new RepositorioContext())
             {
+                return true;
             }
         }
         public Funcionalidad ObtenerFuncionalidad(string nombreFuncionalidad)
@@ -88,7 +89,15 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.Funcionalidades.ToList();
             }
         }
-        public void BajaFuncionalidad(string nombreFuncionalidad) { }
+        public bool BajaFuncionalidad(string nombreFuncionalidad)
+        {
+            using (var contexto = new RepositorioContext())
+            {
+                Funcionalidad funcionRetorno = contexto.Funcionalidades.Where(f => f.Nombre.Equals(nombreFuncionalidad)).SingleOrDefault();
+                contexto.Funcionalidades.Remove(funcionRetorno);
+                return contexto.SaveChanges() > 0;
+            }
+        }
         public bool AltaRol(Rol rol)
         {
             using (var contexto = new RepositorioContext())
@@ -122,14 +131,15 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.Roles.ToList();
             }
         }
-        //public void BajaRol(string nombreRol)
-        //{
-        //    using (var contexto = new RepositorioContext())
-        //    {
-        //        AlumnoSeleccionado.EstudiosEntity.Clear();
-        //        Contexto.SaveChanges();
-        //    }
-        //}
+        public bool BajaRol(string nombreRol)
+        {
+            using (var contexto = new RepositorioContext())
+            {
+                Rol rolRetorno = contexto.Roles.Where(r => r.Nombre.Equals(nombreRol)).SingleOrDefault();
+                contexto.Roles.Remove(rolRetorno);
+                return contexto.SaveChanges() > 0;
+            }
+        }
         public bool AsignarFuncionalidad(string nombreRol, Funcionalidad funcionalidad)
         {
             using (var contexto = new RepositorioContext())

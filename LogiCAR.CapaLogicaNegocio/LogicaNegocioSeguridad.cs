@@ -1,10 +1,6 @@
-﻿using LogiCAR.AccesoDatos;
+﻿using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
@@ -17,34 +13,86 @@ namespace LogiCAR.CapaLogicaNegocio
             repositorioSeguridad = repository;
         }
 
-        public void AltaUsuario(Usuario usuario)
+        public bool AltaUsuario(Usuario usuario)
         {
-            repositorioSeguridad.AltaUsuario(usuario);
+            return repositorioSeguridad.AltaUsuario(usuario);
         }
-        public void AltaFuncionalidad(string nombre)
+        public bool ModificarUsuario(Usuario usuario)
         {
-            repositorioSeguridad.AltaFuncionalidad(new Funcionalidad(nombre));
+            return repositorioSeguridad.ModificarUsuario(usuario);
         }
-        public void AltaRol(string nombre)
+        public Usuario ObtenerUsuario(string nombreUsuario)
         {
-            repositorioSeguridad.AltaRol(new Rol(nombre));
+            return repositorioSeguridad.ObtenerUsuario(nombreUsuario);
         }
-        public void AsignarFuncionalidad(string nombreRol, string nombreFuncionalidad) { }
-        public void AsignarRol(string nombreUsuario, string nombreRol) { }
         public IEnumerable<Usuario> ObtenerUsuarios()
         {
-            //contexto
-            return new List<Usuario>();
+            return repositorioSeguridad.ObtenerUsuarios();
+        }
+        public bool BajaUsuario(string nombreUsuario)
+        {
+            return repositorioSeguridad.BajaUsuario(nombreUsuario);
+        }
+
+       
+        public bool AltaRol(string nombre)
+        {
+            return repositorioSeguridad.AltaRol(new Rol(nombre));
+        }
+        public bool ModificarRol(Rol rol)
+        {
+            return repositorioSeguridad.ModificarRol(rol);
+        }
+        public bool BajaRol(string nombre)
+        {
+            return repositorioSeguridad.BajaFuncionalidad(nombre);
+        }
+        public Rol ObtenerRol(string nombreRol)
+        {
+            return repositorioSeguridad.ObtenerRol(nombreRol);
         }
         public IEnumerable<Rol> ObtenerRoles()
         {
-            return new List<Rol>();
-            //contexto
+            return repositorioSeguridad.ObtenerRoles();
+        }
+        public bool AsignarRol(string nombreUsuario, string nombreRol)
+        {
+            return repositorioSeguridad.AsignarRol(nombreUsuario, nombreRol);
+        }
+
+        public bool AltaFuncionalidad(string nombre)
+        {
+            Funcionalidad funcion = new Funcionalidad();
+            funcion.Nombre = nombre;
+            return repositorioSeguridad.AltaFuncionalidad(funcion);
+        }
+        public bool AsignarFuncionalidad(string nombreRol, string nombreFuncionalidad)
+        {
+            Funcionalidad funcion = new Funcionalidad();
+            funcion.Nombre = nombreFuncionalidad;
+            return repositorioSeguridad.AsignarFuncionalidad(nombreRol, funcion);
         }
         public IEnumerable<Funcionalidad> ObtenerFuncionalidades()
         {
-            return new List<Funcionalidad>();
-            //contexto
+            return repositorioSeguridad.ObtenerFuncionalidades();
         }
+        public Funcionalidad ObtenerFuncionalidad(string nombreFuncionalidad)
+        {
+            return repositorioSeguridad.ObtenerFuncionalidad(nombreFuncionalidad);
+        }
+        public bool ModificarFuncionalidad(string nombreFuncionalidad)
+        {
+            return repositorioSeguridad.ModificarFuncionalidad(nombreFuncionalidad);
+        }
+        public bool BajaFuncionalidad(string nombreFuncionalidad)
+        {
+            return repositorioSeguridad.BajaFuncionalidad(nombreFuncionalidad);
+        }
+       
+       
+      
+
+
+
     }
 }
