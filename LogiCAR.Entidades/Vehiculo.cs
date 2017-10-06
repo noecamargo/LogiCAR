@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace LogiCAR.Entidades
 {
     [Table("Vehiculo")]
@@ -19,5 +20,6 @@ namespace LogiCAR.Entidades
         {
             return this.VIN.Equals(((Vehiculo)vehiculo).VIN);
         }
+
     }
 }

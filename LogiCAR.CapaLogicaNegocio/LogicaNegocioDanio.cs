@@ -1,34 +1,31 @@
 ﻿using LogiCAR.AccesoDatos;
-using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
-using System;
 using System.Collections.Generic;
-using System.Web.Http;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioDanio : ILogicaNegocioDanio
     {
-        private IRepositorio modelo;
+        private IRepositorioDanio repositorioDanio;
 
-        public LogicaNegocioDanio(IRepositorio modelo)
+        public LogicaNegocioDanio(IRepositorioDanio repositorio)
         {
-            this.modelo = modelo;
+            repositorioDanio = repositorio;
         }
 
         public int CrearDanio(Danio danio)
         {
-            return modelo.InsertarDanio(danio);
+            return repositorioDanio.InsertarDanio(danio);
         }
 
         public Danio ObtenerDanio(int id)
         {
-            return modelo.ObtenerDanio(id);
+            return repositorioDanio.ObtenerDanio(id);
         }
 
         public IEnumerable<Danio> ObtenerDanios()
         {
-            return modelo.ObtenerDanios();
+            return repositorioDanio.ObtenerDanios();
         }
 
         public bool ActualizarDanio(int id, Danio danio)

@@ -40,7 +40,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -59,20 +59,31 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DatosDanioTes.cs" />
+    <Compile Include="DatosDanioTest.cs" />
     <Compile Include="DatosInspeccionTest.cs" />
     <Compile Include="DatosVehiculoTest.cs" />
+    <Compile Include="RepositorioSeguridadTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogiCAR.AccesoDatos\LogiCAR.CapaAccesoDatos.csproj">
-      <Project>{247FB134-88FB-446C-A6FB-C4CDD04C8F21}</Project>
+      <Project>{247fb134-88fb-446c-a6fb-c4cdd04c8f21}</Project>
       <Name>LogiCAR.CapaAccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogiCAR.DependencyResolver\LogiCAR.DependencyResolver.csproj">
+      <Project>{906ed05f-0a8f-45ef-b08d-e30bd8f7a824}</Project>
+      <Name>LogiCAR.DependencyResolver</Name>
     </ProjectReference>
     <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">
       <Project>{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}</Project>
       <Name>LogiCAR.Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

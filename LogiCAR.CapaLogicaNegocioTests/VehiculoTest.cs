@@ -19,7 +19,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Vehiculo vehiculo = GenerarVehiculo();
-            var mockVehiculoAccesoDatos = new Mock<IRepositorio>();
+            var mockVehiculoAccesoDatos = new Mock<IRepositorioVehiculo>();
 
             mockVehiculoAccesoDatos
                 .Setup(ad => ad.InsertarVehiculo(vehiculo))
@@ -42,7 +42,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Vehiculo vehiculo = GenerarVehiculo();
-            var mockVehiculoAccesoDatos = new Mock<IRepositorio>();
+            var mockVehiculoAccesoDatos = new Mock<IRepositorioVehiculo>();
 
             mockVehiculoAccesoDatos
                 .Setup(ad => ad.ObtenerVehiculo(vehiculo.VIN))
@@ -65,7 +65,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             IEnumerable<Vehiculo> vehiculos = GenerarVehiculos();
-            var mockVehiculoAccesoDatos = new Mock<IRepositorio>();
+            var mockVehiculoAccesoDatos = new Mock<IRepositorioVehiculo>();
 
             mockVehiculoAccesoDatos
                 .Setup(ad => ad.ObtenerVehiculos())
@@ -88,7 +88,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Vehiculo vehiculo = GenerarVehiculo();
-            var mockVehiculoAccesoDatos = new Mock<IRepositorio>();
+            var mockVehiculoAccesoDatos = new Mock<IRepositorioVehiculo>();
 
             mockVehiculoAccesoDatos
                 .Setup(ad => ad.ActualizarVehiculo(vehiculo.VIN,vehiculo))

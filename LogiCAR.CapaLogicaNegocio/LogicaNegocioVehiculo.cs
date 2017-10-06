@@ -1,26 +1,24 @@
 ﻿using LogiCAR.AccesoDatos;
-using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
 using System;
 using System.Collections.Generic;
-using System.Web.Http;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioVehiculo : ILogicaNegocioVehiculo
     {
-        private IRepositorio modelo;
-                
-        public LogicaNegocioVehiculo(IRepositorio modelo)
+        private IRepositorioVehiculo repositorioVehiculo;
+
+        public LogicaNegocioVehiculo(IRepositorioVehiculo repositorio)
         {
-            this.modelo = modelo;
+            repositorioVehiculo = repositorio;
         }
 
         public Guid CrearVehiculo(Vehiculo vehiculo)
         {
             vehiculo.VIN = Guid.NewGuid();
 
-            if (modelo.InsertarVehiculo(vehiculo))
+            if (repositorioVehiculo.InsertarVehiculo(vehiculo))
             {
                 return vehiculo.VIN;
             }
@@ -32,17 +30,17 @@ namespace LogiCAR.CapaLogicaNegocio
 
         public IEnumerable<Vehiculo> ListaVehiculos()
         {
-            return modelo.ObtenerVehiculos();
+            return repositorioVehiculo.ObtenerVehiculos();
         }
 
         public Vehiculo ObtenerVehiculo(Guid VIN)
         {
-            return modelo.ObtenerVehiculo(VIN);
+            return repositorioVehiculo.ObtenerVehiculo(VIN);
         }
 
         public bool ActualizarVehiculo(Guid VIN,Vehiculo vehiculo)
         {
-            return modelo.ActualizarVehiculo(VIN,vehiculo);
+            return repositorioVehiculo.ActualizarVehiculo(VIN,vehiculo);
         }
 
         

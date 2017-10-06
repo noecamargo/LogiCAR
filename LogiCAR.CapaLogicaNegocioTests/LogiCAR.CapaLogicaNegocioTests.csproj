@@ -62,9 +62,11 @@
   <ItemGroup>
     <Compile Include="Inicializacion.cs" />
     <Compile Include="InspeccionTest.cs" />
+    <Compile Include="LogicaNegocioSeguridadTest.cs" />
     <Compile Include="UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DanioTest.cs" />
+    <Compile Include="Utilidades.cs" />
     <Compile Include="VehiculoTest.cs" />
   </ItemGroup>
   <ItemGroup>

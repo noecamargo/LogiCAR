@@ -1,34 +1,31 @@
 ﻿using LogiCAR.AccesoDatos;
-using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
-using System;
 using System.Collections.Generic;
-using System.Web.Http;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
     public class LogicaNegocioInspeccion : ILogicaNegocioInspeccion
     {
-        private IRepositorio modelo;
+        private IRepositorioInspeccion repositorioInspeccion;
 
-        public LogicaNegocioInspeccion(IRepositorio modelo)
+        public LogicaNegocioInspeccion(IRepositorioInspeccion repositorio)
         {
-            this.modelo = modelo;
+            repositorioInspeccion = repositorio;
         }
 
         public int CrearInspeccion(Inspeccion inspeccion)
         {
-            return modelo.InsertarInspeccion(inspeccion);
+            return repositorioInspeccion.InsertarInspeccion(inspeccion);
         }
 
         public Inspeccion ObtenerInspeccion(int id)
         {
-            return modelo.ObtenerInspeccion(id);
+            return repositorioInspeccion.ObtenerInspeccion(id);
         }
 
         public IEnumerable<Inspeccion> ObtenerInspecciones()
         {
-            return modelo.ObtenerInspecciones();
+            return repositorioInspeccion.ObtenerInspecciones();
         }
 
         public bool ActualizarInspeccion(int id, Inspeccion inspeccion)

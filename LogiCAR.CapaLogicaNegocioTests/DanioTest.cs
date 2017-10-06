@@ -19,7 +19,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Danio danio = GenerarDanio();
-            var mockDanioAccesoDatos = new Mock<IRepositorio>();
+            var mockDanioAccesoDatos = new Mock<IRepositorioDanio>();
 
             mockDanioAccesoDatos
                 .Setup(ad => ad.InsertarDanio(danio))
@@ -42,7 +42,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Danio Danio = GenerarDanio();
-            var mockDanioAccesoDatos = new Mock<IRepositorio>();
+            var mockDanioAccesoDatos = new Mock<IRepositorioDanio>();
 
             mockDanioAccesoDatos
                 .Setup(ad => ad.ObtenerDanio(Danio.Id))
@@ -65,7 +65,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             IEnumerable<Danio> Danios = GenerarDanios();
-            var mockDanioAccesoDatos = new Mock<IRepositorio>();
+            var mockDanioAccesoDatos = new Mock<IRepositorioDanio>();
 
             mockDanioAccesoDatos
                 .Setup(ad => ad.ObtenerDanios())
@@ -88,7 +88,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Danio Danio = GenerarDanio();
-            var mockDanioAccesoDatos = new Mock<IRepositorio>();
+            var mockDanioAccesoDatos = new Mock<IRepositorioDanio>();
 
             mockDanioAccesoDatos
                 .Setup(ad => ad.ActualizarDanio(Danio.Id,Danio))

@@ -19,7 +19,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Inspeccion inspeccion = GenerarInspeccion();
-            var mockInspeccionAccesoDatos = new Mock<IRepositorio>();
+            var mockInspeccionAccesoDatos = new Mock<IRepositorioInspeccion>();
 
             mockInspeccionAccesoDatos
                 .Setup(ad => ad.InsertarInspeccion(inspeccion))
@@ -42,7 +42,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Inspeccion inspeccion = GenerarInspeccion();
-            var mockinspeccionAccesoDatos = new Mock<IRepositorio>();
+            var mockinspeccionAccesoDatos = new Mock<IRepositorioInspeccion>();
 
             mockinspeccionAccesoDatos
                 .Setup(ad => ad.ObtenerInspeccion(inspeccion.Id))
@@ -65,7 +65,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             IEnumerable<Inspeccion> inspecciones = GenerarInspecciones();
-            var mockinspeccionAccesoDatos = new Mock<IRepositorio>();
+            var mockinspeccionAccesoDatos = new Mock<IRepositorioInspeccion>();
 
             mockinspeccionAccesoDatos
                 .Setup(ad => ad.ObtenerInspecciones())
@@ -88,7 +88,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             //Arrange: Construimos el mock y seteamos las expectativas
             Inspeccion inspeccion = GenerarInspeccion();
-            var mockinspeccionAccesoDatos = new Mock<IRepositorio>();
+            var mockinspeccionAccesoDatos = new Mock<IRepositorioInspeccion>();
 
             mockinspeccionAccesoDatos
                 .Setup(ad => ad.ActualizarInspeccion(inspeccion.Id, inspeccion))

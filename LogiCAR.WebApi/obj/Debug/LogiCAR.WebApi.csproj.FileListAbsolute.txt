@@ -1,1 +1,0 @@
-C:\Users\noelc\Source\Repos\LogiCar\LogiCAR.WebApi\obj\Debug\LogiCAR.WebApi.csprojResolveAssemblyReference.cache

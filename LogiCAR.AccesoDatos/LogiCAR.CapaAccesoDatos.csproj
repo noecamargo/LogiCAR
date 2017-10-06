@@ -54,16 +54,23 @@
   <ItemGroup>
     <Compile Include="DependecyResolver.cs" />
     <Compile Include="IRepositorio.cs" />
-    <Compile Include="LogiCar.cs" />
-    <Compile Include="LogiCarContext.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositorioSqlServer.cs" />
+    <Compile Include="IRepositorioDanio.cs" />
+    <Compile Include="IRepositorioInspeccion.cs" />
+    <Compile Include="IRepositorioVehiculo.cs" />
+    <Compile Include="RepositorioInspeccion.cs" />
+    <Compile Include="IRepositorioSeguridad.cs" />
+    <Compile Include="RepositorioContext.cs" />
+    <Compile Include="RepositorioSeguridad.cs" />
+    <Compile Include="RepositorioDanio.cs" />
+    <Compile Include="RepositorioVehiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogiCAR.DependencyResolver\LogiCAR.DependencyResolver.csproj">
@@ -74,6 +81,9 @@
       <Project>{7740dcf3-756a-4e98-9f75-c16edfce9c25}</Project>
       <Name>LogiCAR.Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

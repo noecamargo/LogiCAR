@@ -54,6 +54,9 @@
     <Compile Include="InspeccionTest.cs" />
     <Compile Include="DanioTest.cs" />
     <Compile Include="VehiculoTest.cs" />
+    <Compile Include="UsuarioTest.cs" />
+    <Compile Include="FuncionalidadTest.cs" />
+    <Compile Include="RolTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

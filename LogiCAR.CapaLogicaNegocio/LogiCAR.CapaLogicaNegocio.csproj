@@ -77,6 +77,8 @@
     <Compile Include="LogicaNegocioDanio.cs" />
     <Compile Include="LogicaNegocioInspeccion.cs" />
     <Compile Include="LogicaNegocioVehiculo.cs" />
+    <Compile Include="ILogicaNegocioSeguridad.cs" />
+    <Compile Include="LogicaNegocioSeguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +96,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,7 +9,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
     [TestClass]
     public class DatosVehiculoTest
     {
-        private RepositorioSqlServer repositorio = new AccesoDatos.RepositorioSqlServer();
+        private RepositorioVehiculo repositorio = new RepositorioVehiculo();
        
 
         [TestMethod]
