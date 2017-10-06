@@ -16,7 +16,7 @@ namespace LogiCAR.Entidades.Test
             Lote lote = new Lote();
             lote.Creador = new Usuario();
             lote.Nombre = "Lote 1";
-            lote.Decripcion = "Lote urgente";
+            lote.Descripcion = "Lote urgente";
             lote.ProntoParaPartida = false;
             lote.Vehiculos = new List<Vehiculo>();
             Assert.IsNotNull(lote);

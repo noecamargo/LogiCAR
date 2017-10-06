@@ -16,7 +16,7 @@ namespace LogiCAR.CapaLogicaNegocio
             this.modelo = modelo;
         }
 
-        public int CrearLote(Lote lote)
+        public long CrearLote(Lote lote)
         {
             return 1;
         }
@@ -31,7 +31,7 @@ namespace LogiCAR.CapaLogicaNegocio
             return null;
         }
 
-        public bool ActualizarLote(int id, Lote lote)
+        public bool ActualizarLote(long id, Lote lote)
         {
             return true;
         }

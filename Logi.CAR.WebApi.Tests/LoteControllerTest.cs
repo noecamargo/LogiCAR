@@ -70,7 +70,7 @@ namespace Logi.CAR.WebApi.Tests
             var lotees = GenerarLotees();
             var mockLoteesLogica = new Mock<ILogicaNegocioLote>();
             mockLoteesLogica
-                .Setup(bl => bl.ObtenerLotees())
+                .Setup(bl => bl.ObtenerLotes())
                 .Returns(lotees);
 
             var controller = new LoteController(mockLoteesLogica.Object);
@@ -118,7 +118,7 @@ namespace Logi.CAR.WebApi.Tests
                 Id = -1,
                 Creador = new Usuario(),
                 Nombre = "Lote 2",
-                Decripcion = "desc Lote 2",
+                Descripcion = "desc Lote 2",
                 ProntoParaPartida = false,
                 Vehiculos = new List<Vehiculo>()
             };
@@ -133,7 +133,7 @@ namespace Logi.CAR.WebApi.Tests
                     Id = -1,
             Creador = new Usuario(),
             Nombre = "Lote 3",
-            Decripcion = "desc Lote 3",
+            Descripcion = "desc Lote 3",
             ProntoParaPartida = false,
             Vehiculos = new List<Vehiculo>()
                 },
@@ -142,7 +142,7 @@ namespace Logi.CAR.WebApi.Tests
                      Id = -1,
             Creador = new Usuario(),
             Nombre = "Lote 4",
-            Decripcion = "desc Lote 4",
+            Descripcion = "desc Lote 4",
             ProntoParaPartida = false,
             Vehiculos = new List<Vehiculo>()
                 }

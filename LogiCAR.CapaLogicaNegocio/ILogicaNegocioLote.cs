@@ -7,9 +7,9 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public interface ILogicaNegocioLote
     {
-        int CrearLote(Lote lote);
+        long CrearLote(Lote lote);
         Lote ObtenerLote(long id);
         IEnumerable<Lote> ObtenerLotes();
-        bool ActualizarLote(int id, Lote lote);
+        bool ActualizarLote(long id, Lote lote);
     }
 }

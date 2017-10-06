@@ -9,7 +9,7 @@ namespace LogiCAR.Entidades
         public long Id { get; set; }
 
         public Usuario Creador { get; set; }
-        public string Decripcion { get; set; }
+        public string Descripcion { get; set; }
         public string Nombre { get; set; }
         public bool ProntoParaPartida { get; set; }
         public List<Vehiculo> Vehiculos { get; set; }

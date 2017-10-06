@@ -19,7 +19,7 @@ namespace LogiCAR.WebApi.Controllers
         // GET: api/Lote/Lote
         public IHttpActionResult Get()
         {
-            IEnumerable<Lote> lotees = logicaLote.ObtenerLotees();
+            IEnumerable<Lote> lotees = logicaLote.ObtenerLotes();
             if (lotees == null)
             {
                 return NotFound();
@@ -29,7 +29,7 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // GET: api/Lote/5
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult Get(long id)
         {
             Lote lote = logicaLote.ObtenerLote(id);
             if (lote == null)
@@ -44,7 +44,7 @@ namespace LogiCAR.WebApi.Controllers
         {
             try
             {
-                int id = logicaLote.CrearLote(lote);
+                long id = logicaLote.CrearLote(lote);
                 return CreatedAtRoute("DefaultApi", new { id = id }, lote);
             }
             catch (ArgumentNullException ex)
@@ -54,7 +54,7 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // PUT: api/Lote/5
-        public IHttpActionResult Put(int id, [FromBody]Lote lote)
+        public IHttpActionResult Put(long id, [FromBody]Lote lote)
         {
             try
             {
