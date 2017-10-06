@@ -60,6 +60,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DatosDanioTes.cs" />
+    <Compile Include="DatosTransporteLoteTest.cs" />
     <Compile Include="DatosLoteTest.cs" />
     <Compile Include="DatosInspeccionTest.cs" />
     <Compile Include="DatosVehiculoTest.cs" />

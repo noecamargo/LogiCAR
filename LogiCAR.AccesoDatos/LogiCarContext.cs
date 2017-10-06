@@ -20,5 +20,6 @@ namespace LogiCAR.AccesoDatos
         public DbSet<Inspeccion> Inspecciones { get; set; }
         public DbSet<Danio> Danios { get; set; }
         public DbSet<Lote> Lotes { get; internal set; }
+        public DbSet<TransporteLote> TransporteLotes { get; internal set; }
     }
 }

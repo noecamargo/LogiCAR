@@ -188,5 +188,52 @@ namespace LogiCAR.AccesoDatos
                 return ctx.SaveChanges() > 0;
             }
         }
+
+        public long InsertarTransporteLote(TransporteLote transporte)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+
+                ctx.TransporteLotes.Add(transporte);
+                ctx.SaveChanges();
+                return transporte.Id;
+            }
+        }
+
+        public TransporteLote ObtenerTransporteLote(long id)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                return ctx.TransporteLotes
+                    .Where(d => d.Id.Equals(id))
+                    .FirstOrDefault();
+            }
+        }
+
+        public IEnumerable<TransporteLote> ObtenerTransporteLotes()
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                return ctx.TransporteLotes;
+            }
+        }
+
+        public bool ActualizarTransporteLote(long id, TransporteLote transporte)
+        {
+            using (LogiCarContext ctx = new AccesoDatos.LogiCarContext(connectionString))
+            {
+                TransporteLote transporteViejo = ObtenerTransporteLote(id);
+                if (transporteViejo == null)
+                {
+                    return false;
+                }
+                transporteViejo.FechaInicio = transporte.FechaInicio;
+                transporteViejo.FechaFin = transporte.FechaFin;
+                transporteViejo.Lotes = transporte.Lotes;
+
+                ctx.Entry(transporteViejo).State = System.Data.Entity.EntityState.Modified;
+                return ctx.SaveChanges() > 0;
+            }
+        }
     }
 }
