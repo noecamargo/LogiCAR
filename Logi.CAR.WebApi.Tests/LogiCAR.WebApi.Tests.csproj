@@ -69,6 +69,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanioControllerTest.cs" />
     <Compile Include="InspeccionControllerTest.cs" />
     <Compile Include="VehiculoControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
