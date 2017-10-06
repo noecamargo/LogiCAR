@@ -15,6 +15,7 @@ namespace LogiCAR.Entidades.Test
             usuario.NombreUsuario = "pperez";
             usuario.Contrasenia = "peperez2015";
             usuario.Telefono = "27120515";
+            usuario.Habilitado = true;
             Assert.AreNotEqual(null, usuario);
         }
     }

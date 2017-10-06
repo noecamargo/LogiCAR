@@ -9,7 +9,8 @@ namespace LogiCAR.Entidades.Test
         [TestMethod]
         public void AltaFuncionalidad()
         {
-            Funcionalidad funcion = new Funcionalidad("Agregar Vehiculo");
+            Funcionalidad funcion = new Funcionalidad();
+            funcion.Nombre = "Agregar Vehiculo";
             Assert.AreNotEqual(null, funcion);
         }
     }
