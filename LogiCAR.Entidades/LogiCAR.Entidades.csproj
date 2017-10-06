@@ -45,7 +45,9 @@
     <Compile Include="Danio.cs" />
     <Compile Include="Inspeccion.cs" />
     <Compile Include="Funcionalidad.cs" />
+    <Compile Include="Lote.cs" />
     <Compile Include="Rol.cs" />
+    <Compile Include="TransporteLote.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

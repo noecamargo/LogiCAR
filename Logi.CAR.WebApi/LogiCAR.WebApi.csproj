@@ -127,7 +127,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FuncionalidadController.cs" />
     <Compile Include="Controllers\InspeccionController.cs" />
+    <Compile Include="Controllers\LoteController.cs" />
     <Compile Include="Controllers\RolController.cs" />
+    <Compile Include="Controllers\TransporteLoteController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Controllers\DanioController.cs" />

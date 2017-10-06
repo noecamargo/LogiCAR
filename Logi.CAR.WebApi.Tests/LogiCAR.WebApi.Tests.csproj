@@ -80,7 +80,9 @@
     <Compile Include="DanioControllerTest.cs" />
     <Compile Include="FuncionalidadControllerTest.cs" />
     <Compile Include="InspeccionControllerTest.cs" />
+    <Compile Include="LoteControllerTest.cs" />
     <Compile Include="RolControllerTest.cs" />
+    <Compile Include="TransporteLoteControllerTest.cs" />
     <Compile Include="UsuarioControllerTest.cs" />
     <Compile Include="VehiculoControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

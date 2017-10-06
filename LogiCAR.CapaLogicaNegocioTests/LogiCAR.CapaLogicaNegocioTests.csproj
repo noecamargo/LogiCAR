@@ -61,6 +61,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Inicializacion.cs" />
+    <Compile Include="TransporteLoteTest.cs" />
+    <Compile Include="LoteTest.cs" />
     <Compile Include="InspeccionTest.cs" />
     <Compile Include="LogicaNegocioSeguridadTest.cs" />
     <Compile Include="UsuarioTest.cs" />

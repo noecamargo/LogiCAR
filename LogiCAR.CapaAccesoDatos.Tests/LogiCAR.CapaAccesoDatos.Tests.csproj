@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="DatosDanioTest.cs" />
     <Compile Include="DatosInspeccionTest.cs" />
+    <Compile Include="DatosLoteTest.cs" />
+    <Compile Include="DatosTransporteLoteTest.cs" />
     <Compile Include="DatosVehiculoTest.cs" />
     <Compile Include="RepositorioSeguridadTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -33,6 +33,21 @@ namespace LogiCAR.AccesoDatos
 
         bool ActualizarDanio(int id, Danio danio);
 
+        long InsertarLote(Lote lote);
 
+        Lote ObtenerLote(long id);
+
+        IEnumerable<Lote> ObtenerLotes();
+
+        bool ActualizarLote(long id, Lote lote);
+
+        long InsertarTransporteLote(TransporteLote transporte);
+
+
+        TransporteLote ObtenerTransporteLote(long id);
+
+        IEnumerable<TransporteLote> ObtenerTransporteLotes();
+
+        bool ActualizarTransporteLote(long id, TransporteLote transporte);
     }
 }

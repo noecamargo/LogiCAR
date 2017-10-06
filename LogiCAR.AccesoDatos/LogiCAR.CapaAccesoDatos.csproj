@@ -56,12 +56,16 @@
     <Compile Include="IRepositorio.cs" />
     <Compile Include="IRepositorioDanio.cs" />
     <Compile Include="IRepositorioInspeccion.cs" />
+    <Compile Include="IRepositorioLote.cs" />
+    <Compile Include="IRepositorioTransporteLote.cs" />
     <Compile Include="IRepositorioVehiculo.cs" />
     <Compile Include="RepositorioInspeccion.cs" />
     <Compile Include="IRepositorioSeguridad.cs" />
     <Compile Include="RepositorioContext.cs" />
     <Compile Include="RepositorioSeguridad.cs" />
     <Compile Include="RepositorioDanio.cs" />
+    <Compile Include="RepositorioLote.cs" />
+    <Compile Include="RepositorioTransporteLote.cs" />
     <Compile Include="RepositorioVehiculo.cs" />
   </ItemGroup>
   <ItemGroup>

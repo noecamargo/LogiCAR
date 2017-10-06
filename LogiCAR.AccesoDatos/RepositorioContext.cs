@@ -14,6 +14,7 @@ namespace LogiCAR.CapaAccesoDatos
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Funcionalidad> Funcionalidades { get; set; }
-        
+        public DbSet<Lote> Lotes { get; set; }
+        public DbSet<TransporteLote> TransporteLotes { get; set; }
     }
 }
