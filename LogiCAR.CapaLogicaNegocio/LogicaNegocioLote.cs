@@ -18,22 +18,22 @@ namespace LogiCAR.CapaLogicaNegocio
 
         public long CrearLote(Lote lote)
         {
-            return 1;
+            return modelo.InsertarLote(lote);
         }
 
         public Lote ObtenerLote(long id)
         {
-            return new Lote();
+            return modelo.ObtenerLote(id);
         }
 
         public IEnumerable<Lote> ObtenerLotes()
         {
-            return null;
+            return modelo.ObtenerLotes();
         }
 
         public bool ActualizarLote(long id, Lote lote)
         {
-            return true;
+            return modelo.ActualizarLote(id, lote);
         }
     }
 }

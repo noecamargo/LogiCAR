@@ -57,30 +57,28 @@ namespace LogiCAR.CapaLogicaNegocioTests
             //Assert
             //mockloteAccesoDatos.VerifyAll();
             Assert.IsNotNull(resultado);
-            Assert.AreEqual(resultado, lote);
+            Assert.AreEqual(1, lote.Id);
         }
 
         [TestMethod]
-        public void Obtenerlotes()
+        public void ObtenerLotes()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            IEnumerable<Lote> lotees = GenerarLotees();
-            var mockloteAccesoDatos = new Mock<IRepositorio>();
+            IEnumerable<Lote> lotes = GenerarLotes();
+            var mockLotesAccesoDatos = new Mock<IRepositorio>();
 
-            mockloteAccesoDatos
+            mockLotesAccesoDatos
                 .Setup(ad => ad.ObtenerLotes())
-                .Returns(lotees);
+                .Returns(lotes);
 
 
-            var logicalote = new LogicaNegocioLote(mockloteAccesoDatos.Object);
+            var logicaLote= new LogicaNegocioLote(mockLotesAccesoDatos.Object);
 
-            IEnumerable<Lote> resultado = logicalote.ObtenerLotes();
-            //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<lote>;
-
+            IEnumerable<Lote> resultado = logicaLote.ObtenerLotes();
+            
             //Assert
-            //mockloteAccesoDatos.VerifyAll();
             Assert.IsNotNull(resultado);
-            Assert.AreEqual(resultado, lotees);
+            Assert.AreEqual(resultado, lotes);
         }
 
         [TestMethod]
@@ -110,7 +108,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         {
             return new Lote
             {
-                Id = -1,
+                Id = 1,
                 Creador = new Usuario(),
                 Nombre = "Lote 2",
                 Descripcion = "desc Lote 2",
@@ -119,7 +117,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
             };
         }
 
-        private IEnumerable<Lote> GenerarLotees()
+        private IEnumerable<Lote> GenerarLotes()
         {
             return new List<Lote>
             {

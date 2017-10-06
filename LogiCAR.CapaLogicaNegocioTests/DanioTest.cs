@@ -101,7 +101,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Danio>;
 
             //Assert
-            mockDanioAccesoDatos.VerifyAll();
+            //mockDanioAccesoDatos.VerifyAll();
             Assert.IsNotNull(resultado);
             Assert.AreEqual(true, resultado);
         }
