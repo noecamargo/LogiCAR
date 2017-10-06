@@ -72,10 +72,28 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             {
                 Id = -1,
                 Creacion = DateTime.Today,
-                //VIN = Guid.NewGuid(),
                 VIN = GenerarVehiculo(),
                 //Usuario = new Usuario(),
-                //Danio = new Danio()
+                Danios = GenerarDanios()
+            };
+        }
+
+        private ICollection<Danio> GenerarDanios()
+        {
+            return new List<Danio>
+            {
+                new Danio
+                {
+                Id = 1,
+                Descripcion = "rayon",
+                Foto = new byte[0]
+                },
+                 new Danio
+                {
+                       Id = 1,
+                    Descripcion = "luza rota",
+                Foto = new byte[0]
+                }
             };
         }
 
