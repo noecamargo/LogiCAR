@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace LogiCAR.Entidades.Test
+namespace LogiCAR.Entidades
 {
     public class Lote
     {

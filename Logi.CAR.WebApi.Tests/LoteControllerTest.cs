@@ -38,7 +38,6 @@ namespace Logi.CAR.WebApi.Tests
             Assert.AreEqual("DefaultApi", createdResult.RouteName);
             Assert.AreEqual(1, createdResult.Content.Id);
 
-
         }
 
         [TestMethod]
@@ -116,11 +115,12 @@ namespace Logi.CAR.WebApi.Tests
         {
             return new Lote
             {
-                Id = 1,
-                Creacion = DateTime.Today,
-                //VIN = Guid.NewGuid()
-                //Usuario = new Usuario(),
-                //Danio = new Danio()
+                Id = -1,
+                Creador = new Usuario(),
+                Nombre = "Lote 2",
+                Decripcion = "desc Lote 2",
+                ProntoParaPartida = false,
+                Vehiculos = new List<Vehiculo>()
             };
         }
 
@@ -130,19 +130,21 @@ namespace Logi.CAR.WebApi.Tests
             {
                 new Lote
                 {
-                    Id = 2,
-                    Creacion = DateTime.Today,
-                    //Danio = new Danio(),
-                    //Usuario = new Usuario(),
-                    //VIN = Guid.NewGuid()
+                    Id = -1,
+            Creador = new Usuario(),
+            Nombre = "Lote 3",
+            Decripcion = "desc Lote 3",
+            ProntoParaPartida = false,
+            Vehiculos = new List<Vehiculo>()
                 },
                  new Lote
                 {
-                    Id = 3,
-                    Creacion = DateTime.Today,
-                    //Danio = new Danio(),
-                    //Usuario = new Usuario(),
-                    //VIN = Guid.NewGuid()
+                     Id = -1,
+            Creador = new Usuario(),
+            Nombre = "Lote 4",
+            Decripcion = "desc Lote 4",
+            ProntoParaPartida = false,
+            Vehiculos = new List<Vehiculo>()
                 }
             };
 
