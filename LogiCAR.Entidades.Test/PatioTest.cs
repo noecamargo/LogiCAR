@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 namespace LogiCAR.CapaLogicaNegocioTests
 {
     [TestClass]
-    public class PuertoTest
+    public class PatioTest
     {
-
         [TestMethod]
-        public void CrearPuerto()
+        public void CrearPatio()
         {
-            Puerto puertoPrincipal = new Puerto();
-            puertoPrincipal.Nombre = "PuertoMontevideo";
+            Patio patio = new Patio();
+            patio.Nombre = "Patio Principal";
+            Assert.AreNotEqual(null, patio);
         }
+
+
+
     }
 }

@@ -1,25 +1,15 @@
-﻿using LogiCAR.CapaLogicaNegocio;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogiCAR.CapaLogicaNegocioTests
+namespace LogiCAR.Entidades.Test
 {
     [TestClass]
-    public class PatioTest
+    public class SubZonaTest
     {
-       
-        [TestMethod]
-        public void CrearZona()
-        {
-            Zona zona = new Zona();
-            zona.Nombre = "Zona1";
-            zona.Capacidad = 20;
-            Assert.AreNotEqual(null, zona);
-        }
         [TestMethod]
         public void CrearSubZona()
         {
@@ -28,6 +18,5 @@ namespace LogiCAR.CapaLogicaNegocioTests
             subZona.Capacidad = 5;
             Assert.AreNotEqual(null, subZona);
         }
-
     }
 }

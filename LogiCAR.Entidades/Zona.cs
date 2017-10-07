@@ -1,4 +1,4 @@
-﻿namespace LogiCAR.CapaLogicaNegocio
+﻿namespace LogiCAR.Entidades
 {
     public class Zona
     {
