@@ -54,7 +54,30 @@ namespace LogiCAR.AccesoDatos
                 vehiculoViejo.ProntoParaPartir = vehiculo.ProntoParaPartir;
 
                 contexto.Entry(vehiculoViejo).State = System.Data.Entity.EntityState.Modified;
-                return contexto.SaveChanges() > 0;
+                int modificado = contexto.SaveChanges();
+
+                if (vehiculoViejo.ProntoParaPartir != vehiculo.ProntoParaPartir)
+                    VerifcarPartidaLote(vehiculo);
+
+                return modificado > 0;
+            }
+        }
+
+        public void VerifcarPartidaLote(Vehiculo vehiculo)
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                
+                var  loteARevisar = contexto.Lotes.Where(l => l.Id.Equals(vehiculo.lote.Id)).FirstOrDefault();
+
+                foreach (var vehiculoRevisar in loteARevisar.Vehiculos)
+                {
+                    if (vehiculoRevisar.ProntoParaPartir == false)
+                        return;
+                }
+                RepositorioLote lote = new RepositorioLote();
+                loteARevisar.ProntoParaPartida = true;
+                lote.ActualizarLote(loteARevisar.Id,loteARevisar);
             }
         }
     }

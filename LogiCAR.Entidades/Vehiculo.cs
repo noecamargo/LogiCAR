@@ -17,6 +17,7 @@ namespace LogiCAR.Entidades
         public string Modelo { get; set; }
         public bool ProntoParaPartir { get; set; }
 
+        public virtual Lote lote { get; set; }
         public override bool Equals(object vehiculo)
         {
             return this.VIN.Equals(((Vehiculo)vehiculo).VIN);
