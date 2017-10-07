@@ -14,8 +14,7 @@ namespace LogiCAR.CapaAccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                contexto.Entry(usuario.Rol).State = System.Data.Entity.EntityState.Modified;
-                usuario.Rol = ObtenerRolPorId(usuario.Rol.Id);
+                contexto.Roles.Attach(usuario.Rol);
                 contexto.Usuarios.Add(usuario);
                 contexto.SaveChanges();
                 return usuario.Id;
@@ -33,6 +32,7 @@ namespace LogiCAR.CapaAccesoDatos
                 usuarioResultado.Rol = usuario.Rol;
                 usuarioResultado.Telefono = usuario.Telefono;
                 usuarioResultado.Habilitado = usuario.Habilitado;
+
                 contexto.Entry(usuarioResultado).State = System.Data.Entity.EntityState.Modified;
                 return contexto.SaveChanges() > 0;
             }
