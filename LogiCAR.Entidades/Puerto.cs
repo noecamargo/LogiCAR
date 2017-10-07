@@ -8,7 +8,7 @@ namespace LogiCAR.Entidades
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdPuerto { get; set; }
-        public List<Vehiculo> Vehiculos { get; set; }
+        public virtual List<Vehiculo> Vehiculos { get; set; }
         public Puerto()
         {
             Vehiculos = new List<Vehiculo>();

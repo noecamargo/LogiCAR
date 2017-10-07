@@ -12,7 +12,7 @@ namespace LogiCAR.Entidades
         public int Disponible { get; set; }
         public string Nombre { get; set; }
 
-        public List<SubZona> SubZonas { get; set; }
+        public virtual List<SubZona> SubZonas { get; set; }
         public Zona()
         {
             SubZonas = new List<SubZona>();
