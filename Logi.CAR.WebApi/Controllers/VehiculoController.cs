@@ -6,9 +6,10 @@ using LogiCAR.CapaLogicaNegocio;
 
 namespace LogiCAR.WebApi.Controllers
 {
+
     public class VehiculoController : ApiController
     {
-
+        
         private ILogicaNegocioVehiculo logicaNegocioVehiculo { get; set; }
 
         public VehiculoController(ILogicaNegocioVehiculo logicaVehiculo)
@@ -16,6 +17,12 @@ namespace LogiCAR.WebApi.Controllers
             logicaNegocioVehiculo = logicaVehiculo;
         }
 
+        //public VehiculoController()
+        //{
+            
+        //    logicaNegocioVehiculo = new LogicaNegocioVehiculo();
+
+        //}
         // GET: api/Vehiculo
         public IHttpActionResult Get()
         {
@@ -38,8 +45,9 @@ namespace LogiCAR.WebApi.Controllers
             }
             return Ok(vehiculo);
         }
-        
+
         // PUT: api/Vehiculo/5
+        
         public IHttpActionResult Put(Guid VIN, [FromBody]Vehiculo vehiculo)
         {
             try
@@ -58,8 +66,8 @@ namespace LogiCAR.WebApi.Controllers
         {
             try
             {
-                Guid id = logicaNegocioVehiculo.CrearVehiculo(vehiculo);
-                return CreatedAtRoute("DefaultApi", new { id = id }, vehiculo);
+                bool resultado = logicaNegocioVehiculo.CrearVehiculo(vehiculo);
+                return CreatedAtRoute("DefaultApi", new { id = vehiculo.VIN }, vehiculo);
             }
             catch (ArgumentNullException ex)
             {

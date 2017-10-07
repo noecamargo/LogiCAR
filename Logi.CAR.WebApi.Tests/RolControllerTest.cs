@@ -18,24 +18,24 @@ namespace LogiCAR.WebApi.Test
         public void AltaRol()
         {
             //Arrange
-            string nombreRol = "Admin";
+            Rol rol = GenerarRol();
 
             var mockLogicaNegocioSeguridad = new Mock<ILogicaNegocioSeguridad>();
             mockLogicaNegocioSeguridad
-                .Setup(bl => bl.AltaRol(nombreRol))
+                .Setup(bl => bl.AltaRol(rol))
                     .Returns(true);
 
             var controller = new RolController(mockLogicaNegocioSeguridad.Object);
 
             //Act
-            IHttpActionResult obtainedResult = controller.Post(nombreRol);
+            IHttpActionResult obtainedResult = controller.Post(rol);
             var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Rol>;
 
             //Assert
             mockLogicaNegocioSeguridad.VerifyAll();
             Assert.IsNotNull(createdResult);
             Assert.AreEqual("DefaultApi", createdResult.RouteName);
-            Assert.AreEqual(nombreRol, createdResult.Content.Nombre);
+            Assert.AreEqual(rol, createdResult.Content.Nombre);
         }
 
         [TestMethod]
@@ -129,6 +129,7 @@ namespace LogiCAR.WebApi.Test
         {
             return new Rol
             {
+                IdRol = 1,
                 Nombre = "Modificar Usuario"
             };
 

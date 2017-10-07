@@ -23,7 +23,7 @@ namespace LogiCAR.WebApi.Test
             var mockLogicaNegocioSeguridad = new Mock<ILogicaNegocioSeguridad>();
             mockLogicaNegocioSeguridad
                 .Setup(bl => bl.AltaUsuario(usuario))
-                    .Returns(true);
+                    .Returns(1);
 
             var controller = new UsuarioController(mockLogicaNegocioSeguridad.Object);
 
@@ -94,13 +94,13 @@ namespace LogiCAR.WebApi.Test
 
             var mockLogicaNegocioSeguridad = new Mock<ILogicaNegocioSeguridad>();
             mockLogicaNegocioSeguridad
-                .Setup(bl => bl.ModificarUsuario(usuario))
+                .Setup(bl => bl.ModificarUsuario(usuario.Id,usuario))
                 .Returns(true);
 
             var controller = new UsuarioController(mockLogicaNegocioSeguridad.Object);
 
             //Act: Efectuamos la llamada al controller
-            IHttpActionResult obtainedResult = controller.Put(usuario);
+            IHttpActionResult obtainedResult = controller.Put(usuario.Id,usuario);
 
             //Assert
             var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Usuario>;
@@ -119,6 +119,7 @@ namespace LogiCAR.WebApi.Test
             {
                 new Usuario
                 {
+                    Id = 2,
                    Nombre = "Alejandro",
                    Apellido = "Perez",
                    NombreUsuario = "aperez",
@@ -128,6 +129,7 @@ namespace LogiCAR.WebApi.Test
                 },
                  new Usuario
                 {
+                   Id = 3,
                    Nombre = "Juan Pedro",
                    Apellido = "Perez",
                    NombreUsuario = "jpperez",
@@ -142,6 +144,7 @@ namespace LogiCAR.WebApi.Test
         private Usuario GenerarUsuarioFalso()
         {
             Usuario usuario = new Usuario();
+            usuario.Id = 1;
             usuario.Nombre = "Pedro";
             usuario.Apellido = "Perez";
             usuario.NombreUsuario = "pperez";

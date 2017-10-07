@@ -31,13 +31,14 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         public void AltaUsuario()
         {
             Usuario usuario = CrearFalsoUsuario();
-            bool retorno = repositorio.AltaUsuario(usuario);
-            Assert.AreEqual(true, retorno);
+            int retorno = repositorio.AltaUsuario(usuario);
+            Assert.AreEqual(1, retorno);
         }
 
         private Usuario CrearFalsoUsuario()
         {
             Usuario usuario = new Usuario();
+            usuario.Id = 1;
             usuario.Nombre = "Pedro";
             usuario.Apellido = "Perez";
             usuario.NombreUsuario = "pperez";
@@ -139,7 +140,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         void ModificarUsuario()
         {
             Usuario usuario = CrearFalsoUsuario();
-            bool retorno = repositorio.ModificarUsuario(usuario);
+            bool retorno = repositorio.ModificarUsuario(usuario.Id,usuario);
             Assert.AreEqual("true", retorno);
         }
         [TestMethod]

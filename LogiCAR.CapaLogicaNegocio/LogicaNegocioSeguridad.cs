@@ -1,5 +1,6 @@
 ﻿using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
+using System;
 using System.Collections.Generic;
 
 namespace LogiCAR.CapaLogicaNegocio
@@ -13,13 +14,14 @@ namespace LogiCAR.CapaLogicaNegocio
             repositorioSeguridad = repositorio;
         }
 
-        public bool AltaUsuario(Usuario usuario)
+        public int AltaUsuario(Usuario usuario)
         {
+            validacionInsertarUsuario(usuario);
             return repositorioSeguridad.AltaUsuario(usuario);
         }
-        public bool ModificarUsuario(Usuario usuario)
+        public bool ModificarUsuario(int Id,Usuario usuario)
         {
-            return repositorioSeguridad.ModificarUsuario(usuario);
+            return repositorioSeguridad.ModificarUsuario(Id,usuario);
         }
         public Usuario ObtenerUsuario(string nombreUsuario)
         {
@@ -35,10 +37,22 @@ namespace LogiCAR.CapaLogicaNegocio
         }
 
        
-        public bool AltaRol(string nombre)
+        public bool AltaRol(Rol rol)
         {
-            return repositorioSeguridad.AltaRol(new Rol(nombre));
+            validacionInsertarRol(rol);
+            return repositorioSeguridad.AltaRol(rol);
         }
+
+        private void validacionInsertarRol(Rol rol)
+        {
+            if (rol == null)
+                throw new ArgumentNullException("El rol es vacio.");
+            if (rol.Nombre == null)
+                throw new ArgumentNullException("El rol debe tener un nombre.");
+            if (ExisteRol(rol.Nombre))
+                throw new Exception("El Rol ya existe en el sistema");
+        }
+
         public bool ModificarRol(Rol rol)
         {
             return repositorioSeguridad.ModificarRol(rol);
@@ -88,9 +102,35 @@ namespace LogiCAR.CapaLogicaNegocio
         {
             return repositorioSeguridad.BajaFuncionalidad(nombreFuncionalidad);
         }
-       
-       
-      
+
+        private void validacionInsertarUsuario(Usuario usuario)
+        {
+            if (usuario.Nombre == null || usuario.Apellido == null || usuario.Contrasenia == null || usuario.NombreUsuario == null || usuario.Rol == null)
+                throw new ArgumentNullException("Faltan datos necesarios para el usuario.");
+            if (ExisteUsuario(usuario.NombreUsuario))
+                throw new Exception("El usuario ya existe en el sistema");
+            if(ObtenerRolPorId(usuario.Rol.IdRol) == null)
+                throw new Exception("El rol asignado para el usuario no existe en el sistema.");
+
+        }
+
+        private Rol ObtenerRolPorId(int IdRol)
+        {
+            return repositorioSeguridad.ObtenerRolPorId(IdRol);
+        }
+
+        private bool ExisteUsuario(string nombreUsuario)
+        {
+            return repositorioSeguridad.ObtenerUsuario(nombreUsuario) != null;
+        }
+
+        private bool ExisteRol(string nombreUsuario)
+        {
+            return repositorioSeguridad.ObtenerRol(nombreUsuario) != null;
+        }
+
+
+
 
 
 

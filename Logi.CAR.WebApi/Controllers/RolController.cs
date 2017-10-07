@@ -56,12 +56,12 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // POST: api/Rol
-        public IHttpActionResult Post([FromBody] string nombreRol)
+        public IHttpActionResult Post([FromBody] Rol Rol)
         {
             try
             {
-                bool updateResult = logicaNegocioSeguridad.AltaRol(nombreRol);
-                return CreatedAtRoute("DefaultApi", new { updated = updateResult }, nombreRol);
+                bool updateResult = logicaNegocioSeguridad.AltaRol(Rol);
+                return CreatedAtRoute("DefaultApi", new { updated = updateResult }, Rol);
             }
             catch (ArgumentNullException ex)
             {

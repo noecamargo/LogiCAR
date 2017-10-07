@@ -10,22 +10,22 @@ namespace LogiCAR.CapaAccesoDatos
     public class RepositorioSeguridad : IRepositorioSeguridad
     {
 
-        public bool AltaUsuario(Usuario usuario)
+        public int AltaUsuario(Usuario usuario)
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                List<Usuario> listUsuarios = contexto.Usuarios.ToList();
-                if (!(listUsuarios.Exists(u => u.NombreUsuario.Equals(usuario.NombreUsuario))))
-                    contexto.Usuarios.Add(usuario);
-                return contexto.SaveChanges() > 0;
+                 usuario.Rol = ObtenerRolPorId(usuario.Rol.IdRol);
+                contexto.Usuarios.Add(usuario);
+                contexto.SaveChanges();
+                return usuario.Id;
             }
-
         }
-        public bool ModificarUsuario(Usuario usuario)
+
+        public bool ModificarUsuario(int Id, Usuario usuario)
         {
             using (var contexto = new RepositorioContext())
             {
-                Usuario usuarioResultado = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(usuario.NombreUsuario)).FirstOrDefault();
+                Usuario usuarioResultado = contexto.Usuarios.Where(u => u.Id.Equals(usuario.Id)).FirstOrDefault();
                 usuarioResultado.Nombre = usuario.Nombre;
                 usuarioResultado.Apellido = usuario.Apellido;
                 usuarioResultado.Contrasenia = usuario.Contrasenia;
@@ -158,6 +158,14 @@ namespace LogiCAR.CapaAccesoDatos
                 contexto.Entry(usuarioResultado).State = System.Data.Entity.EntityState.Modified;
                 contexto.Entry(rolResultado).State = System.Data.Entity.EntityState.Modified;
                 return contexto.SaveChanges() > 0;
+            }
+        }
+
+        public Rol ObtenerRolPorId(int IdRol)
+        {
+            using (var contexto = new RepositorioContext())
+            {
+                return contexto.Roles.Where(r => r.IdRol.Equals(IdRol)).FirstOrDefault();
             }
         }
     }

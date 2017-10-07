@@ -6,8 +6,8 @@ namespace LogiCAR.CapaLogicaNegocio
     public interface ILogicaNegocioSeguridad
     {
         bool AltaFuncionalidad(string nombre);
-        bool AltaRol(string nombre);
-        bool AltaUsuario(Usuario usuario);
+        bool AltaRol(Rol rol);
+        int AltaUsuario(Usuario usuario);
         bool AsignarFuncionalidad(string nombreRol, string nombreFuncionalidad);
         bool AsignarRol(string nombreUsuario, string nombreRol);
         IEnumerable<Funcionalidad> ObtenerFuncionalidades();
@@ -20,7 +20,7 @@ namespace LogiCAR.CapaLogicaNegocio
         bool BajaUsuario(string nombreUsuario);
         bool BajaFuncionalidad(string nombreFuncionalidad);
         bool ModificarRol(Rol rol);
-        bool ModificarUsuario(Usuario nombreUsuario);
+        bool ModificarUsuario(int id,Usuario nombreUsuario);
         bool ModificarFuncionalidad(string nombreFuncionalidad);
 
     }

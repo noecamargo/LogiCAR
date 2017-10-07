@@ -8,21 +8,21 @@ namespace LogiCAR.Entidades
     public class Rol
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int? idRol { get; set; }
-        [Key]
-        [Column(Order = 1)]
+        public int IdRol { get; set; }
+
+        //[Key]
         public string Nombre { get; set; }
+
         public virtual List<Funcionalidad> Permisos { get; set; }
 
         public Rol()
         {
            Permisos = new List<Funcionalidad>();
         }
-        public Rol(string nombreTipoUsuario)
+        public Rol(string nombre)
         {
-            Nombre = nombreTipoUsuario;
+            Nombre = nombre;
             Permisos = new List<Funcionalidad>();
         }
        

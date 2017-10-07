@@ -9,27 +9,48 @@ namespace LogiCAR.CapaLogicaNegocio
     {
         private IRepositorioVehiculo repositorioVehiculo;
 
+        public LogicaNegocioVehiculo()
+        {
+            repositorioVehiculo = new RepositorioVehiculo();
+        }
+
         public LogicaNegocioVehiculo(IRepositorioVehiculo repositorio)
         {
             repositorioVehiculo = repositorio;
         }
 
-        public Guid CrearVehiculo(Vehiculo vehiculo)
+        public bool CrearVehiculo(Vehiculo vehiculo)
         {
-            vehiculo.VIN = Guid.NewGuid();
+            validacionInsertarVehiculo(vehiculo);
 
             if (repositorioVehiculo.InsertarVehiculo(vehiculo))
             {
-                return vehiculo.VIN;
+                return true;
             }
             else
             {
-                return new Guid();
+                return false;
             }
+        }
+
+        private void validacionInsertarVehiculo(Vehiculo vehiculo)
+        {
+            if(vehiculo == null)
+                throw new ArgumentNullException("Vehiculo vacio");
+            if (vehiculo.VIN != null && vehiculo.VIN == Guid.Empty)
+                throw new ArgumentNullException("El vehiculo debe tener un VIN");
+            if (ExisteVechiculo(vehiculo.VIN))
+                throw new  Exception("El vehiculo ya existe en el sistema");
+        }
+
+        private bool ExisteVechiculo(Guid VIN)
+        {
+            return repositorioVehiculo.ObtenerVehiculo(VIN) != null;
         }
 
         public IEnumerable<Vehiculo> ListaVehiculos()
         {
+            //IEnumerable<Vehiculo> retorno = new IEnumerable<Vehiculo>();
             return repositorioVehiculo.ObtenerVehiculos();
         }
 
@@ -38,11 +59,9 @@ namespace LogiCAR.CapaLogicaNegocio
             return repositorioVehiculo.ObtenerVehiculo(VIN);
         }
 
-        public bool ActualizarVehiculo(Guid VIN,Vehiculo vehiculo)
+        public bool ActualizarVehiculo(Guid VIN, Vehiculo vehiculo)
         {
-            return repositorioVehiculo.ActualizarVehiculo(VIN,vehiculo);
+            return repositorioVehiculo.ActualizarVehiculo(VIN, vehiculo);
         }
-
-        
     }
 }

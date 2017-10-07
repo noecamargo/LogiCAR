@@ -24,7 +24,7 @@ namespace LogiCAR.WebApi.Tests
             var mockVehiculosLogica = new Mock<ILogicaNegocioVehiculo>();
             mockVehiculosLogica
                 .Setup(bl => bl.CrearVehiculo(vehiculo))
-                    .Returns(vehiculo.VIN);
+                    .Returns(true);
 
             var controller = new VehiculoController(mockVehiculosLogica.Object);
 

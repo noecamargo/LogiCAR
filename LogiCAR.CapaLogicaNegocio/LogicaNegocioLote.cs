@@ -1,6 +1,6 @@
 ﻿using LogiCAR.AccesoDatos;
 using LogiCAR.Entidades;
-
+using System;
 using System.Collections.Generic;
 
 
@@ -13,6 +13,11 @@ namespace LogiCAR.CapaLogicaNegocio
         public LogicaNegocioLote(IRepositorioLote respositorio)
         {
             this.respositorioLote = respositorio;
+        }
+
+        public LogicaNegocioLote()
+        {
+            this.respositorioLote = new RepositorioLote();
         }
 
         public long CrearLote(Lote lote)
@@ -34,5 +39,7 @@ namespace LogiCAR.CapaLogicaNegocio
         {
             return respositorioLote.ActualizarLote(id, lote);
         }
+
+        
     }
 }

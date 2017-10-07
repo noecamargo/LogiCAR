@@ -28,12 +28,12 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
             var logicaVehiculo = new LogicaNegocioVehiculo(mockVehiculoAccesoDatos.Object);
 
-            Guid resultado = logicaVehiculo.CrearVehiculo(vehiculo);
+            bool resultado = logicaVehiculo.CrearVehiculo(vehiculo);
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert
             mockVehiculoAccesoDatos.VerifyAll();
-            Assert.AreEqual(resultado, vehiculo.VIN);
+            Assert.AreEqual(resultado, true);
 
         }
 

@@ -15,6 +15,7 @@ namespace LogiCAR.Entidades
         public string Color { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
+        
 
         public override bool Equals(object vehiculo)
         {

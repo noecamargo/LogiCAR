@@ -42,11 +42,11 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // PUT: api/Usuario/5
-        public IHttpActionResult Put([FromBody]Usuario usuario)
+        public IHttpActionResult Put(int id,[FromBody]Usuario usuario)
         {
             try
             {
-                bool updateResult = logicaNegocioSeguridad.ModificarUsuario(usuario);
+                bool updateResult = logicaNegocioSeguridad.ModificarUsuario(id,usuario);
                 return CreatedAtRoute("DefaultApi", new { updated = updateResult }, usuario);
             }
             catch (ArgumentNullException ex)
@@ -60,8 +60,8 @@ namespace LogiCAR.WebApi.Controllers
         {
             try
             {
-               bool updateResult = logicaNegocioSeguridad.AltaUsuario(usuario);
-                return CreatedAtRoute("DefaultApi", new { updated = updateResult }, usuario);
+                int resultado = logicaNegocioSeguridad.AltaUsuario(usuario);
+                return CreatedAtRoute("DefaultApi", new { updated = resultado }, usuario);
             }
             catch (ArgumentNullException ex)
             {

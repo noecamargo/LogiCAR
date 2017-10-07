@@ -7,7 +7,7 @@ namespace LogiCAR.CapaAccesoDatos
     {
         bool AltaFuncionalidad(Funcionalidad funcionalidad);
         bool AltaRol(Rol rol);
-        bool AltaUsuario(Usuario usuario);
+        int AltaUsuario(Usuario usuario);
         bool AsignarFuncionalidad(string nombreRol, Funcionalidad funcionalidad);
         bool AsignarRol(string nombreUsuario, string nombreRol);
         ICollection<Funcionalidad> ObtenerFuncionalidades();
@@ -20,7 +20,8 @@ namespace LogiCAR.CapaAccesoDatos
         bool BajaUsuario(string nombreUsuario);
         bool BajaFuncionalidad(string nombreFuncionalidad);
         bool ModificarRol(Rol rol);
-        bool ModificarUsuario(Usuario usuario);
+        bool ModificarUsuario(int id,Usuario usuario);
         bool ModificarFuncionalidad(string nombreFuncionalidad);
+        Rol ObtenerRolPorId(int idRol);
     }
 }

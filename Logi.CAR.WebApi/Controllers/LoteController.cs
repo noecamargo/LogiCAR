@@ -16,6 +16,13 @@ namespace LogiCAR.WebApi.Controllers
             this.logicaLote = logicaLote;
         }
 
+        public LoteController()
+        {
+
+            logicaLote = new LogicaNegocioLote();
+
+        }
+
         // GET: api/Lote/Lote
         public IHttpActionResult Get()
         {

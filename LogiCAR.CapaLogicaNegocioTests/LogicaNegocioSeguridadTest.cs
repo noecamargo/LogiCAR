@@ -42,11 +42,11 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
 
             mockRepositorioSeguridad
-                .Setup(repo => repo.ModificarUsuario(usuario));
+                .Setup(repo => repo.ModificarUsuario(usuario.Id,usuario));
 
             var logicaSeguridad = new LogicaNegocioSeguridad(mockRepositorioSeguridad.Object);
 
-            logicaSeguridad.ModificarUsuario(usuario);
+            logicaSeguridad.ModificarUsuario(usuario.Id,usuario);
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert
@@ -120,7 +120,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
             var logicaSeguridad = new LogicaNegocioSeguridad(mockRepositorioSeguridad.Object);
 
-            logicaSeguridad.ModificarUsuario(usuario);
+            logicaSeguridad.ModificarUsuario(usuario.Id,usuario);
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert
@@ -165,7 +165,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
             var logicaSeguridad = new LogicaNegocioSeguridad(mockRepositorioSeguridad.Object);
 
-            logicaSeguridad.AltaRol(rol.Nombre);
+            logicaSeguridad.AltaRol(rol);
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert
