@@ -11,7 +11,7 @@ namespace LogiCAR.AccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-
+                contexto.Inspecciones.Attach(danio.InspeccionId);
                 contexto.Danios.Add(danio);
                 contexto.SaveChanges();
                 return danio.Id;

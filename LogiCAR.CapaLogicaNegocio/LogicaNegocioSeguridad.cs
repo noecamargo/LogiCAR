@@ -109,8 +109,8 @@ namespace LogiCAR.CapaLogicaNegocio
                 throw new ArgumentNullException("Faltan datos necesarios para el usuario.");
             if (ExisteUsuario(usuario.NombreUsuario))
                 throw new Exception("El usuario ya existe en el sistema");
-            if(ObtenerRolPorId(usuario.Rol.Id) == null)
-                throw new Exception("El rol asignado para el usuario no existe en el sistema.");
+            //if(ObtenerRolPorId(usuario.Rol.Id) == null)
+            //    throw new Exception("El rol asignado para el usuario no existe en el sistema.");
 
         }
 
