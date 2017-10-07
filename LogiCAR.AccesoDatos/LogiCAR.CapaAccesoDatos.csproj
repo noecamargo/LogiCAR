@@ -50,11 +50,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="IRepositorioPatio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioContext.cs" />
+    <Compile Include="RepositorioPatio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">
+      <Project>{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}</Project>
+      <Name>LogiCAR.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

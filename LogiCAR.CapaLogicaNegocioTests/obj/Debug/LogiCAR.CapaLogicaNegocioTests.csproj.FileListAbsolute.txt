@@ -19,3 +19,9 @@ C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocioTests\bin\De
 C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\obj\Debug\LogiCAR.CapaLogicaNegocioTests.csprojResolveAssemblyReference.cache
 C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\obj\Debug\LogiCAR.CapaLogicaNegocioTests.dll
 C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\obj\Debug\LogiCAR.CapaLogicaNegocioTests.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocioTests.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocioTests.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocio.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\bin\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocioTests\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

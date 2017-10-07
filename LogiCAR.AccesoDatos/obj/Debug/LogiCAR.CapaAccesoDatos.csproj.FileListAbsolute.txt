@@ -38,3 +38,5 @@ C:\DA2 - RepoLugares2\LogiCAR.AccesoDatos\bin\Debug\EntityFramework.SqlServer.xm
 C:\DA2 - RepoLugares2\LogiCAR.AccesoDatos\obj\Debug\LogiCAR.CapaAccesoDatos.csprojResolveAssemblyReference.cache
 C:\DA2 - RepoLugares2\LogiCAR.AccesoDatos\obj\Debug\LogiCAR.AccesoDatos.dll
 C:\DA2 - RepoLugares2\LogiCAR.AccesoDatos\obj\Debug\LogiCAR.AccesoDatos.pdb
+C:\DA2 - RepoLugares2\LogiCAR.AccesoDatos\bin\Debug\LogiCAR.Entidades.dll
+C:\DA2 - RepoLugares2\LogiCAR.AccesoDatos\bin\Debug\LogiCAR.Entidades.pdb

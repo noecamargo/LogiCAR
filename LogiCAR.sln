@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.Entidades.Test", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.Entidades", "LogiCAR.Entidades\LogiCAR.Entidades.csproj", "{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiCAR.Utilidades", "LogiCAR.Utilidades\LogiCAR.Utilidades.csproj", "{367D4B18-DD61-4829-8767-4526CE7AC52B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7740DCF3-756A-4E98-9F75-C16EDFCE9C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367D4B18-DD61-4829-8767-4526CE7AC52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367D4B18-DD61-4829-8767-4526CE7AC52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367D4B18-DD61-4829-8767-4526CE7AC52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367D4B18-DD61-4829-8767-4526CE7AC52B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

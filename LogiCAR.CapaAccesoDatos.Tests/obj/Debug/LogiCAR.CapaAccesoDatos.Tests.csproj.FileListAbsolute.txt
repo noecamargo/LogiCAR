@@ -18,3 +18,14 @@ C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\es\Microsoft.Visua
 C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.csprojResolveAssemblyReference.cache
 C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.dll
 C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\obj\Debug\LogiCAR.CapaAccesoDatos.Tests.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.AccesoDatos.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.Entidades.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.Utilidades.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\EntityFramework.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.AccesoDatos.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.Entidades.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.Utilidades.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\EntityFramework.xml
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\LogiCAR.CapaAccesoDatos.Tests.dll.config
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaAccesoDatos.Tests\bin\Debug\EntityFramework.SqlServer.xml
