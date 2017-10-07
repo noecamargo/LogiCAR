@@ -22,7 +22,14 @@ namespace LogiCAR.CapaLogicaNegocio
 
         public long CrearLote(Lote lote)
         {
+            ValidacionCrearEditarLote(lote);
             return respositorioLote.InsertarLote(lote);
+        }
+
+        private void ValidacionCrearEditarLote(Lote lote)
+        {
+            if(lote.Vehiculos.Count == 0)
+                throw new ArgumentNullException("El lote debe tener almenos un Vehiculo");
         }
 
         public Lote ObtenerLote(long id)
@@ -37,9 +44,27 @@ namespace LogiCAR.CapaLogicaNegocio
 
         public bool ActualizarLote(long id, Lote lote)
         {
+            ValidacionCrearEditarLote(lote);
             return respositorioLote.ActualizarLote(id, lote);
         }
 
-        
+        public bool AgregarVehiculosALote(long id, List<Vehiculo> vehiculos)
+        {
+            Lote loteViejo = ObtenerLote(id);
+            
+            foreach (Vehiculo vehiculo in vehiculos)
+            {
+                if (!loteViejo.Vehiculos.Exists(v => v.VIN.Equals(vehiculo.VIN)))
+                {
+                    loteViejo.Vehiculos.Add(vehiculo);
+                    respositorioLote.ActualizarLote(id, loteViejo);
+                    
+                }
+            }
+
+            return true;
+        }
+
+
     }
 }

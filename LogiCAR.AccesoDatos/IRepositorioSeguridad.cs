@@ -19,7 +19,7 @@ namespace LogiCAR.CapaAccesoDatos
         //void BajaRol(string nombreRol);
         bool BajaUsuario(string nombreUsuario);
         bool BajaFuncionalidad(string nombreFuncionalidad);
-        bool ModificarRol(Rol rol);
+        bool ModificarRol(int Id,Rol rol);
         bool ModificarUsuario(int id,Usuario usuario);
         bool ModificarFuncionalidad(string nombreFuncionalidad);
         Rol ObtenerRolPorId(int idRol);

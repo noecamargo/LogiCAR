@@ -16,6 +16,7 @@ namespace LogiCAR.Entidades
 
         public string Descripcion { get; set; }
         public byte[] Foto { get; set; }
+        public virtual Inspeccion InspeccionId { get; set; }
         
     }
 }

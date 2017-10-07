@@ -9,7 +9,7 @@ namespace LogiCAR.Entidades
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdRol { get; set; }
+        public int Id { get; set; }
 
         //[Key]
         public string Nombre { get; set; }

@@ -91,13 +91,13 @@ namespace LogiCAR.WebApi.Test
             var rol = GenerarRol();
             var mockLogicaNegocioSeguridad = new Mock<ILogicaNegocioSeguridad>();
             mockLogicaNegocioSeguridad
-                .Setup(bl => bl.ModificarRol(rol))
+                .Setup(bl => bl.ModificarRol(rol.Id,rol))
                 .Returns(true);
 
             var controller = new RolController(mockLogicaNegocioSeguridad.Object);
 
             //Act: Efectuamos la llamada al controller
-            IHttpActionResult obtainedResult = controller.Put(rol);
+            IHttpActionResult obtainedResult = controller.Put(rol.Id,rol);
 
             //Assert
             var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Rol>;
@@ -129,7 +129,7 @@ namespace LogiCAR.WebApi.Test
         {
             return new Rol
             {
-                IdRol = 1,
+                Id = 1,
                 Nombre = "Modificar Usuario"
             };
 

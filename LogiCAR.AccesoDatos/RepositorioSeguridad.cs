@@ -14,7 +14,8 @@ namespace LogiCAR.CapaAccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                 usuario.Rol = ObtenerRolPorId(usuario.Rol.IdRol);
+                contexto.Entry(usuario.Rol).State = System.Data.Entity.EntityState.Modified;
+                usuario.Rol = ObtenerRolPorId(usuario.Rol.Id);
                 contexto.Usuarios.Add(usuario);
                 contexto.SaveChanges();
                 return usuario.Id;
@@ -106,11 +107,11 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.SaveChanges() > 0;
             }
         }
-        public bool ModificarRol(Rol rol)
+        public bool ModificarRol(int Id,Rol rol)
         {
             using (var contexto = new RepositorioContext())
             {
-                Rol rolResultado = contexto.Roles.Where(r => r.Nombre.Equals(rol.Nombre)).FirstOrDefault();
+                Rol rolResultado = contexto.Roles.Where(r => r.Id.Equals(Id)).FirstOrDefault();
                 rolResultado.Nombre = rol.Nombre;
                 rolResultado.Permisos = rol.Permisos;
                 contexto.Entry(rolResultado).State = System.Data.Entity.EntityState.Modified;
@@ -165,7 +166,7 @@ namespace LogiCAR.CapaAccesoDatos
         {
             using (var contexto = new RepositorioContext())
             {
-                return contexto.Roles.Where(r => r.IdRol.Equals(IdRol)).FirstOrDefault();
+                return contexto.Roles.Where(r => r.Id.Equals(IdRol)).FirstOrDefault();
             }
         }
     }

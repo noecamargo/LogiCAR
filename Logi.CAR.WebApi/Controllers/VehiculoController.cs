@@ -16,13 +16,7 @@ namespace LogiCAR.WebApi.Controllers
         {
             logicaNegocioVehiculo = logicaVehiculo;
         }
-
-        //public VehiculoController()
-        //{
-            
-        //    logicaNegocioVehiculo = new LogicaNegocioVehiculo();
-
-        //}
+        
         // GET: api/Vehiculo
         public IHttpActionResult Get()
         {
@@ -47,7 +41,7 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // PUT: api/Vehiculo/5
-        
+        [HttpPut]
         public IHttpActionResult Put(Guid VIN, [FromBody]Vehiculo vehiculo)
         {
             try

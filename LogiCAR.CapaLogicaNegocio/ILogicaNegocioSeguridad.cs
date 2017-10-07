@@ -19,7 +19,7 @@ namespace LogiCAR.CapaLogicaNegocio
         //void BajaRol(string nombre);
         bool BajaUsuario(string nombreUsuario);
         bool BajaFuncionalidad(string nombreFuncionalidad);
-        bool ModificarRol(Rol rol);
+        bool ModificarRol(int id,Rol rol);
         bool ModificarUsuario(int id,Usuario nombreUsuario);
         bool ModificarFuncionalidad(string nombreFuncionalidad);
 

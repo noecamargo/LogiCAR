@@ -17,6 +17,6 @@ namespace LogiCAR.Entidades
 
         //public Usuario Usuario { get; set; }
         
-        public virtual Vehiculo VIN { get; set; }
+        public virtual Vehiculo Vehiculo { get; set; }
     }
 }

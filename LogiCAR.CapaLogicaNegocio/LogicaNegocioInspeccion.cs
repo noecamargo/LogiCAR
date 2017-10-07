@@ -1,5 +1,6 @@
 ﻿using LogiCAR.AccesoDatos;
 using LogiCAR.Entidades;
+using System;
 using System.Collections.Generic;
 
 namespace LogiCAR.CapaLogicaNegocio
@@ -15,6 +16,8 @@ namespace LogiCAR.CapaLogicaNegocio
 
         public int CrearInspeccion(Inspeccion inspeccion)
         {
+            inspeccion.Creacion = DateTime.Today;
+            
             return repositorioInspeccion.InsertarInspeccion(inspeccion);
         }
 

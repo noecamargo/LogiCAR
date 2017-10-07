@@ -42,11 +42,11 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // PUT: api/Rol/5
-        public IHttpActionResult Put([FromBody]Rol rol)
+        public IHttpActionResult Put(int id,[FromBody]Rol rol)
         {
             try
             {
-                bool updateResult = logicaNegocioSeguridad.ModificarRol(rol);
+                bool updateResult = logicaNegocioSeguridad.ModificarRol(id,rol);
                 return CreatedAtRoute("DefaultApi", new { updated = updateResult }, rol);
             }
             catch (ArgumentNullException ex)

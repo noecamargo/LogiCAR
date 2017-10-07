@@ -24,6 +24,20 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // GET: api/Lote/Lote
+        [HttpPut]
+        public IHttpActionResult AgregarVehiculosALote(int id, [FromBody] List<Vehiculo> vehiculos)
+        {
+            try
+            {
+                bool resultado = logicaLote.AgregarVehiculosALote(id, vehiculos);
+                return CreatedAtRoute("CustomApi", new { updated = resultado }, id);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
         public IHttpActionResult Get()
         {
             IEnumerable<Lote> lotees = logicaLote.ObtenerLotes();

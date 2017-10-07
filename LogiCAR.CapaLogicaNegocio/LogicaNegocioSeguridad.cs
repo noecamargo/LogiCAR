@@ -53,9 +53,9 @@ namespace LogiCAR.CapaLogicaNegocio
                 throw new Exception("El Rol ya existe en el sistema");
         }
 
-        public bool ModificarRol(Rol rol)
+        public bool ModificarRol(int Id,Rol rol)
         {
-            return repositorioSeguridad.ModificarRol(rol);
+            return repositorioSeguridad.ModificarRol(Id,rol);
         }
         public bool BajaRol(string nombre)
         {
@@ -109,7 +109,7 @@ namespace LogiCAR.CapaLogicaNegocio
                 throw new ArgumentNullException("Faltan datos necesarios para el usuario.");
             if (ExisteUsuario(usuario.NombreUsuario))
                 throw new Exception("El usuario ya existe en el sistema");
-            if(ObtenerRolPorId(usuario.Rol.IdRol) == null)
+            if(ObtenerRolPorId(usuario.Rol.Id) == null)
                 throw new Exception("El rol asignado para el usuario no existe en el sistema.");
 
         }

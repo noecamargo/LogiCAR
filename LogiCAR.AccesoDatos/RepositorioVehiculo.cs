@@ -51,7 +51,7 @@ namespace LogiCAR.AccesoDatos
                 vehiculoViejo.Color = vehiculo.Color;
                 vehiculoViejo.Marca = vehiculo.Marca;
                 vehiculoViejo.Modelo = vehiculo.Modelo;
-
+                vehiculoViejo.ProntoParaPartir = vehiculo.ProntoParaPartir;
 
                 contexto.Entry(vehiculoViejo).State = System.Data.Entity.EntityState.Modified;
                 return contexto.SaveChanges() > 0;

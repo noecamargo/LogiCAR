@@ -12,7 +12,7 @@ namespace LogiCAR.AccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-
+                
                 contexto.Lotes.Add(lote);
                 contexto.SaveChanges();
                 return lote.Id;
@@ -23,7 +23,7 @@ namespace LogiCAR.AccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                return contexto.Lotes
+                return contexto.Lotes.Include("Vehiculos")
                     .Where(d => d.Id.Equals(id))
                     .FirstOrDefault();
             }
@@ -33,7 +33,7 @@ namespace LogiCAR.AccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                return contexto.Lotes;
+                return contexto.Lotes.Include("Vehiculos");
             }
         }
 

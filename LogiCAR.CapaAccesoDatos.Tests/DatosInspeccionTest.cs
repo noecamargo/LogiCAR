@@ -72,7 +72,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             {
                 Id = -1,
                 Creacion = DateTime.Today,
-                VIN = GenerarVehiculo(),
+                Vehiculo = GenerarVehiculo(),
                 //Usuario = new Usuario(),
                 Danios = GenerarDanios()
             };
@@ -107,7 +107,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
                     Creacion = DateTime.Today,
                     //Danio = new Danio(),
                     //Usuario = new Usuario(),
-                   VIN = GenerarVehiculo()
+                   Vehiculo = GenerarVehiculo()
                 },
                  new Inspeccion
                 {
@@ -115,7 +115,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
                     Creacion = DateTime.Today,
                     //Danio = new Danio(),
                     //Usuario = new Usuario(),
-                    VIN = GenerarVehiculo()
+                    Vehiculo = GenerarVehiculo()
                 }
             };
         }

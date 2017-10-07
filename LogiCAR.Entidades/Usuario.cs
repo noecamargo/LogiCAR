@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LogiCAR.Entidades
@@ -23,7 +24,7 @@ namespace LogiCAR.Entidades
         [Required]
         public string Nombre { get; set; }
 
-        [Required]
+                
         public virtual Rol Rol { get; set; }
 
         public string Telefono { get; set; }
