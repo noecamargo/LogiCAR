@@ -30,7 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,10 +45,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogicaNegocioLugares.cs" />
+    <Compile Include="ILogicaNegocioPatio.cs" />
+    <Compile Include="LogicaNegocioPatio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LogiCAR.AccesoDatos\LogiCAR.CapaAccesoDatos.csproj">
+      <Project>{247fb134-88fb-446c-a6fb-c4cdd04c8f21}</Project>
+      <Name>LogiCAR.CapaAccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">
+      <Project>{7740dcf3-756a-4e98-9f75-c16edfce9c25}</Project>
+      <Name>LogiCAR.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogiCAR.Utilidades\LogiCAR.Utilidades.csproj">
+      <Project>{367d4b18-dd61-4829-8767-4526ce7ac52b}</Project>
+      <Name>LogiCAR.Utilidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

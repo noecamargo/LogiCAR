@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using LogiCAR.Entidades;
 
-namespace LogiCAR.CapaAccesoDatos
+namespace LogiCAR.CapaLogicaNegocio
 {
-    public interface IRepositorioPatio
+    public interface ILogicaNegocioPatio
     {
         bool AltaPatio(Patio patio);
         bool AltaPuerto(Puerto puerto);
@@ -17,16 +17,16 @@ namespace LogiCAR.CapaAccesoDatos
         bool ModificarPatio(Patio patio);
         bool ModificarSubZona(SubZona subZona);
         bool ModificarZona(Zona zona);
+        SubZona ObtenerSubZona(int id);
+        IEnumerable<SubZona> ObtenerSubZonas();
+        Zona ObtenerZona(int id);
+        IEnumerable<Zona> ObtenerZonas();
         Patio ObtenerPatio();
         Puerto ObtenerPuerto();
-        bool ModificarPuerto(List<Vehiculo> vehiculos); 
-        SubZona ObtenerSubZona(int id);
-        ICollection<SubZona> ObtenerSubZonas();
-        Zona ObtenerZona(int id);
-        ICollection<Zona> ObtenerZonas();
+        bool ModificarPuerto(List<Vehiculo> vehiculos);
         bool QuitarVehiculoPatio(Patio patio, Guid VIN);
-        bool QuitarVehiculoPuerto(Puerto puerto, Guid VIN);
         int QuitarVehiculoSubZona(int idSubZona, Guid VIN);
         int SetearCapacidadSubZona(int idZona, int idSubZona, int capacidad);
+        bool QuitarVehiculoPuerto(Puerto puerto, Guid VIN);
     }
 }

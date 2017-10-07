@@ -20,5 +20,6 @@ namespace LogiCAR.CapaAccesoDatos
         public DbSet<SubZona> SubZonas { get; set; }
         public DbSet<Patio> Patios { get; set; }
         public DbSet<Puerto> Puertos { get; set; }
+             
     }
 }

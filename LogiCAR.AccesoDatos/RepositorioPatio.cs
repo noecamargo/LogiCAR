@@ -29,6 +29,13 @@ namespace LogiCAR.CapaAccesoDatos
                     .FirstOrDefault();
             }
         }
+        public ICollection<Zona> ObtenerZonas()
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                return contexto.Zonas.ToList();
+            }
+        }
         public bool ModificarZona(Zona zona)
         {
             using (RepositorioContext contexto = new RepositorioContext())
@@ -82,6 +89,14 @@ namespace LogiCAR.CapaAccesoDatos
                     .FirstOrDefault();
             }
         }
+        public ICollection<SubZona> ObtenerSubZonas()
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                return contexto.SubZonas.ToList();
+            }
+        }
+
         public bool ModificarSubZona(SubZona subZona)
         {
             using (RepositorioContext contexto = new RepositorioContext())
@@ -205,6 +220,13 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.SaveChanges() > 0;
             }
         }
+        public Patio ObtenerPatio()
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                return contexto.Patios.ToList().FirstOrDefault();
+            }
+        }
         #endregion
 
         #region Metodos de Puerto
@@ -216,6 +238,19 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.SaveChanges() > 0;
             }
         }
+        public bool ModificarPuerto(List<Vehiculo> vehiculos)
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                Puerto puerto = ObtenerPuerto();
+                foreach(var vehiculo in vehiculos)
+                {
+                    puerto.Vehiculos.Add(vehiculo);
+                }
+                return contexto.SaveChanges() > 0;
+            }
+        }
+
         public bool QuitarVehiculoPuerto(Puerto puerto, Guid VIN)
         {
             using (RepositorioContext contexto = new RepositorioContext())
@@ -228,18 +263,14 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.SaveChanges() > 0;
             }
         }
+        public Puerto ObtenerPuerto()
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                return contexto.Puertos.ToList().FirstOrDefault();
+            }
+        }
         #endregion
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
