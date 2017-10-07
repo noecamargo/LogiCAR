@@ -1,7 +1,7 @@
-﻿namespace LogiCAR.CapaLogicaNegocio
+﻿namespace LogiCAR.Entidades
 {
-    public class Puerto
+    public class Puerto : Lugar
     {
-        public string Nombre { get; set; }
+       
     }
 }

@@ -13,3 +13,8 @@ C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\bin\Debug\L
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.csprojResolveAssemblyReference.cache
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.dll
 C:\Users\noelc\Source\Repos\LogiCarLugares\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocio\bin\Debug\LogiCAR.CapaLogicaNegocio.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocio\bin\Debug\LogiCAR.CapaLogicaNegocio.pdb
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.csprojResolveAssemblyReference.cache
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.dll
+C:\DA2 - RepoLugares2\LogiCAR.CapaLogicaNegocio\obj\Debug\LogiCAR.CapaLogicaNegocio.pdb

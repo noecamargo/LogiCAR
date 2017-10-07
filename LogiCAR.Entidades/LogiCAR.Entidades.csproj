@@ -46,6 +46,7 @@
     <Compile Include="Inspeccion.cs" />
     <Compile Include="Funcionalidad.cs" />
     <Compile Include="Lote.cs" />
+    <Compile Include="Lugar.cs" />
     <Compile Include="Patio.cs" />
     <Compile Include="Puerto.cs" />
     <Compile Include="Rol.cs" />

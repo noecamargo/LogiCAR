@@ -13,7 +13,7 @@ namespace LogiCAR.Entidades.Test
         [TestMethod]
         public void AltaZona()
         {
-            ZonaTest zona = new ZonaTest();
+            Zona zona = new Zona();
             zona.Nombre = "Zona1";
             zona.Capacidad = 20;
             Assert.AreNotEqual(null, zona);

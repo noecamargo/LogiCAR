@@ -1,1 +1,9 @@
 C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\obj\Debug\LogiCAR.Entidades.Test.csprojResolveAssemblyReference.cache
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\bin\Debug\LogiCAR.Entidades.Test.dll
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\bin\Debug\LogiCAR.Entidades.Test.pdb
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\bin\Debug\LogiCAR.Entidades.dll
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\bin\Debug\LogiCAR.Entidades.pdb
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\obj\Debug\LogiCAR.Entidades.Test.dll
+C:\DA2 - RepoLugares2\LogiCAR.Entidades.Test\obj\Debug\LogiCAR.Entidades.Test.pdb

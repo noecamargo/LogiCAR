@@ -51,6 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LugarTest.cs" />
     <Compile Include="PatioTest.cs" />
     <Compile Include="PuertoTest.cs" />
     <Compile Include="SubZonaTest.cs" />
