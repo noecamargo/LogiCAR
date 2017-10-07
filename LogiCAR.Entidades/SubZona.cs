@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LogiCAR.Entidades
@@ -7,6 +8,7 @@ namespace LogiCAR.Entidades
     {
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int IdSubZona { get; set; }
         public int Capacidad { get; set; }
         public int Disponible { get; set; }

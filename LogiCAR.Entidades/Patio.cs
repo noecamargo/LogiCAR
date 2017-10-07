@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LogiCAR.Entidades
 {
     public class Patio : Lugar
     {
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdPatio { get; set; }
+        
         public virtual List<Vehiculo> vehiculos { get; set; }
 
         public Patio()

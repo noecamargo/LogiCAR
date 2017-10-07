@@ -186,7 +186,7 @@ namespace LogiCAR.CapaAccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                Patio patioResultado = contexto.Patios.Where(z => z.IdPatio.Equals(patio.IdPatio)).FirstOrDefault();
+                Patio patioResultado = contexto.Patios.Where(z => z.Id.Equals(patio.Id)).FirstOrDefault();
                 patioResultado.Nombre = patio.Nombre;
                 patioResultado.vehiculos = patio.vehiculos;
                 contexto.Entry(patioResultado).State = System.Data.Entity.EntityState.Modified;
@@ -197,7 +197,7 @@ namespace LogiCAR.CapaAccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                Patio patioResultado = contexto.Patios.Where(z => z.IdPatio.Equals(patio.IdPatio)).FirstOrDefault();
+                Patio patioResultado = contexto.Patios.Where(z => z.Id.Equals(patio.Id)).FirstOrDefault();
                 Vehiculo vehiculoResultado = contexto.Vehiculos.Where(v => v.VIN.Equals(VIN)).FirstOrDefault();
                 patioResultado.vehiculos.Remove(vehiculoResultado);
                 contexto.Entry(patioResultado).State = System.Data.Entity.EntityState.Modified;
@@ -220,7 +220,7 @@ namespace LogiCAR.CapaAccesoDatos
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                Puerto puertoResultado = contexto.Puertos.Where(p => p.IdPuerto.Equals(puerto.IdPuerto)).FirstOrDefault();
+                Puerto puertoResultado = contexto.Puertos.Where(p => p.Id.Equals(puerto.Id)).FirstOrDefault();
                 Vehiculo vehiculoResultado = contexto.Vehiculos.Where(v => v.VIN.Equals(VIN)).FirstOrDefault();
                 puertoResultado.Vehiculos.Remove(vehiculoResultado);
                 contexto.Entry(puertoResultado).State = System.Data.Entity.EntityState.Modified;
