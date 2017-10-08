@@ -55,11 +55,16 @@
     <Compile Include="Inspeccion.cs" />
     <Compile Include="Funcionalidad.cs" />
     <Compile Include="Lote.cs" />
+    <Compile Include="Lugar.cs" />
+    <Compile Include="Patio.cs" />
+    <Compile Include="Puerto.cs" />
     <Compile Include="Rol.cs" />
+    <Compile Include="SubZona.cs" />
     <Compile Include="TransporteLote.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Zona.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

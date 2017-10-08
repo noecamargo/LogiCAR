@@ -81,11 +81,15 @@
     <Compile Include="FuncionalidadControllerTest.cs" />
     <Compile Include="InspeccionControllerTest.cs" />
     <Compile Include="LoteControllerTest.cs" />
+    <Compile Include="PatioControllerTests.cs" />
+    <Compile Include="PuertoControllerTests.cs" />
     <Compile Include="RolControllerTest.cs" />
+    <Compile Include="SubZonaControllerTests.cs" />
     <Compile Include="TransporteLoteControllerTest.cs" />
     <Compile Include="UsuarioControllerTest.cs" />
     <Compile Include="VehiculoControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZonaController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logi.CAR.WebApi\LogiCAR.WebApi.csproj">

@@ -121,7 +121,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
 
         public void ModificarRol()
         {
-            bool retorno = repositorio.ModificarRol(CrearFalsoRol());
+            bool retorno = repositorio.ModificarRol(1,CrearFalsoRol());
             Assert.AreEqual("true", retorno);
         }
         

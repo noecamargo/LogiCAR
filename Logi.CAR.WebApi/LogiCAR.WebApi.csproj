@@ -145,11 +145,15 @@
     <Compile Include="Controllers\FuncionalidadController.cs" />
     <Compile Include="Controllers\InspeccionController.cs" />
     <Compile Include="Controllers\LoteController.cs" />
+    <Compile Include="Controllers\PatioController.cs" />
+    <Compile Include="Controllers\PuertoController.cs" />
     <Compile Include="Controllers\RolController.cs" />
+    <Compile Include="Controllers\SubZonaController.cs" />
     <Compile Include="Controllers\TransporteLoteController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Controllers\DanioController.cs" />
+    <Compile Include="Controllers\ZonaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

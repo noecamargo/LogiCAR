@@ -64,6 +64,7 @@
     <Compile Include="DatosLoteTest.cs" />
     <Compile Include="DatosTransporteLoteTest.cs" />
     <Compile Include="DatosVehiculoTest.cs" />
+    <Compile Include="RepositorioPatioTest.cs" />
     <Compile Include="RepositorioSeguridadTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

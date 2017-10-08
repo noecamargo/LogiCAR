@@ -51,6 +51,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LugarTest.cs" />
+    <Compile Include="PatioTest.cs" />
+    <Compile Include="PuertoTest.cs" />
+    <Compile Include="SubZonaTest.cs" />
     <Compile Include="TransporteLoteTest.cs" />
     <Compile Include="LoteTest.cs" />
     <Compile Include="InspeccionTest.cs" />
@@ -60,6 +64,7 @@
     <Compile Include="FuncionalidadTest.cs" />
     <Compile Include="RolTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZonaTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogiCAR.Entidades\LogiCAR.Entidades.csproj">

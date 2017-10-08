@@ -16,5 +16,9 @@ namespace LogiCAR.CapaAccesoDatos
         public DbSet<Funcionalidad> Funcionalidades { get; set; }
         public DbSet<Lote> Lotes { get; set; }
         public DbSet<TransporteLote> TransporteLotes { get; set; }
+        public DbSet<Zona> Zonas { get; set; }
+        public DbSet<SubZona> SubZonas { get; set; }
+        public DbSet<Patio> Patios { get; set; }
+        public DbSet<Puerto> Puertos { get; set; }
     }
 }
