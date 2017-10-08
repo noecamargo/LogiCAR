@@ -1,6 +1,7 @@
 ﻿using LogiCAR.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,58 @@ namespace LogiCAR.CapaAccesoDatos
     public class RepositorioSeguridad : IRepositorioSeguridad
     {
 
+        public Guid LogIn(string nombreUsuario, string contrasenia)
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                Guid token = Guid.Empty;
+                try
+                {
+                    token = Guid.NewGuid();
+                    Usuario usuario = new Usuario();
+                    usuario.NombreUsuario = nombreUsuario;
+                    usuario.Contrasenia = contrasenia;
+                    usuario.Token = token;
+                    contexto.Usuarios.Add(usuario);
+                    contexto.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                ve.PropertyName, ve.ErrorMessage);
+                        }
+                    }
+                    throw;
+                }
+               
+               
+                return token;
+            }
+        }
+
+        public bool LogOff(string nombreUsuario)
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                Usuario usuarioLogueado = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(nombreUsuario)).SingleOrDefault();
+                usuarioLogueado.Token = Guid.Empty;
+                contexto.Entry(usuarioLogueado).State = System.Data.Entity.EntityState.Modified;
+                return contexto.SaveChanges() > 0;
+            }
+
+        }
+
         public bool AltaUsuario(Usuario usuario)
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                List<Usuario> listUsuarios = contexto.Usuarios.ToList();
+               List<Usuario> listUsuarios = contexto.Usuarios.ToList();
                 if (!(listUsuarios.Exists(u => u.NombreUsuario.Equals(usuario.NombreUsuario))))
                     contexto.Usuarios.Add(usuario);
                 return contexto.SaveChanges() > 0;

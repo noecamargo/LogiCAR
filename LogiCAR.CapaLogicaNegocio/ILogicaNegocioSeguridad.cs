@@ -1,10 +1,14 @@
 ﻿using LogiCAR.Entidades;
+using System;
 using System.Collections.Generic;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
     public interface ILogicaNegocioSeguridad
     {
+
+        Guid LogIn(string nombreUsuario, string contrasenia);
+        bool LogOff(string nombreUsuario);
         bool AltaFuncionalidad(string nombre);
         bool AltaRol(string nombre);
         bool AltaUsuario(Usuario usuario);

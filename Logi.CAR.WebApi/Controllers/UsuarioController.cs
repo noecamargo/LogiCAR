@@ -18,6 +18,18 @@ namespace LogiCAR.WebApi.Controllers
             logicaNegocioSeguridad = logicaSeguridad;
         }
 
+        [HttpPost]
+        public IHttpActionResult LogIn([FromBody]string nombreUsuario,string contrasenia)
+        {
+            Guid guid = logicaNegocioSeguridad.LogIn(nombreUsuario, contrasenia);
+            if (guid == Guid.Empty)
+            {
+                return NotFound();
+            }
+            return Ok(guid);
+
+        }
+
         // GET: api/Usuario
         public IHttpActionResult Get()
         {

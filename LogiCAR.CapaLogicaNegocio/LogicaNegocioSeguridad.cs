@@ -1,5 +1,6 @@
 ﻿using LogiCAR.CapaAccesoDatos;
 using LogiCAR.Entidades;
+using System;
 using System.Collections.Generic;
 
 namespace LogiCAR.CapaLogicaNegocio
@@ -13,6 +14,14 @@ namespace LogiCAR.CapaLogicaNegocio
             repositorioSeguridad = repository;
         }
 
+        public Guid LogIn(string nombreUsuario, string contrasenia)
+        {
+            return repositorioSeguridad.LogIn(nombreUsuario, contrasenia);
+        }
+        public bool LogOff(string nombreUsuario)
+        {
+            return repositorioSeguridad.LogOff(nombreUsuario);
+        }
         public bool AltaUsuario(Usuario usuario)
         {
             return repositorioSeguridad.AltaUsuario(usuario);
