@@ -13,6 +13,7 @@ namespace LogiCAR.CapaLogicaNegocio
             registerComponent.RegisterType<ILogicaNegocioLote, LogicaNegocioLote>();
             registerComponent.RegisterType<ILogicaNegocioInspeccion, LogicaNegocioInspeccion>();
             registerComponent.RegisterType<ILogicaNegocioDanio, LogicaNegocioDanio>();
+            registerComponent.RegisterType<ILogicaNegocioPatio, LogicaNegocioPatio>();
         }
     }
 }

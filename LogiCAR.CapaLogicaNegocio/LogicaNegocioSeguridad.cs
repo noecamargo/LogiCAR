@@ -14,6 +14,15 @@ namespace LogiCAR.CapaLogicaNegocio
             repositorioSeguridad = repositorio;
         }
 
+        public Guid LogIn(string nombreUsuario, string contrasenia)
+        {
+            //todo: validar usuario y contraseña 
+            return repositorioSeguridad.LogIn(nombreUsuario, contrasenia);
+        }
+        public bool LogOff(string nombreUsuario)
+        {
+            return repositorioSeguridad.LogOff(nombreUsuario);
+        }
         public int AltaUsuario(Usuario usuario)
         {
             validacionInsertarUsuario(usuario);
@@ -105,7 +114,7 @@ namespace LogiCAR.CapaLogicaNegocio
 
         private void validacionInsertarUsuario(Usuario usuario)
         {
-            if (usuario.Nombre == null || usuario.Apellido == null || usuario.Contrasenia == null || usuario.NombreUsuario == null || usuario.Rol == null)
+            if (usuario.Nombre == null || usuario.Apellido == null || usuario.Contrasenia == null || usuario.NombreUsuario == null)
                 throw new ArgumentNullException("Faltan datos necesarios para el usuario.");
             if (ExisteUsuario(usuario.NombreUsuario))
                 throw new Exception("El usuario ya existe en el sistema");

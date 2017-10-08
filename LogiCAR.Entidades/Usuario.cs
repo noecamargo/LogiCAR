@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,12 +7,15 @@ namespace LogiCAR.Entidades
     public class Usuario
     {
 
-
+        public Usuario()
+        {
+            Habilitado = true;
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
                 
-        //TODO Que sea unica
+        
         public string NombreUsuario { get; set; }
 
         [Required]
@@ -28,7 +31,9 @@ namespace LogiCAR.Entidades
         public virtual Rol Rol { get; set; }
 
         public string Telefono { get; set; }
+        [Required]
         public bool Habilitado { get; set; }
+        public Guid Token { get; set; }
     }
 }
 

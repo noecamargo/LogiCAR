@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using LogiCAR.Entidades;
+using System;
 
 namespace LogiCAR.CapaAccesoDatos
 {
     public interface IRepositorioSeguridad
     {
+        Guid LogIn(string nombreUsuario, string contrasenia);
+        bool LogOff(string nombreUsuario);
         bool AltaFuncionalidad(Funcionalidad funcionalidad);
         bool AltaRol(Rol rol);
         int AltaUsuario(Usuario usuario);

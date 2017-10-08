@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LogiCAR.Entidades;
 using System.Collections.Generic;
+using System;
 
 namespace LogiCAR.CapaAccesoDatos.Tests
 {
@@ -8,8 +9,21 @@ namespace LogiCAR.CapaAccesoDatos.Tests
     public class RepositorioSeguridadTest
     {
         private IRepositorioSeguridad repositorio = new RepositorioSeguridad();
-        
-       
+
+        [TestMethod]
+        public void LogIn()
+        {
+            Guid guid = repositorio.LogIn("pperez", "password");
+            Assert.AreNotEqual(Guid.Empty, guid);
+        }
+
+        [TestMethod]
+        public void LogOff()
+        {
+            string nombreUsuario = "pperez";
+            bool retorno = repositorio.LogOff(nombreUsuario);
+            Assert.AreEqual(true, retorno);
+        }
 
         [TestMethod]
         public void AltaFuncionalidad()

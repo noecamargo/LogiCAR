@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LogiCAR.CapaLogicaNegocio
 {
-    public class LogicaNegocioPatio
+    public class LogicaNegocioPatio : ILogicaNegocioPatio
     {
         private IRepositorioPatio repositorioPatio;
 
@@ -85,7 +85,7 @@ namespace LogiCAR.CapaLogicaNegocio
         {
             return repositorioPatio.ObtenerPuerto();
         }
-        bool ModificarPuerto(List<Vehiculo> vehiculos)
+        public bool ModificarPuerto(List<Vehiculo> vehiculos)
         {
             return repositorioPatio.ModificarPuerto(vehiculos);
         }

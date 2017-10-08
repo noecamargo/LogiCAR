@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LogiCAR.Entidades
 {
+    [Table("Inspeccion")]
     public class Inspeccion
     {
         [Key]
@@ -15,7 +16,7 @@ namespace LogiCAR.Entidades
 
         public ICollection<Danio> Danios { get; set; }
 
-        //public Usuario Usuario { get; set; }
+        public Usuario Usuario { get; set; }
         
         public virtual Vehiculo Vehiculo { get; set; }
     }

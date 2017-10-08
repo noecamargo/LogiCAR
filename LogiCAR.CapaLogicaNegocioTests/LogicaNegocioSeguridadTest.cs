@@ -342,11 +342,11 @@ namespace LogiCAR.CapaLogicaNegocioTests
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
             mockRepositorioSeguridad
-                .Setup(repo => repo.ModificarRol(rol));
+                .Setup(repo => repo.ModificarRol(1,rol));
 
             var logicaSeguridad = new LogicaNegocioSeguridad(mockRepositorioSeguridad.Object);
 
-            bool retorno = logicaSeguridad.ModificarRol(rol);
+            bool retorno = logicaSeguridad.ModificarRol(1,rol);
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert
@@ -375,7 +375,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         //    Assert.AreEqual(true, retorno);
         //}
 
-       [TestMethod]
+        [TestMethod]
         void BajaFuncionalidad()
         {
             //Arrange: Construimos el mock y seteamos las expectativas

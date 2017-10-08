@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Danio.cs" />
+    <Compile Include="Historico.cs" />
     <Compile Include="Inspeccion.cs" />
     <Compile Include="Funcionalidad.cs" />
     <Compile Include="Lote.cs" />

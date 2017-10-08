@@ -9,7 +9,29 @@ namespace LogiCAR.CapaAccesoDatos
 {
     public class RepositorioSeguridad : IRepositorioSeguridad
     {
+        public Guid LogIn(string nombreUsuario, string contrasenia)
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+               var usuario = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(nombreUsuario)).SingleOrDefault();
+                usuario.Token = Guid.NewGuid();
+                contexto.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
+                contexto.SaveChanges();
+                return usuario.Token;
+            }
+        }
 
+        public bool LogOff(string nombreUsuario)
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                Usuario usuarioLogueado = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(nombreUsuario)).SingleOrDefault();
+                usuarioLogueado.Token = Guid.Empty;
+                contexto.Entry(usuarioLogueado).State = System.Data.Entity.EntityState.Modified;
+                return contexto.SaveChanges() > 0;
+            }
+
+        }
         public int AltaUsuario(Usuario usuario)
         {
             using (RepositorioContext contexto = new RepositorioContext())

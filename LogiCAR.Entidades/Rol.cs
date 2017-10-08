@@ -4,14 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LogiCAR.Entidades
 {
-    [Table("Rol")]
+  
     public class Rol
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        //[Key]
         public string Nombre { get; set; }
 
         public virtual List<Funcionalidad> Permisos { get; set; }

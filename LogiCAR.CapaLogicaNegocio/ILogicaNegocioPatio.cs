@@ -17,16 +17,16 @@ namespace LogiCAR.CapaLogicaNegocio
         bool ModificarPatio(Patio patio);
         bool ModificarSubZona(SubZona subZona);
         bool ModificarZona(Zona zona);
+        Patio ObtenerPatio();
+        Puerto ObtenerPuerto();
+        bool ModificarPuerto(List<Vehiculo> vehiculos);
         SubZona ObtenerSubZona(int id);
         IEnumerable<SubZona> ObtenerSubZonas();
         Zona ObtenerZona(int id);
         IEnumerable<Zona> ObtenerZonas();
-        Patio ObtenerPatio();
-        Puerto ObtenerPuerto();
-        bool ModificarPuerto(List<Vehiculo> vehiculos);
         bool QuitarVehiculoPatio(Patio patio, Guid VIN);
+        bool QuitarVehiculoPuerto(Puerto puerto, Guid VIN);
         int QuitarVehiculoSubZona(int idSubZona, Guid VIN);
         int SetearCapacidadSubZona(int idZona, int idSubZona, int capacidad);
-        bool QuitarVehiculoPuerto(Puerto puerto, Guid VIN);
     }
 }
