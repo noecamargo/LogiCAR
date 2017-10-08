@@ -64,7 +64,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         public void ObtenerDanios()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            IEnumerable<Danio> Danios = GenerarDanios();
+            ICollection<Danio> Danios = GenerarDanios();
             var mockDanioAccesoDatos = new Mock<IRepositorioDanio>();
 
             mockDanioAccesoDatos
@@ -116,7 +116,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
             };
         }
 
-        private IEnumerable<Danio> GenerarDanios()
+        private ICollection<Danio> GenerarDanios()
         {
             return new List<Danio>
             {

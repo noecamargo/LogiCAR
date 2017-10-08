@@ -64,7 +64,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         public void Obtenerinspeccions()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            IEnumerable<Inspeccion> inspecciones = GenerarInspecciones();
+            ICollection<Inspeccion> inspecciones = GenerarInspecciones();
             var mockinspeccionAccesoDatos = new Mock<IRepositorioInspeccion>();
 
             mockinspeccionAccesoDatos
@@ -118,7 +118,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
             };
         }
 
-        private IEnumerable<Inspeccion> GenerarInspecciones()
+        private ICollection<Inspeccion> GenerarInspecciones()
         {
             return new List<Inspeccion>
             {

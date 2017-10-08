@@ -29,11 +29,11 @@ namespace LogiCAR.AccesoDatos
             }
         }
 
-        public IEnumerable<Lote> ObtenerLotes()
+        public ICollection<Lote> ObtenerLotes()
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                return contexto.Lotes.Include("Vehiculos");
+                return contexto.Lotes.Include("Vehiculos").ToList();
             }
         }
 

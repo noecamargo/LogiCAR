@@ -9,6 +9,6 @@ namespace LogiCAR.AccesoDatos
         bool ActualizarVehiculo(Guid VIN, Vehiculo vehiculo);
         bool InsertarVehiculo(Vehiculo vehiculo);
         Vehiculo ObtenerVehiculo(Guid VIN);
-        IEnumerable<Vehiculo> ObtenerVehiculos();
+        ICollection<Vehiculo> ObtenerVehiculos();
     }
 }

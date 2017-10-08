@@ -29,11 +29,11 @@ namespace LogiCAR.AccesoDatos
             }
         }
 
-        public IEnumerable<TransporteLote> ObtenerTransporteLotes()
+        public ICollection<TransporteLote> ObtenerTransporteLotes()
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                return contexto.TransporteLotes;
+                return contexto.TransporteLotes.ToList();
             }
         }
 

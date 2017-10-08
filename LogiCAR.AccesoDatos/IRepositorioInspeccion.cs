@@ -8,6 +8,6 @@ namespace LogiCAR.AccesoDatos
         bool ActualizarInspeccion(int id, Inspeccion inspeccion);
         int InsertarInspeccion(Inspeccion inspeccion);
         Inspeccion ObtenerInspeccion(int id);
-        IEnumerable<Inspeccion> ObtenerInspecciones();
+        ICollection<Inspeccion> ObtenerInspecciones();
     }
 }

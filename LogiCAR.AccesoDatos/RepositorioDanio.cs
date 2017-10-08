@@ -28,11 +28,11 @@ namespace LogiCAR.AccesoDatos
             }
         }
 
-        public IEnumerable<Danio> ObtenerDanios()
+        public ICollection<Danio> ObtenerDanios()
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                return contexto.Danios;
+                return contexto.Danios.ToList();
             }
         }
 

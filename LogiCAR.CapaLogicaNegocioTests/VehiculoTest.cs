@@ -64,7 +64,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         public void ObtenerVehiculos()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            IEnumerable<Vehiculo> vehiculos = GenerarVehiculos();
+            ICollection<Vehiculo> vehiculos = GenerarVehiculos();
             var mockVehiculoAccesoDatos = new Mock<IRepositorioVehiculo>();
 
             mockVehiculoAccesoDatos
@@ -119,7 +119,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
         }
 
-        private IEnumerable<Vehiculo> GenerarVehiculos()
+        private ICollection<Vehiculo> GenerarVehiculos()
         {
             return new List<Vehiculo>
             {

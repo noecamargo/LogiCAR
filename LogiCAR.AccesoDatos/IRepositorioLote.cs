@@ -8,6 +8,6 @@ namespace LogiCAR.AccesoDatos
         bool ActualizarLote(long id, Lote lote);
         long InsertarLote(Lote lote);
         Lote ObtenerLote(long id);
-        IEnumerable<Lote> ObtenerLotes();
+        ICollection<Lote> ObtenerLotes();
     }
 }

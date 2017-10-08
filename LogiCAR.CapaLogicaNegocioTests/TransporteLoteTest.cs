@@ -56,7 +56,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
         public void ObtenerTransporteLotes()
         {
             //Arrange: Construimos el mock y seteamos las expectativas
-            IEnumerable<TransporteLote> transporte = GenerarTransporteLotes();
+            ICollection<TransporteLote> transporte = GenerarTransporteLotes();
             var mockTransporteLotesAccesoDatos = new Mock<IRepositorioTransporteLote>();
 
             mockTransporteLotesAccesoDatos
@@ -105,7 +105,7 @@ namespace LogiCAR.CapaLogicaNegocioTests
             };
         }
 
-        private IEnumerable<TransporteLote> GenerarTransporteLotes()
+        private ICollection<TransporteLote> GenerarTransporteLotes()
         {
             return new List<TransporteLote>
             {

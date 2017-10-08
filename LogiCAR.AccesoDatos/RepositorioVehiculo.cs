@@ -29,11 +29,11 @@ namespace LogiCAR.AccesoDatos
             }
         }
 
-        public IEnumerable<Vehiculo> ObtenerVehiculos()
+        public ICollection<Vehiculo> ObtenerVehiculos()
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                return contexto.Vehiculos;
+                return contexto.Vehiculos.ToList();
             }
 
         }

@@ -8,6 +8,6 @@ namespace LogiCAR.AccesoDatos
         bool ActualizarDanio(int id, Danio danio);
         int InsertarDanio(Danio danio);
         Danio ObtenerDanio(int id);
-        IEnumerable<Danio> ObtenerDanios();
+        ICollection<Danio> ObtenerDanios();
     }
 }

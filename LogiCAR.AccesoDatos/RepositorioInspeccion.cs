@@ -29,11 +29,11 @@ namespace LogiCAR.AccesoDatos
             }
         }
 
-        public IEnumerable<Inspeccion> ObtenerInspecciones()
+        public ICollection<Inspeccion> ObtenerInspecciones()
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                return contexto.Inspecciones;
+                return contexto.Inspecciones.ToList();
             }
         }
 
