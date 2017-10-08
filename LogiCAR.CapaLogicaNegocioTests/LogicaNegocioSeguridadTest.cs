@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using Moq;
 using LogiCAR.CapaAccesoDatos;
-
+using System;
 
 namespace LogiCAR.CapaLogicaNegocioTests
 {
@@ -21,11 +21,11 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
 
             mockRepositorioSeguridad
-                .Setup(repo => repo.AltaUsuario(usuario));
+                .Setup(repo => repo.AltaUsuario(usuario,Guid.NewGuid()));
 
            var logicaSeguridad = new LogicaNegocioSeguridad(mockRepositorioSeguridad.Object);
 
-            logicaSeguridad.AltaUsuario(usuario);
+            logicaSeguridad.AltaUsuario(usuario,Guid.NewGuid());
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert
@@ -137,12 +137,12 @@ namespace LogiCAR.CapaLogicaNegocioTests
 
 
             mockRepositorioSeguridad
-                .Setup(repo => repo.AsignarFuncionalidad("Admin", funcion))
+                .Setup(repo => repo.AsignarFuncionalidad(1, funcion))
                 .Returns(true);
 
             var logicaSeguridad = new LogicaNegocioSeguridad(mockRepositorioSeguridad.Object);
 
-            logicaSeguridad.AsignarFuncionalidad("Admin", funcion.Nombre);
+            logicaSeguridad.AsignarFuncionalidad(1, funcion.Nombre);
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert
@@ -190,18 +190,18 @@ namespace LogiCAR.CapaLogicaNegocioTests
         void AsignarRol()
         {
             string nombreUsuario = "pperez";
-            string nombreRol = "Admin";
+            
             
             var mockRepositorioSeguridad = new Mock<IRepositorioSeguridad>();
 
 
             mockRepositorioSeguridad
-                .Setup(repo => repo.AsignarRol(nombreUsuario, nombreRol))
+                .Setup(repo => repo.AsignarRol(nombreUsuario, 1))
                 .Returns(true);
 
             var logicaSeguridad = new LogicaNegocioSeguridad(mockRepositorioSeguridad.Object);
 
-            logicaSeguridad.AsignarFuncionalidad(nombreRol, nombreRol);
+            logicaSeguridad.AsignarRol(nombreUsuario, 1);
             //var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Vehiculo>;
 
             //Assert

@@ -13,7 +13,8 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         [TestMethod]
         public void LogIn()
         {
-            Guid guid = repositorio.LogIn("pperez", "password");
+            var usuario = CrearFalsoUsuario();
+            Guid guid = repositorio.LogIn(usuario);
             Assert.AreNotEqual(Guid.Empty, guid);
         }
 
@@ -21,7 +22,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         public void LogOff()
         {
             string nombreUsuario = "pperez";
-            bool retorno = repositorio.LogOff(nombreUsuario);
+            bool retorno = repositorio.LogOff(Guid.NewGuid());
             Assert.AreEqual(true, retorno);
         }
 
@@ -45,7 +46,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         public void AltaUsuario()
         {
             Usuario usuario = CrearFalsoUsuario();
-            int retorno = repositorio.AltaUsuario(usuario);
+            int retorno = repositorio.AltaUsuario(usuario, Guid.NewGuid());
             Assert.AreEqual(1, retorno);
         }
 
@@ -65,13 +66,13 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         [TestMethod]
         public void AsignarFuncionalidad(Rol rol, Funcionalidad funcionalidad)
         {
-            bool retorno = repositorio.AsignarFuncionalidad(rol.Nombre, funcionalidad);
+            bool retorno = repositorio.AsignarFuncionalidad(rol.Id, funcionalidad);
             Assert.AreEqual(true, retorno);
         }
         [TestMethod]
         public void AsignarRol(string nombreUsuario, Rol rol)
         {
-            bool retorno = repositorio.AsignarRol(nombreUsuario, rol.Nombre);
+            bool retorno = repositorio.AsignarRol(nombreUsuario, rol.Id);
             Assert.AreEqual(true, retorno);
         }
         [TestMethod]
@@ -80,8 +81,8 @@ namespace LogiCAR.CapaAccesoDatos.Tests
             Funcionalidad funcion = new Funcionalidad();
             funcion.Nombre = "Agregar Rol";
             repositorio.AltaFuncionalidad(funcion);
-            ICollection<Funcionalidad> retorno = repositorio.ObtenerFuncionalidades();
-            Assert.AreNotEqual(0, retorno.Count);
+            IEnumerable<Funcionalidad> retorno = repositorio.ObtenerFuncionalidades();
+            Assert.AreNotEqual(0, retorno);
 
         }
         [TestMethod]
@@ -97,7 +98,7 @@ namespace LogiCAR.CapaAccesoDatos.Tests
         public void ObtenerUsuarios()
         {
             Usuario usuario = CrearFalsoUsuario();
-            repositorio.AltaUsuario(usuario);
+            repositorio.AltaUsuario(usuario,Guid.NewGuid());
             ICollection<Usuario> retorno = repositorio.ObtenerUsuarios();
             Assert.AreNotEqual(0, retorno.Count);
         }

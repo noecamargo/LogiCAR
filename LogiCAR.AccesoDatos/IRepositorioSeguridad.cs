@@ -6,13 +6,15 @@ namespace LogiCAR.CapaAccesoDatos
 {
     public interface IRepositorioSeguridad
     {
-        Guid LogIn(string nombreUsuario, string contrasenia);
-        bool LogOff(string nombreUsuario);
+        Guid LogIn(Usuario usuario);
+        bool LogOff(Guid token);
+        bool NoEsAdministrador(Guid token);
+        List<Funcionalidad> FuncionalidadesAprobadas(Guid token);
         bool AltaFuncionalidad(Funcionalidad funcionalidad);
         bool AltaRol(Rol rol);
-        int AltaUsuario(Usuario usuario);
-        bool AsignarFuncionalidad(string nombreRol, Funcionalidad funcionalidad);
-        bool AsignarRol(string nombreUsuario, string nombreRol);
+        int AltaUsuario(Usuario usuario,Guid token);
+        bool AsignarFuncionalidad(int idRol, Funcionalidad funcionalidad);
+        bool AsignarRol(string nombreUsuario, int idRol);
         ICollection<Funcionalidad> ObtenerFuncionalidades();
         ICollection<Rol> ObtenerRoles();
         ICollection<Usuario> ObtenerUsuarios();

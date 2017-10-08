@@ -14,20 +14,34 @@ namespace LogiCAR.CapaLogicaNegocio
             repositorioSeguridad = repositorio;
         }
 
-        public Guid LogIn(string nombreUsuario, string contrasenia)
+        public Guid LogIn(Usuario usuario)
         {
             //todo: validar usuario y contraseña 
-            return repositorioSeguridad.LogIn(nombreUsuario, contrasenia);
+            return repositorioSeguridad.LogIn(usuario);
         }
-        public bool LogOff(string nombreUsuario)
+        public bool LogOff(Guid token)
         {
-            return repositorioSeguridad.LogOff(nombreUsuario);
+            return repositorioSeguridad.LogOff(token);
         }
-        public int AltaUsuario(Usuario usuario)
+        public int AltaUsuario(Usuario usuario, Guid token)
         {
             validacionInsertarUsuario(usuario);
-            return repositorioSeguridad.AltaUsuario(usuario);
+            Autorizar("AltaUsuario", token);
+            return repositorioSeguridad.AltaUsuario(usuario, token);
         }
+
+        //public bool NoEsAdministrador(Guid token)
+        //{
+        //    return repositorioSeguridad.NoEsAdministrador(token);
+        //}
+
+
+        public void Autorizar(string nombreFuncionalidad, Guid token)
+        {
+            if (!(repositorioSeguridad.FuncionalidadesAprobadas(token)).Exists(f => f.Nombre.Equals(nombreFuncionalidad.ToUpper())))
+                throw new Exception("El usuario no esta autorizado");
+        }
+
         public bool ModificarUsuario(int Id,Usuario usuario)
         {
             return repositorioSeguridad.ModificarUsuario(Id,usuario);
@@ -78,9 +92,9 @@ namespace LogiCAR.CapaLogicaNegocio
         {
             return repositorioSeguridad.ObtenerRoles();
         }
-        public bool AsignarRol(string nombreUsuario, string nombreRol)
+        public bool AsignarRol(string nombreUsuario, int idRol)
         {
-            return repositorioSeguridad.AsignarRol(nombreUsuario, nombreRol);
+            return repositorioSeguridad.AsignarRol(nombreUsuario, idRol);
         }
 
         public bool AltaFuncionalidad(string nombre)
@@ -89,11 +103,11 @@ namespace LogiCAR.CapaLogicaNegocio
             funcion.Nombre = nombre;
             return repositorioSeguridad.AltaFuncionalidad(funcion);
         }
-        public bool AsignarFuncionalidad(string nombreRol, string nombreFuncionalidad)
+        public bool AsignarFuncionalidad(int idRol, string nombreFuncionalidad)
         {
             Funcionalidad funcion = new Funcionalidad();
             funcion.Nombre = nombreFuncionalidad;
-            return repositorioSeguridad.AsignarFuncionalidad(nombreRol, funcion);
+            return repositorioSeguridad.AsignarFuncionalidad(idRol, funcion);
         }
         public IEnumerable<Funcionalidad> ObtenerFuncionalidades()
         {

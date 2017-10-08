@@ -9,32 +9,31 @@ namespace LogiCAR.CapaAccesoDatos
 {
     public class RepositorioSeguridad : IRepositorioSeguridad
     {
-        public Guid LogIn(string nombreUsuario, string contrasenia)
+        public Guid LogIn(Usuario usuario)
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-               var usuario = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(nombreUsuario)).SingleOrDefault();
+                var usuarioObtenido = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(usuario.NombreUsuario)).SingleOrDefault();
                 usuario.Token = Guid.NewGuid();
                 contexto.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
                 return usuario.Token;
             }
         }
-
-        public bool LogOff(string nombreUsuario)
+        public bool LogOff(Guid token)
         {
             using (RepositorioContext contexto = new RepositorioContext())
             {
-                Usuario usuarioLogueado = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(nombreUsuario)).SingleOrDefault();
+                Usuario usuarioLogueado = contexto.Usuarios.Where(u => u.Token.Equals(token)).SingleOrDefault();
                 usuarioLogueado.Token = Guid.Empty;
                 contexto.Entry(usuarioLogueado).State = System.Data.Entity.EntityState.Modified;
                 return contexto.SaveChanges() > 0;
             }
 
         }
-        public int AltaUsuario(Usuario usuario)
+        public int AltaUsuario(Usuario usuario,Guid token)
         {
-            using (RepositorioContext contexto = new RepositorioContext())
+           using (RepositorioContext contexto = new RepositorioContext())
             {
                 contexto.Roles.Attach(usuario.Rol);
                 contexto.Usuarios.Add(usuario);
@@ -42,7 +41,35 @@ namespace LogiCAR.CapaAccesoDatos
                 return usuario.Id;
             }
         }
-
+        public Usuario ObtenerUsuarioLogueado(Guid token)
+        {
+            Usuario usuarioLogueado = new Usuario();
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                return usuarioLogueado = contexto.Usuarios.Where(u => u.Token.Equals(token)).SingleOrDefault();
+            }
+        }
+        public bool NoEsAdministrador(Guid token)
+        {
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                bool resultado = false;
+                var usuarioLogueado = contexto.Usuarios.Where(u => u.Token.Equals(token)).SingleOrDefault();
+                if (usuarioLogueado.Rol.Nombre != "ADMINISTRADOR")
+                    resultado = true;
+                return resultado;
+            }
+        }
+        public List<Funcionalidad> FuncionalidadesAprobadas(Guid token)
+        {
+            List<Funcionalidad> funcionesPermitidas = new List<Funcionalidad>();
+            Usuario usuarioLogueado = new Usuario();
+            using (RepositorioContext contexto = new RepositorioContext())
+            {
+                usuarioLogueado = contexto.Usuarios.Where(u => u.Token.Equals(token)).SingleOrDefault();
+                return usuarioLogueado.Rol.Permisos;
+            }
+        }
         public bool ModificarUsuario(int Id, Usuario usuario)
         {
             using (var contexto = new RepositorioContext())
@@ -70,7 +97,7 @@ namespace LogiCAR.CapaAccesoDatos
         {
             using (var contexto = new RepositorioContext())
             {
-                return contexto.Usuarios.ToList();
+                return contexto.Usuarios.Include("Rol").ToList();
             }
         }
         public bool BajaUsuario(string nombreUsuario)
@@ -163,20 +190,20 @@ namespace LogiCAR.CapaAccesoDatos
                 return contexto.SaveChanges() > 0;
             }
         }
-        public bool AsignarFuncionalidad(string nombreRol, Funcionalidad funcionalidad)
+        public bool AsignarFuncionalidad(int idRol, Funcionalidad funcionalidad)
         {
             using (var contexto = new RepositorioContext())
             {
-                contexto.Roles.Where(r => r.Nombre.Equals(nombreRol)).FirstOrDefault().Permisos.Add(funcionalidad);
+                contexto.Roles.Where(r => r.Nombre.Equals(idRol)).FirstOrDefault().Permisos.Add(funcionalidad);
                 return contexto.SaveChanges() > 0;
             }
         }
-        public bool AsignarRol(string nombreUsuario, string nombreRol)
+        public bool AsignarRol(string nombreUsuario, int idRol)
         {
             using (var contexto = new RepositorioContext())
             {
                 Usuario usuarioResultado = contexto.Usuarios.Where(u => u.NombreUsuario.Equals(nombreUsuario)).FirstOrDefault();
-                Rol rolResultado = contexto.Roles.Where(r => r.Nombre.Equals(nombreRol)).FirstOrDefault();
+                Rol rolResultado = contexto.Roles.Where(r => r.Id.Equals(idRol)).FirstOrDefault();
                 usuarioResultado.Rol = rolResultado;
                 contexto.Entry(usuarioResultado).State = System.Data.Entity.EntityState.Modified;
                 contexto.Entry(rolResultado).State = System.Data.Entity.EntityState.Modified;

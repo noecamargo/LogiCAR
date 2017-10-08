@@ -22,13 +22,13 @@ namespace LogiCAR.WebApi.Test
 
             var mockLogicaNegocioSeguridad = new Mock<ILogicaNegocioSeguridad>();
             mockLogicaNegocioSeguridad
-                .Setup(bl => bl.AltaUsuario(usuario))
+                .Setup(bl => bl.AltaUsuario(usuario,Guid.NewGuid()))
                     .Returns(1);
 
             var controller = new UsuarioController(mockLogicaNegocioSeguridad.Object);
 
             //Act
-            IHttpActionResult obtainedResult = controller.Post(usuario);
+            IHttpActionResult obtainedResult = controller.Post(Guid.NewGuid(),usuario);
             var createdResult = obtainedResult as CreatedAtRouteNegotiatedContentResult<Rol>;
 
             //Assert

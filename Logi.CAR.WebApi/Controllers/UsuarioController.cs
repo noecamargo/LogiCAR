@@ -21,7 +21,7 @@ namespace LogiCAR.WebApi.Controllers
         [HttpPut]
         public IHttpActionResult LogIn([FromBody]Usuario usuario)
         {
-             Guid guid = logicaNegocioSeguridad.LogIn(usuario.NombreUsuario, usuario.Contrasenia);
+             Guid guid = logicaNegocioSeguridad.LogIn(usuario);
             if (guid == Guid.Empty)
             {
                 return NotFound();
@@ -68,11 +68,12 @@ namespace LogiCAR.WebApi.Controllers
         }
 
         // POST: api/Usuario
-        public IHttpActionResult Post([FromBody] Usuario usuario)
+        public IHttpActionResult Post(Guid token, [FromBody] Usuario usuario)
         {
             try
             {
-                int resultado = logicaNegocioSeguridad.AltaUsuario(usuario);
+               
+                int resultado = logicaNegocioSeguridad.AltaUsuario(usuario,token);
                 return CreatedAtRoute("DefaultApi", new { updated = resultado }, usuario);
             }
             catch (ArgumentNullException ex)

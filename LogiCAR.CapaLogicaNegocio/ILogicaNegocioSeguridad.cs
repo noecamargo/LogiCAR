@@ -6,13 +6,13 @@ namespace LogiCAR.CapaLogicaNegocio
 {
     public interface ILogicaNegocioSeguridad
     {
-        Guid LogIn(string nombreUsuario, string contrasenia);
-        bool LogOff(string nombreUsuario);
+        Guid LogIn(Usuario usuario);
+        bool LogOff(Guid token);
         bool AltaFuncionalidad(string nombre);
         bool AltaRol(Rol rol);
-        int AltaUsuario(Usuario usuario);
-        bool AsignarFuncionalidad(string nombreRol, string nombreFuncionalidad);
-        bool AsignarRol(string nombreUsuario, string nombreRol);
+        int AltaUsuario(Usuario usuario, Guid token);
+        bool AsignarFuncionalidad(int idRol, string nombreFuncionalidad);
+        bool AsignarRol(string nombreUsuario, int idRol);
         IEnumerable<Funcionalidad> ObtenerFuncionalidades();
         IEnumerable<Rol> ObtenerRoles();
         IEnumerable<Usuario> ObtenerUsuarios();
